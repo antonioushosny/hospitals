@@ -143,6 +143,19 @@ return [
     |
     */
 
+
+    'values' => [
+        'video_questions_type' => [
+            'choices'              => 'اختيارات',
+         ],
+         'course_questions_type' => [
+            'choices'              => 'اختيارات',
+         ],
+         'skill_questions_type' => [
+            'choices'              => 'اختيارات',
+         ],
+
+     ],
     'attributes' => [
         'name'                  => 'الاسم',
         'username'              => 'اسم المُستخدم',
@@ -174,6 +187,7 @@ return [
         'available'             => 'مُتاح',
         'size'                  => 'الحجم',
         'images'                =>  'الصور',
+        'current_password'      => 'كلمة المرور الحالية' ,
 
         /**
          * Admin
@@ -182,13 +196,20 @@ return [
         'admins_status'         => 'الحالة',
         'roles'                 => 'الادوار',
 
-        
+
         /**
-        
-        
-        /** 
-         * MetaTag  
-         */ 
+         * CLients
+         */
+        'clients_username'          =>  'اسم المتسخدم',
+        'clients_name'              =>  'اسم العميل',
+        'clients_email'             =>  'البريد الالكتروني',
+        'clients_age'               =>  'العمر',
+        'clients_phone'             =>  'الجوال',
+        'clients_status'            =>  'الحالة',
+
+        /**
+         * MetaTag
+         */
         'en.metatags_title'         => 'عنوان التهيئة الانجليزى',
         'ar.metatags_title'         => 'عنوان التهيئة العربى',
         'en.metatags_desc'          => 'وصف التهيئة الانجليزى',
@@ -196,11 +217,11 @@ return [
         'metatags_position'         => 'الترتيب',
         'metatags_page'             => 'اسم الصفحة',
         'metatags_status'           => 'الحالة',
-        
-        
-        /** 
-         * Infos    
-         */ 
+
+
+        /**
+         * Infos
+         */
         'en.infos_value'            => 'النص',
         'ar.infos_value'            => 'النص',
         'infos_key'                 => 'العنوان',
@@ -209,23 +230,41 @@ return [
         'ar.infos_title'            => 'العنوان بالعربية',
         'infos_position'            => 'الترتيب',
         'infos_status'              => 'الحالة',
-        
-        /** 
-         * Role 
-         */ 
+
+        /**
+         * Role
+         */
         'permissions'               => 'الصلاحيات',
-        
-        
-        /** 
-         * Contact Us   
-         */ 
+
+
+        /**
+         * Contact Us
+         */
         'contact_us_name'           =>  'الاسم',
         'contact_us_email'          =>  'البريد',
         'contact_us_phone'          =>  'الجوال',
         'contact_us_text'           =>  'الرسالة',
+        'contact_us_message'           =>  'الرسالة',
     
-         
+ 
+
+        /**
+        * clients
+        */
+        'clients_phone'           => 'رقم الجوال',
+        'file'                      => 'الملف' ,
+        'email'                     => 'البريد الالكتروني',
+        'clients_city'            => 'المدينة',
+        'clients_phone'           => 'رقم الجوال',
+        'password'                  => 'كلمة المرور',
+    
+ 
+  
+
+ 
+
+
     ],
 ];
 
- 
+

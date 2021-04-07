@@ -149,7 +149,172 @@ return [
 
         'images'    =>  'images',
 
-        
+
+
+        /**
+         * Questions
+         */
+        'ar.questions_title' =>  'Arabic Question title',
+        'en.questions_title' =>  'English Question title',
+
+
+        /**
+        * clients
+        */
+        'clients_phone'           => 'Client phone  ',
+        'ar.clients_name'         => 'client name in arabic',
+        'en.clients_name'         => 'Client name in english',
+        'file'                      => 'File' ,
+        'clients_name'            => 'Client name',
+        'email'                     => 'Email',
+        'clients_city'            => 'City',
+        'jobs_id'                   => 'Job',
+        'clients_phone'           => 'Phone',
+        'password'                  => 'Password',
+        'clients_points'          => 'Client Points',
+        'device_token'              => 'Device Token',
+        'clients_status'          => 'Client status',
+        'clients_id'              => 'Client',
+        'clients_course_assignments_degree'           => 'Assignment degree',
+        'clients_course_assignments_status'           => 'Assignment status',
+        'clients_course_assignments_answers_answer'   => 'Answer',
+        'clients_skill_assignments_degree'            => 'Assignment degree',
+        'clients_skill_assignments_status'            => 'Assignment status',
+        'clients_skill_assignments_answers_answer'    => 'Answer',
+        'clients_video_tests_status'                  => 'Status  ',
+        'client_video_tests_answers_answer'           => 'Answer',
+
+
+        /**
+        * courses
+        */
+        'courses_status'                => 'Course status  ',
+        'courses_points'                => 'Course Points',
+        'courses_id'                    => 'Course',
+        'course_assignments_success_degree'=>'Success degree',
+        'course_assignments_status'     => 'Status',
+        'ar.course_questions_question'  => 'Question in arabic',
+        'ar.course_questions_answer1'   => 'Answer1 in arabic',
+        'ar.course_questions_answer2'   => 'Answer2 in arabic',
+        'ar.course_questions_answer3'   => 'Answer3 in arabic',
+        'ar.course_questions_answer4'   => 'Answer4 in arabic',
+        'en.course_questions_question'  => 'Question in english',
+        'en.course_questions_answer1'   => 'Answer1 in english',
+        'en.course_questions_answer2'   => 'Answer2 in english',
+        'en.course_questions_answer3'   => 'Answer3 in english',
+        'en.course_questions_answer4'   => 'Answer4 in english',
+        'course_assignments_id'         => 'Assignment',
+        'course_questions_type'         => 'Question type',
+        'course_questions_correct_answer'=>'correct answer',
+        'course_questions_correct_answer.0'=>' Correct answer 1',
+        'course_questions_correct_answer.1'=>' Correct answer 2',
+        'course_questions_correct_answer.2'=>' Correct answer 3',
+        'course_questions_correct_answer.3'=>' Correct answer 4',
+        'course_questions_status'       => ' Status',
+        'ar.courses_title'              => ' title in arabic ',
+        'ar.courses_desc'               => ' description in arabic',
+        'en.courses_title'              => ' title in english',
+        'en.courses_desc'               => ' description in english',
+        'ar.course_assignments_title'   => ' title in arabic ',
+        'en.course_assignments_title'   => ' title in english',
+
+        /**
+        * sections
+        */
+        'ar.sections_title'             => ' title in arabic ',
+        'ar.sections_desc'              => ' description in arabic',
+        'en.sections_title'             => ' title in english',
+        'en.sections_desc'              => ' description in english',
+        'sections_id'                   => 'section',
+
+        /**
+        * skills
+        */
+        'ar.skills_title'               => ' title in arabic ',
+        'ar.skills_desc'                => ' description in arabic',
+        'en.skills_title'               => ' title in english',
+        'en.skills_desc'                => ' description in english',
+        'skills_id'                     => 'Skill',
+        'skills_status'                 => 'Status  ',
+        'skills_points'                 => 'Skill Points  ',
+        'skill_assignments_success_degree'=> 'Succes degree  ',
+        'skill_assignments_status'      => 'status',
+        'ar.skill_questions_question'   => 'Question in arabic',
+        'ar.skill_questions_answer1'    => 'Answer1 in arabic',
+        'ar.skill_questions_answer2'    => 'Answer2 in arabic',
+        'ar.skill_questions_answer3'    => 'Answer3 in arabic',
+        'ar.skill_questions_answer4'    => 'Answer4 in arabic',
+        'en.skill_questions_question'   => 'Question in english',
+        'en.skill_questions_answer1'    => 'Answer1 in english',
+        'en.skill_questions_answer2'    => 'Answer2 in english',
+        'en.skill_questions_answer3'    => 'Answer3 in english',
+        'en.skill_questions_answer4'    => 'Answer4 in english',
+        'skill_assignments_id'          => 'Assignment',
+        'skill_questions_type'          => 'Question type',
+        'skill_questions_correct_answer'=> 'Correct answer',
+        'skill_questions_correct_answer.0'=>' Correct answer 1',
+        'skill_questions_correct_answer.1'=>' Correct answer 2',
+        'skill_questions_correct_answer.2'=>' Correct answer 3',
+        'skill_questions_correct_answer.3'=>' Correct answer 4',
+        'skill_questions_status'        => 'Status',
+        'ar.skill_assignments_title'   => ' title in arabic ',
+        'en.skill_assignments_title'   => ' title in english',
+
+        /**
+        * videos
+        */
+        'ar.videos_title'               => ' title in arabic ',
+        'ar.videos_desc'                => ' description in arabic',
+        'en.videos_title'               => ' title in english',
+        'en.videos_desc'                =>  ' description in english',
+        'videos_video'                  => 'Video',
+        'videos_status'                 => 'Status Video',
+        'videos_points'                 => 'Points Video',
+        'ar.video_questions_question'   => 'Question in arabic',
+        'ar.video_questions_answer1'    => 'Answer1 in arabic',
+        'ar.video_questions_answer2'    => 'Answer2 in arabic',
+        'ar.video_questions_answer3'    => 'Answer3 in arabic',
+        'ar.video_questions_answer4'    => 'Answer4 in arabic',
+        'en.video_questions_question'   => 'Question in english',
+        'en.video_questions_answer1'    => 'Answer1 in english',
+        'en.video_questions_answer2'    => 'Answer2 in english',
+        'en.video_questions_answer3'    => 'Answer3 in english',
+        'en.video_questions_answer4'    => 'Answer4 in english',
+        'video_tests_id'                => 'Test',
+        'video_questions_type'          => 'Question type',
+        'video_questions_correct_answer'=> 'Correct answer',
+        'video_questions_correct_answer'=> 'Correct answer',
+        'video_questions_correct_answer.0'=>' Correct answer 1',
+        'video_questions_correct_answer.1'=>' Correct answer 2',
+        'video_questions_correct_answer.2'=>' Correct answer 3',
+        'video_questions_correct_answer.3'=>' Correct answer 4',
+        'video_questions_status'        => 'Status ',
+        'videos_id'                     => 'Video',
+        'video_tests_time'              => 'Test time',
+        'video_tests_status'            => 'Status',
+        'ar.video_tests_title'   => ' title in arabic ',
+        'en.video_tests_title'   => ' title in english',
+
+        /**
+        * degrees
+        */
+        'ar.degrees_title'              => ' title in arabic ',
+        'en.degrees_title'              => ' title in english',
+        'degrees_status'                => 'Status',
+        'degrees_from'                  => 'From',
+        'degrees_to'                    => 'To',
+        'degrees_id'                    => 'Degree',
+
+        /**
+        * diplomas
+        */
+        'ar.diplomas_title'             => ' title in arabic ',
+        'ar.diplomas_desc'              => ' description in arabic',
+        'en.diplomas_title'             => ' title in english',
+        'en.diplomas_desc'              =>  ' description in english',
+        'diplomas_status'               => 'Status ',
+        'diplomas_id'                   => 'Diploma',
+
     ],
 
 ];

@@ -14,11 +14,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content=" ">
-    <meta name="author" content="Łukasz Holeczek">
+    <meta name="author" content="Antony Hosny">
     <meta name="keyword" content="">
-    <link rel="icon" href="{{ asset('backend/img/logo.png') }}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{{ asset('backend/img/logo.jpeg') }}" type="image/png" sizes="16x16">
 
-    <title>Adam</title>
+    <title>{{__('admin::lang.siteTitle')}}</title>
+
     <!-- Icons-->
     <link href="{{ asset('vendors/@coreui/icons/css/coreui-icons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/flag-icon-css/css/flag-icon.min.css') }}" rel="stylesheet">
@@ -40,7 +41,7 @@
             <div class="card text-white bg-white">
               <div class="card-body align-items-center d-flex justify-content-center">
                 <div>
-                  <img class="login-logo" src="{{ asset( 'backend/img/logo.png' ) }}">
+                  <img class="login-logo" src="{{ asset( 'backend/img/logo.jpeg' ) }}">
                
                 </div>
               </div>

@@ -19,15 +19,10 @@ class MatchOldPassword implements Rule
         if(Auth::guard('client')->check()) {
             return Hash::check($value,  auth::guard('client')->user()->password);
         }
-        elseif(Auth::guard('pharmacist')->check()) {
-            return Hash::check($value,  auth::guard('pharmacist')->user()->password);
+        elseif(Auth::guard('doctor')->check()) {
+            return Hash::check($value,  auth::guard('doctor')->user()->password);
         }
-        elseif(Auth::guard('employee')->check()) {
-            return Hash::check($value,  auth::guard('employee')->user()->password);
-        }
-        elseif(Auth::guard('shop')->check()) {
-            return Hash::check($value,  auth::guard('shop')->user()->password);
-        }
+        
     }
   
     /**

@@ -44,26 +44,15 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
-        'shop' => [
-            'driver' => 'session',
-            'provider' => 'shops',
-        ],
         'client' => [
             'driver' => 'session',
             'provider' => 'clients',
         ],
-        'pharmacist' => [
+        'doctor' => [
             'driver' => 'session',
-            'provider' => 'pharmacists',
+            'provider' => 'doctors',
         ],
-        'employee' => [
-            'driver' => 'session',
-            'provider' => 'employees',
-        ],
-        'pharmacy' => [
-            'driver' => 'session',
-            'provider' => 'pharmacies',
-        ],
+  
 
         'device' => [
             'driver' => 'session',
@@ -97,26 +86,14 @@ return [
             'model' => Modules\Admin\Models\Admin::class,
         ],
 
-        'shops' => [
+        'doctors' => [
             'driver' => 'eloquent',
-            'model' => Modules\Ecommerce\Models\Shop::class,
+            'model' => Modules\Ecommerce\Models\Doctor::class,
         ],
 
         'clients' => [
             'driver' => 'eloquent',
             'model' => Modules\Admin\Models\Client::class,
-        ],
-        'pharmacists' => [
-            'driver' => 'eloquent',
-            'model' => Modules\Consulting\Models\Pharmacist::class,
-        ],
-        'employees' => [
-            'driver' => 'eloquent',
-            'model' => Modules\Branches\Models\Employee::class,
-        ],
-        'pharmacies' => [
-            'driver' => 'eloquent',
-            'model' => Modules\StockOrder\Models\Pharmacy::class,
         ],
         'devices' => [
             'driver' => 'eloquent',
@@ -146,8 +123,8 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'shops' => [
-            'provider' => 'shops',
+        'doctors' => [
+            'provider' => 'doctors',
             'table' => 'password_resets',
             'expire' => 60,
         ],
@@ -156,21 +133,7 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'pharmacists' => [
-            'provider' => 'pharmacists',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
-        'employee' => [
-            'provider' => 'employees',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
-        'pharmacies' => [
-            'provider' => 'pharmacies',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
+       
         'devices' => [
             'provider' => 'devices',
             'table' => 'password_resets',

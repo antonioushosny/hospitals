@@ -48,8 +48,84 @@
         </li>
       @endcanany
   
- 
-   
+     
+      {{-- advertisements Link --}}
+      @canany(['view advertisements'])
+        <li class="nav-item">
+            @can('view advertisements')
+              <a class="nav-link" href="{{ route('admin.advertisements.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.advertisements') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+
+      {{-- news Link --}}
+      @canany(['view news'])
+        <li class="nav-item">
+            @can('view news')
+              <a class="nav-link" href="{{ route('admin.news.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.news') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+
+      {{-- countries Link --}}
+      @canany(['view countries'])
+        <li class="nav-item">
+            @can('view countries')
+              <a class="nav-link" href="{{ route('admin.countries.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.countries') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+      
+      {{-- hospitals Link --}}
+      @canany(['view hospitals'])
+        <li class="nav-item">
+            @can('view hospitals')
+              <a class="nav-link" href="{{ route('admin.hospitals.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.hospitals') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+      
+      {{-- specialties Link --}}
+      @canany(['view specialties'])
+        <li class="nav-item">
+            @can('view specialties')
+              <a class="nav-link" href="{{ route('admin.specialties.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.specialties') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+
+      {{-- departments Link --}}
+      @canany(['view departments'])
+        <li class="nav-item">
+            @can('view departments')
+              <a class="nav-link" href="{{ route('admin.departments.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.departments') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+
+      {{-- doctors Link --}}
+      @canany(['view doctors'])
+        <li class="nav-item">
+            @can('view doctors')
+              <a class="nav-link" href="{{ route('admin.doctors.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.doctors') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+      
       {{-- Admins Links --}}
       @canany(['view admins', 'view roles'])
         <li class="nav-item nav-dropdown">
@@ -72,7 +148,6 @@
           </ul>
         </li>
       @endcanany
-      
       
       {{-- MetaTags Link --}}
       @canany(['view metatags'])

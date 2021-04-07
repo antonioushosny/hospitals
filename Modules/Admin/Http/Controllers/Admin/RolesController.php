@@ -26,7 +26,7 @@ class RolesController extends Controller
         $query = Role::orderBy('id');
 
         // if this role is [super-admin], then redirect to 403
-        // because this role [super_admin], just for NamaaIT User
+        // because this role [super_admin], just for  User
         $authId = auth()->id();
         if ($authId != 1) {
             $query->where('id', '!=', 1);
@@ -79,7 +79,7 @@ class RolesController extends Controller
     public function show(Role $role)
     {
         // if this role is [super-admin], then redirect to 403
-        // because this role [super_admin], just for NamaaIT User
+        // because this role [super_admin], just for Admin User
         if ($role->id === 1 && auth()->user()->admins_id !== 1) {
             return abort(403, $message = "you don't have permission to access this page" );
         }
@@ -104,7 +104,7 @@ class RolesController extends Controller
     public function edit(Role $role)
     {
         // if this role is [super-admin], then redirect to 403
-        // because this role [super_admin], just for NamaaIT User
+        // because this role [super_admin], just for Super Admin User
         if ($role->id === 1 && auth()->user()->admins_id !== 1) {
             return abort(403, $message = "you don't have permission to access this page" );
         }
@@ -130,7 +130,7 @@ class RolesController extends Controller
     public function update(RoleRequest $request, Role $role)
     {
         // if this role is [super-admin], then redirect to 403
-        // because this role [super_admin], just for NamaaIT User
+        // because this role [super_admin], just for  Super Admin User
         if ($role->id === 1 && auth()->user()->admins_id !== 1) {
             return abort(403, $message = "you don't have permission to access this page" );
         }
@@ -150,7 +150,7 @@ class RolesController extends Controller
     public function destroy(Role $role)
     {
         // if this role is [super-admin], then redirect to 403
-        // because this role [super_admin], just for NamaaIT User
+        // because this role [super_admin], just for  Super Admin User
         if ($role->id === 1 && auth()->user()->admins_id !== 1) {
             return abort(403, $message = "you don't have permission to access this page" );
         }

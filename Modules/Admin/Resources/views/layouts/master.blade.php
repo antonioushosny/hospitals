@@ -14,7 +14,7 @@
     
     <title>{{ __('admin::lang.siteTitle') }} | {{ __('admin::lang.adminPanel') }}</title>
 
-    <link rel="icon" href="{{ asset('backend/imf/logo.png') }}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{{ asset('backend/img/logo.jpeg') }}" type="image/png" sizes="16x16">
  
     
     <!-- Icons-->
@@ -45,8 +45,6 @@
     <link href="{{ asset('backend/css/tajawal-font.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/custom.css') }}" rel="stylesheet">
     @yield('style')
-    <!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
    
 </head>
 <body class="app header-fixed sidebar-hidden aside-menu-fixed"> 

@@ -13,9 +13,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <a class=" col-lg-1 col-md-2 navbar-brand" href="{{ route('admin.dashboard.home') }}">
-          <img class="d-md-down-none" src="{{ asset('backend/img/logo.png') }}" height="25" alt="{{__('admin::lang.siteTitle')}}">
+          <img class="d-md-down-none" src="{{ asset('backend/img/logo.jpeg') }}" height="25" alt="{{__('admin::lang.siteTitle')}}">
 
-          <img class="d-lg-none" src="{{ asset($locale == 'ar' ? 'front/images/logo-ar.png' : 'front/images/logo-en.png') }}" height="30" alt="{{__('admin::lang.siteTitle')}}">
+          <img class="d-lg-none" src="{{ asset($locale == 'ar' ? 'backend/img/logo.jpeg' : 'backend/img/logo.jpeg') }}" height="30" alt="{{__('admin::lang.siteTitle')}}">
         </a>
 
           <div class="col-lg-9  col-md-7   row m-0 p-0 d-md-down-none">
@@ -72,6 +72,61 @@
                     </a>
                   </li>
                 @endcanany
+
+                {{-- news Links --}}
+                @canany(['view news'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.news.index') }}" >
+                      {{ __('admin::lang.news') }}
+                    </a>
+                  </li>
+                @endcanany
+
+                {{-- countries Links --}}
+                @canany(['view countries'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.countries.index') }}" >
+                      {{ __('admin::lang.countries') }}
+                    </a>
+                  </li>
+                @endcanany
+                
+                {{-- hospitals Links --}}
+                @canany(['view hospitals'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.hospitals.index') }}" >
+                      {{ __('admin::lang.hospitals') }}
+                    </a>
+                  </li>
+                @endcanany
+                
+                {{-- specialties Links --}}
+                @canany(['view specialties'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.specialties.index') }}" >
+                      {{ __('admin::lang.specialties') }}
+                    </a>
+                  </li>
+                @endcanany
+
+                {{-- departments Links --}}
+                @canany(['view departments'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.departments.index') }}" >
+                      {{ __('admin::lang.departments') }}
+                    </a>
+                  </li>
+                @endcanany
+
+                {{-- doctors Links --}}
+                @canany(['view doctors'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.doctors.index') }}" >
+                      {{ __('admin::lang.doctors') }}
+                    </a>
+                  </li>
+                @endcanany
+                
                 {{-- contactus Links --}}
                 @canany(['view contactus'])
                   <li class="nav-item px-3">

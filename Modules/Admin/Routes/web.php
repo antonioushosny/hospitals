@@ -48,10 +48,35 @@ Route::prefix('admin')
 		 */
 	    Route::resource('advertisements', 'AdvertisementsController');
 
-	    /**
-		 * Reports Routes
+	  	/**
+		 * News Routes
 		 */
-	  
+	    Route::resource('news', 'NewsController');
+
+	  	/**
+		 * countries Routes
+		 */
+		Route::resource('countries', 'CountriesController');
+		
+		/**
+		 * Hospitals Routes
+		 */
+	    Route::resource('hospitals', 'HospitalsController');	
+		
+		/**
+		 * Specialties Routes
+		 */
+	    Route::resource('specialties', 'SpecialtiesController');
+
+		/**
+		 * Departments Routes
+		 */
+	    Route::resource('departments', 'DepartmentsController');
+
+		/**
+		 * Doctors Routes
+		 */
+	    Route::resource('doctors', 'DoctorsController');
 		
 	    /**
 		 * ContactUs Routes

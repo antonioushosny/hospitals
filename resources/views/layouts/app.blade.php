@@ -23,8 +23,14 @@
     
     <link rel="stylesheet" href="{{ asset('front/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/jquery.fancybox.min.css') }}">
-   
+    <link rel="stylesheet" href="{{ asset('vendors/select2/css/select2.css') }}">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="{{ asset('front/css/custom.css') }}">
 
+    @if($dir == 'rtl')
+        {{-- RTL Styles --}}
+        <link rel="stylesheet" href="{{ asset('front/css/custom-rtl.css') }}">
+    @endif
     @yield('style')
   
  </head>
@@ -32,8 +38,8 @@
 <!-- class="rtl" -->
 <body class="{{ $dir == 'rtl' ? 'rtl' : ''  }} p-0 m-0 ">
  
-   
- 
+   @include('includes.header')
+   @include('includes.navbar')
     <div id="overlayer"></div>
     <span class="loader">
         <span class="loader-inner"></span>
@@ -50,11 +56,12 @@
     </div>
     <!-- page-wrapper -->
 
-    
+    @include('includes.footer')
   
     {{-- Scripts --}}
     <script src="{{ asset('front/js/jquery.min.js') }}"></script>
     <script src="{{ asset('front/js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     @if($dir == 'rtl')
         {{-- RTL Scripts --}}
@@ -64,8 +71,7 @@
     @endif
 
     <script src="{{ asset('vendors/select2/js/select2.min.js') }}"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    @include('includes.scripts')
     @yield('script1')
     @yield('script2')
     @yield('script')

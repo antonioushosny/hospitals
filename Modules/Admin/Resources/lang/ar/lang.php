@@ -5,7 +5,7 @@ return [
 	 * General
 	 */ 
 	'home' 					=> 'الرئيسية',
-	'siteTitle'				=>	'ابافيس',
+	'siteTitle'				=>	'Treatment Abroad',
 	'adminPanel'			=>	'لوحة التحكم',
 	'selectStatus' 			=> 'أختر الحالة',
 	'website'				=>	'الموقع',
@@ -53,12 +53,12 @@ return [
 	'type'					=>	'النوع',
 	'message'				=>	'الرسالة',
 	'phone'					=>	'الجوال',
-	'infos'					=>	'نبذة عن ابافيس    ',
+	'infos'					=>	'نبذة عن Treatment Abroad    ',
 	'privacyPolicy'			=>	'سياسة الاستخدام',
 	'termsConditions'		=>	'الشروط والاحكام',
-	'info'					=>	'عن ابافيس ',
+	'info'					=>	'عن Treatment Abroad ',
 	'page'					=>	'الصفحة',
-	'aboutProject'			=>	'عن ابافيس',
+	'aboutProject'			=>	'عن Treatment Abroad',
 	'connectWithUs'			=> 'تواصل معنا',
 	'gps'					=>	'احداثيات الخريطة',
 	'createdDone'			=>	'تمت الاضافة بنجاح',
@@ -132,6 +132,77 @@ return [
 	'advertisements_text' 	=> ' نص الاعلان',
 	'mobile_img' 			=> 'صورة الجوال ',
 
+		
+	/**
+	 * Countries
+	 */
+	'countries' 		=> 'الدول',
+	'country' 			=> 'الدولة',
+	'countryDetails'	=> 'تفاصيل الدولة',
+	'countryCreated' 	=> 'تم انشاء الدولة',
+	'countryUpdated' 	=> 'تم تعديل الدولة',
+	'countryDeleted' 	=> 'تم حذف الدولة',
+	'countries_title' 	=> 'اسم الدولة',
+
+
+	/**
+	 * Hospitals
+	 */
+	'hospitals' 		=> 'المستشفيات',
+	'hospital' 			=> 'المستشفي',
+	'hospitalDetails'	=> 'تفاصيل المستشفي',
+	'hospitalCreated' 	=> 'تم انشاء المستشفي',
+	'hospitalUpdated' 	=> 'تم تعديل المستشفي',
+	'hospitalDeleted' 	=> 'تم حذف المستشفي',
+	'hospitals_title' 	=> 'اسم المستشفي',
+ 
+	/**
+	 * Departments
+	 */
+	'departments' 			=> 'الأقسام',
+	'department' 			=> 'القسم',
+	'departmentDetails'		=> 'تفاصيل القسم',
+	'departmentCreated' 	=> 'تم انشاء القسم',
+	'departmentUpdated' 	=> 'تم تعديل القسم',
+	'departmentDeleted' 	=> 'تم حذف القسم',
+	'departments_title' 	=> 'اسم القسم ',
+
+	/**
+	 * Specialties
+	 */
+	'specialties' 			=> 'التخصصات',
+	'specialty' 			=> 'التخصص',
+	'specialtyDetails'		=> 'تفاصيل التخصص',
+	'specialtyCreated' 		=> 'تم انشاء التخصص',
+	'specialtyUpdated' 		=> 'تم تعديل التخصص',
+	'specialtyDeleted' 		=> 'تم حذف  التخصص',
+	'specialties_title' 	=> 'اسم التخصص',
+	
+	/**
+	 * Doctors
+	 */
+	'doctors' 			=> 'الدكاترة',
+	'doctor' 			=> 'الدكتور',
+	'doctorDetails'		=> 'تفاصيل الدكتور',
+	'doctorCreated' 	=> 'تم انشاء الدكتور',
+	'doctorUpdated' 	=> 'تم تعديل الدكتور',
+	'doctorDeleted' 	=> 'تم حذف الدكتور',
+	'doctors_title' 	=> 'اسم الدكتور ',
+	'civil_no'			=> 'الرقم المدني',
+	
+	/**
+	 * News
+	 */
+	'news' 			=> 'الأخبار',
+	'newDetails'	=>	'تفاصيل الخير',
+	'newCreated' 	=> 'تم انشاء خبر',
+	'newUpdated' 	=> 'تم تعديل خبر ',
+	'newDeleted' 	=> 'تم حذف خبر',
+	'news_title' 	=> 'عنوان الخبر',
+	'news_desc' 	=> 'نص الخبر',
+	'news_image' 	=> 'صورة الخبر',
+	 
+ 
 
 	/**
 	 * Notifications
@@ -168,6 +239,10 @@ return [
 	 */
 	'contactUs'				=>	'رسائل الاتصال',
 	'contactus'				=>	'رسائل الاتصال',
+	'contactusCreated'		=> 'تم اضافة رسالة',
+	'contactusUpdated'		=> 'تم تحديث رسالة',
+	'contactusDeleted'		=> 'تم حذف رسالة',
+
 	'complaint'                 =>  'شكوى',
     'Suggestion'                =>  'اقتراح ',
 	'Unspecified'                =>  'غير محدد ',
@@ -192,9 +267,10 @@ return [
 	'infoCreated' 			=> 'تم اضافة معلومة',
 	'infoUpdated' 			=> 'تم تحديث المعلومة',
 	'infoDetails' 			=> 'بيانات الوصف',
-	'infoDeleted' 			=> 'تم حذف المعلوة',
+	'infoDeleted' 			=> 'تم حذف المعلومة',
 	'info_key'				=>	'العنوان',
 	'info_value'			=>	'النص',
+	'info_about'			=> 'عن Treatment Abroad ',
 	'info_desc'				=>	'الوصف',
 	'info_mission'			=>	'المهمة',
 	'info_vision'			=>	'الرؤية',
