@@ -126,6 +126,33 @@
                     </a>
                   </li>
                 @endcanany
+                {{-- diseases Links --}}
+                @canany(['view diseases'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.diseases.index') }}" >
+                      {{ __('admin::lang.diseases') }}
+                    </a>
+                  </li>
+                @endcanany
+
+                {{-- clients Links --}}
+                @canany(['view clients'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.clients.index') }}" >
+                      {{ __('admin::lang.clients') }}
+                    </a>
+                  </li>
+                @endcanany
+                
+
+                {{-- orders Links --}}
+                @canany(['view orders'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.orders.index') }}" >
+                      {{ __('admin::lang.orders') }}
+                    </a>
+                  </li>
+                @endcanany
                 
                 {{-- contactus Links --}}
                 @canany(['view contactus'])

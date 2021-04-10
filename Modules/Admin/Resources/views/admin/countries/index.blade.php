@@ -94,17 +94,20 @@
 	          					<form method="POST" action="{{ route('admin.countries.destroy', $country->countries_id) }}">
 	          						@csrf
 	          						@method('DELETE')
+									
 	          						@can('view countries')
 			          					<a href="{{ route('admin.countries.show', $country->countries_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
 	          						@endcan
 	          						@can('update countries')
 			          					<a href="{{ route('admin.countries.edit', $country->countries_id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
 	          						@endcan
+									@if($country->countries_id != 1)
 	          						@can('delete countries')
 	          							<button type="submit" class="btn btn-danger btn-sm delete-form">
 	          								<i class="fa fa-trash"></i>
 	          							</button>
 	          						@endcan
+	          						@endif
 	          					</form>
 	          				</div>
 	          			</div>

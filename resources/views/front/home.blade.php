@@ -34,118 +34,108 @@
 	<div class="row">
       	<div class="col-lg-6 col-md-8 mx-auto">
         	<h1 class="fw-light">{{__('lang.contactUs')}}</h1>
+			<form action="{{ route('postcontactus') }}" method="post" class= ">
+				@csrf
+
+	
+			<div class="form-group row">
+
+				<label for="contact_us_name" class="col-sm-2 fb-700 col-form-label">
+					{{ __('lang.name') }} *
+				</label>
+
+				<div class="col-sm-10">
+					<input class="form-control {{ $errors->first('contact_us_name') ? 'is-invalid' : '' }}"
+						id="contact_us_name" type="text" name="contact_us_name"
+						placeholder="{{ __('lang.name') }}" value="{{ old('contact_us_name') }}"
+					>
+
+				@if ($errors->first('contact_us_name'))
+					<div class="invalid-feedback">{{ $errors->first('contact_us_name') }}</div>
+				@endif
+				</div>
+
+			</div>
+			<div class="form-group row">
+
+				<label for="contact_us_phone" class="col-sm-2 fb-700 col-form-label">
+					{{ __('lang.phone') }} *
+				</label>
+
+				<div class="col-sm-10">
+					<input class="form-control price-number {{ $errors->first('contact_us_phone') ? 'is-invalid' : '' }}"
+						id="contact_us_phone" type="text" name="contact_us_phone"
+						placeholder="{{ __('lang.phone') }}" value="{{ old('contact_us_phone') }}"
+					>
+
+				@if ($errors->first('contact_us_phone'))
+					<div class="invalid-feedback">{{ $errors->first('contact_us_phone') }}</div>
+				@endif
+				</div>
+
+			</div>
+
+			<div class="form-group row">
+
+				<label for="contact_us_email" class="col-sm-2 fb-700 col-form-label">
+					{{ __('lang.email') }}
+				</label>
+
+				<div class="col-sm-10">
+					<input class="form-control {{ $errors->first('contact_us_email') ? 'is-invalid' : '' }}"
+						id="contact_us_email" type="text" name="contact_us_email"
+						placeholder="{{ __('lang.email') }}" value="{{ old('contact_us_email') }}"
+					>
+
+				@if ($errors->first('contact_us_email'))
+					<div class="invalid-feedback">{{ $errors->first('contact_us_email') }}</div>
+				@endif
+				</div>
+
+			</div>
+
+			<div class="form-group row">
+
+				<label for="contact_us_message" class="col-sm-2 fb-700 col-form-label">
+					{{ __('lang.text') }} *
+				</label>
+
+				<div class="col-sm-10">
+					<textarea name="contact_us_message" id="text" rows="5"
+						class="form-control {{ $errors->first('contact_us_message') ? 'is-invalid' : '' }}"
+						placeholder="{{ __('lang.text') }}">{{ old('contact_us_message') }}</textarea>
+					@if ($errors->first('contact_us_message'))
+						<div class="invalid-feedback">{{ $errors->first('contact_us_message') }}</div>
+					@endif
+				</div>
+
+			</div>
+
+
+			<div class="form-group row">
+
+				<label for="contact_us_message" class="col-sm-2 fb-700 col-form-label"></label>
+
+
+				<div class="col-sm-10">
+					<span class="float-right sycamore-color fb-700 mb-2">
+						{{-- {{ __('lang.filledMust') }} --}}
+					</span>
+					<button type="submit" class="btn btn-bluish float-none float-md-{{ $dir == 'rtl' ? 'left' : 'right' }} ">
+						{{ __('lang.send') }}
+					</button>
+					
+					
+				</div>
+
+			</div>
+
+
+			</form>
 		</div>
 	</div>
  
-		@if (session('status'))
-			<div class="alert alert-success text-sm-center">
-				<button class="close" type="button" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">×</span>
-				</button>
-				<h6>{{ session('status') }}</h6>
-			</div>
-		@endif
-
-		@include('includes.errors')
-
-		<form action="{{ route('postcontactus') }}" method="post" class= ">
-			@csrf
-
   
-		  <div class="form-group row">
-
-		  	<label for="contact_us_name" class="col-sm-2 fb-700 col-form-label">
-		  		{{ __('lang.name') }} *
-		  	</label>
-
-		  	<div class="col-sm-10">
-				<input class="form-control {{ $errors->first('contact_us_name') ? 'is-invalid' : '' }}"
-					id="contact_us_name" type="text" name="contact_us_name"
-					placeholder="{{ __('lang.name') }}" value="{{ old('contact_us_name') }}"
-				>
-
-	          @if ($errors->first('contact_us_name'))
-	            <div class="invalid-feedback">{{ $errors->first('contact_us_name') }}</div>
-	          @endif
-		    </div>
-
-		  </div>
-		  <div class="form-group row">
-
-		  	<label for="contact_us_phone" class="col-sm-2 fb-700 col-form-label">
-		  		{{ __('lang.phone') }} *
-		  	</label>
-
-		  	<div class="col-sm-10">
-				<input class="form-control price-number {{ $errors->first('contact_us_phone') ? 'is-invalid' : '' }}"
-					id="contact_us_phone" type="text" name="contact_us_phone"
-					placeholder="{{ __('lang.phone') }}" value="{{ old('contact_us_phone') }}"
-				>
-
-	          @if ($errors->first('contact_us_phone'))
-	            <div class="invalid-feedback">{{ $errors->first('contact_us_phone') }}</div>
-	          @endif
-		    </div>
-
-		  </div>
-
-		  <div class="form-group row">
-
-		  	<label for="contact_us_email" class="col-sm-2 fb-700 col-form-label">
-		  		{{ __('lang.email') }}
-		  	</label>
-
-		  	<div class="col-sm-10">
-				<input class="form-control {{ $errors->first('contact_us_email') ? 'is-invalid' : '' }}"
-					id="contact_us_email" type="text" name="contact_us_email"
-					placeholder="{{ __('lang.email') }}" value="{{ old('contact_us_email') }}"
-				>
-
-	          @if ($errors->first('contact_us_email'))
-	            <div class="invalid-feedback">{{ $errors->first('contact_us_email') }}</div>
-	          @endif
-		    </div>
-
-		  </div>
-
-		  <div class="form-group row">
-
-		  	<label for="contact_us_message" class="col-sm-2 fb-700 col-form-label">
-		  		{{ __('lang.text') }} *
-		  	</label>
-
-		  	<div class="col-sm-10">
-				<textarea name="contact_us_message" id="text" rows="5"
-					class="form-control {{ $errors->first('contact_us_message') ? 'is-invalid' : '' }}"
-					placeholder="{{ __('lang.text') }}">{{ old('contact_us_message') }}</textarea>
-		        @if ($errors->first('contact_us_message'))
-		            <div class="invalid-feedback">{{ $errors->first('contact_us_message') }}</div>
-		        @endif
-		    </div>
-
-		  </div>
-
-
-		  <div class="form-group row">
-
-		  	<label for="contact_us_message" class="col-sm-2 fb-700 col-form-label"></label>
-
-
-		  	<div class="col-sm-10">
-		  		<span class="float-right sycamore-color fb-700 mb-2">
-		  			{{-- {{ __('lang.filledMust') }} --}}
-		  		</span>
-		  		<button type="submit" class="btn btn-bluish float-none float-md-{{ $dir == 'rtl' ? 'left' : 'right' }} ">
-		  			{{ __('lang.send') }}
-				  </button>
-				  
-				  
-		    </div>
-
-		  </div>
-
-
-		</form>
  
 </section>
 @endsection

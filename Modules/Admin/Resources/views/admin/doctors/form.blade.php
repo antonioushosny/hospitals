@@ -97,7 +97,7 @@
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="doctors_phone">{{ __('admin::lang.civil_no') }}<span class="text-danger"> *</span></label>
                   <div class="col-md-9">
-                    {{ Form::text('doctors_civil_no',old('doctorsdoctors_civil_no',isset($doctor) ? $doctor->doctors_civil_no : ''),['placeholder'=> __('admin::lang.civil_no'),'class'=>' form-control'])}}              
+                    {{ Form::text('doctors_civil_no',old('doctors_civil_no',isset($doctor) ? $doctor->doctors_civil_no : ''),['placeholder'=> __('admin::lang.civil_no'),'class'=>' form-control'])}}              
                       @if ($errors->first('doctors_civil_no'))
                         <div class="invalid-feedback">{{ $errors->first('doctors_civil_no') }}</div>
                       @endif

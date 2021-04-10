@@ -5,7 +5,7 @@
   <nav id="sidebar" class="sidebar-wrapper d-md-none d-inline">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="{{route('home')}}">{{__('lang.projectTitleAcademy')}}</a>
+        <a href="{{route('home')}}">{{__('admin::lang.projectTitle')}}</a>
         <div id="close-sidebar">
           <i class="fa fa-times"></i>
         </div>
@@ -14,9 +14,7 @@
 
       <div class="sidebar-menu">
         <ul>
-
-
-
+ 
               <li class="header-menu" >
                 <img src="{{asset('backend/img/logo.jpeg')}}" alt="{{__('lang.projectTitle')}}" class="  object-fit-contain " width="100%" height="100px" >
               </li>
@@ -35,37 +33,15 @@
                 </a>
               </li>
               
-
-
-
-                @if(auth('client')->check())
-                <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'courses' ? 'active' : '' }} ">
-                  <a href="{{route('courses')}}">
-                    <span>{{__('lang.myCourses')}} </span>
+ 
+              @if(auth('client')->check() && !auth('doctor')->check())
+                <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} ">
+                  <a href="{{route('orders')}}">
+                    <span>{{__('lang.orders')}} </span>
                   </a>
                 </li>
-                <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'skills' ? 'active' : '' }} ">
-                  <a href="{{route('skills')}}">
-                    <span>{{__('lang.mySkills')}} </span>
-                  </a>
-                </li>
-
-                @endif
-                <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'contactus' ? 'active' : '' }}   ">
-                  <a href="{{route('contactus')}}">
-                    <span>{{__('lang.ContactUs')}} </span>
-                  </a>
-                </li>
-
-                <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'diplomas' ? 'active' : '' }} ">
-                    <a href="{{route('diplomas')}}">
-                      <span>{{__('lang.projectTitleDiplomas')}} </span>
-                    </a>
-                </li>
-              @if(auth('client')->check())
-
-
-              <li class="{{ isset($mainPageTitle) &&  $mainPageTitle == 'myProfile'  ? 'active' : ''  }} ">
+                 
+                <li class="{{ isset($mainPageTitle) &&  $mainPageTitle == 'myProfile'  ? 'active' : ''  }} ">
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{auth::guard('client')->user()->clients_name}} </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li class="{{ isset($mainPageTitle) &&  $mainPageTitle == 'myProfile'  ? 'active' : ''  }} ">
@@ -73,15 +49,22 @@
                     </li>
 
                 </ul>
-              </li>
-              <li class="">
-                <a href="{{route('logout', ['type'  =>  'client'])}}"><span> {{__('lang.logout') }}  </span></a>
-              </li>
-
+                </li>
+                <li class="">
+                  <a href="{{route('logout', ['type'  =>  'client'])}}"><span> {{__('lang.logout') }}  </span></a>
+                </li>
               @else
-              <li class=" ">
-                <a href="{{route('getLogin','client')}}"><span> {{__('lang.login') }}  </span></a>
-              </li>
+                <li class=" ">
+                  <a href="{{route('login','client')}}"><span> {{__('lang.login') }}  </span></a>
+                </li>
+              @endif
+ 
+               
+ 
+              @if(!auth('client')->check() && !auth('doctor')->check())
+                <li class=" ">
+                    <a href="{{route('doctorLogin',['type'=>'doctor'])}}" > {{__('lang.doctorLogin')}}</a>
+                </li>
               @endif
 
               <li class=" ">

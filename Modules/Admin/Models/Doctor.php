@@ -3,11 +3,18 @@
 namespace Modules\Admin\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\StorageHandle;
+use App\Notifications\VerfiyMail;
+use App\Notifications\ResetPasswordNotification as Notification;
 
-class Doctor extends Model
+
+class Doctor extends Authenticatable implements MustVerifyEmail
 {
-    use  StorageHandle;
+    use  Notifiable, StorageHandle;
     protected $connection = 'mysql';
     // use   StorageHandle;
 
@@ -28,6 +35,16 @@ class Doctor extends Model
     const CREATED_AT = 'doctors_created_at';
     const UPDATED_AT = 'doctors_updated_at';
 
+     /**
+     * Custom password reset notification.
+     * 
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new Notification($token,'doctor'));
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -37,6 +54,27 @@ class Doctor extends Model
         'doctors_name', 'specialties_id','departments_id','doctors_status','doctors_phone','doctors_email','doctors_civil_no','password','hospitals_id','countries_id'
     ];
  
+     /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password',
+    ];
+
+      /**
+     * Set password encryption.
+     * 
+     * @param string $value
+     */
+    public function setPasswordAttribute($value)
+    {
+        if ($value) {
+            // $this->attributes['password'] = Hash::make($value);
+            $this->attributes['password'] = bcrypt($value);
+        }
+    }
     /**
      * Many to one relation with country.
      * 

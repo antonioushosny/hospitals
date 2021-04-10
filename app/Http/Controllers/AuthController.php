@@ -8,6 +8,7 @@ use Validator;
 use Auth;
 use Carbon\Carbon;
 use Modules\Admin\Models\Client ;
+use Modules\Admin\Models\Doctor ;
 
 use App\Rules\MatchOldPassword;
 use Modules\Admin\Models\PasswordReset;
@@ -34,7 +35,7 @@ class AuthController extends Controller
             // if logged, then go to home
             return redirect()->route('home');
         }
-        // session(['type' => $type]);
+        session(['type' => $type]);
         $request->pageType ? session(['pageType' => $request->pageType]): session(['pageType' => 'login']) ;
         $request->products_id ? session(['products_id' => $request->products_id]): session(['products_id' => '']) ;
  
@@ -54,8 +55,8 @@ class AuthController extends Controller
         $date = Carbon::now();
         $date = $date->sub('1 hours') ;
         $resets = PasswordReset::where('created_at','<=',$date)->delete() ;
-        // $type = $request->type;
-        $type = 'client' ;
+        $type = $request->type;
+        // $type = 'client' ;
         // return $type ;
         // First, check if parameter is 'client'
 
@@ -70,7 +71,8 @@ class AuthController extends Controller
 
             // else, then do login process
 
-            // $email = $type == 'client' ? 'email' : 'email';
+            $email = $type == 'client' ? 'email' : 'doctors_email';
+            $phone = $type == 'client' ? 'clients_phone' : 'doctors_phone';
             session(['type' => $type]);
             // Validate Request
             $request->validate([
@@ -83,9 +85,14 @@ class AuthController extends Controller
             if($type == 'client'){
                 $credentials['clients_phone'] = $request->clients_phone ;
                 $status = 'clients_status'  ;
+                $credentials[$status] = '1';
+            }
+            if($type == 'doctor'){
+                $credentials['doctors_phone'] = $request->clients_phone ;
+                $status = 'doctors_status'  ;
+                $credentials[$status] = 'active';
             }
             $credentials['password'] = $request->password ;
-            $credentials[$status] = '1';
 
             // Attemp Login
             // return $credentials;
@@ -103,9 +110,13 @@ class AuthController extends Controller
             } else {
 
                 request()->flash();
-
-                $userStatus = Auth::guard($type)->validate([ 'clients_phone' => request('clients_phone'), 'password' => request('password'), $status => 'stop']);
-
+                $userStatus = '' ;
+                if($type == 'client'){
+                    $userStatus = Auth::guard($type)->validate([ 'clients_phone' => request('clients_phone'), 'password' => request('password'), $status => '0']);
+                }
+                if($type == 'doctor'){
+                    $userStatus = Auth::guard($type)->validate([ 'doctors_phone' => request('clients_phone'), 'password' => request('password'), $status => 'stop']);
+                    }
                 // if true, this acount has been stopped by Admin
                 if ($userStatus) {
                     return back()->with('status_danger', __('admin::lang.inactiveAccount'))->with('type', $type);
@@ -427,7 +438,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::guard($request->type)->logout();
-        return redirect()->route('login')->with('success', __('lang.loged_success'));
+        return redirect()->route('home')->with('success', __('lang.loged_success'));
     }
 
     /**

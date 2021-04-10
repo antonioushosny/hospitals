@@ -174,10 +174,31 @@ return [
 	'doctorCreated' 	=> 'Doctor Created',
 	'doctorUpdated' 	=> 'Doctor Updated',
 	'doctorDeleted' 	=> 'Doctor Deleted',
-	'doctors_title' 	=> 'Doctor Name',
+	'doctors_name' 		=> 'Doctor Name',
 	'civil_no'			=> 'Civil Number',
 
+	/**
+	 * Clients
+	 */
+	'clients' 			=> 'Clients',
+	'client' 			=> 'Client',
+	'clientDetails'		=> 'Client Details',
+	'clientCreated' 	=> 'Client Created',
+	'clientUpdated' 	=> 'Client Updated',
+	'clientDeleted' 	=> 'Client Deleted',
+	'clients_name' 	=> 'Client Name',
+	'civil_no'			=> 'Civil Number',
 
+	/**
+	 * Diseases
+	 */
+	'diseases' 			=> 'Diseases',
+	'disease' 			=> 'Disease',
+	'diseaseDetails'	=> 'Disease Details',
+	'diseaseCreated' 	=> 'Disease Created',
+	'diseaseUpdated' 	=> 'Disease Updated',
+	'diseaseDeleted' 	=> 'Disease Deleted',
+	'diseases_title' 	=> 'Disease Name',
 	/**
 	 * News
 	 */
@@ -189,7 +210,51 @@ return [
 	'news_desc' 	=> 'News Text',
 	'news_title' 	=> 'News Title',
 	'news_image' 	=> 'News Image',
-
+ 
+	
+	/**
+     * orders
+     */
+    'doctor_following'           => 'Responsible Doctor',
+    'add_order'                 =>'Add Order',
+    'patient_data'              => 'Patient Data',
+    'passport'                  => 'Passport',
+    'nationality'               => 'Nationality',
+    'blood_type'                => 'Blood Type',
+    'patient_address'           => 'Patient Address',
+    'patient_name'              => 'Patient Name',
+    'patient_phone'             => 'Patient Phone',
+    'companion_data'            => 'Companion Data',
+    'companion_name'            => 'Companion Name',
+    'companion_phone'           => 'Companion Phone',
+    'companion_civil_no'        => 'Companion Civil Number',
+    'companion_address'         => 'Companion Address' ,
+    'order_data'                => 'Order Data',
+    'choose_disease'            => 'Choose Disease',
+    'diseases_title'            => 'Disease Title',
+    'orders'                    => 'Orders',
+	'status_0'                  => 'New',
+    'status_1'                  => 'Accept',
+    'status_2'                  => 'Reject',
+    'status_3'                  => 'Preparing Order',
+    'status_4'                  => 'Finished Order',
+    'disease'                   => 'Disease',
+    'country'                   => 'Country',
+    'hospital'                  => 'Hospital',
+    'doctor'                    => 'Doctor',
+    'treatment_budget'          => 'Treatment Budget',
+    'prescription_img'          => 'Prescription Image',
+    'treatment_period'          => 'Treatment Period',
+    'treatment_cost'            => 'Treatment Cost',
+    'notes'                     => 'Notes',
+    'created_at'                => 'Created At',
+	'order_images'              => 'Order Images',
+	'orders_id'					=> 'Order Number',
+	'client'					=> 'Client',
+	'doctor_following_notes'	=> 'Responsible Doctor Notes',
+	'orderCreated'				=> 'Order Created',
+	'orderUpdated'				=> 'Order Updated',
+	'orderDeleted'				=> 'Order Deleted',
  
  
 	

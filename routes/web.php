@@ -33,6 +33,7 @@ Route::get('/news/{news}', 'HomeController@showNews')->name('news.show');
 Auth::routes([ 'verify' => true ]);
  
 Route::get('/login', 'AuthController@getLogin')->name('login');
+Route::get('/login/{type}', 'AuthController@getLogin')->name('doctorLogin');
 Route::post('/login', 'AuthController@postLogin')->name('postLogin');
 Route::get('/register/{type}', 'AuthController@getRegister')->name('getRegister');
 Route::post('/register', 'AuthController@postRegister')->name('postRegister');
@@ -56,8 +57,18 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth:client'], function () {
     Route::get('/client/changePassword/', 'AuthController@changePassword')->name('client.changePassword');
- 
+    Route::get('/orders/client_orders', 'OrdersController@clientOrders')->name('orders.client_orders');
+    Route::get('/orders/add', 'OrdersController@addOrder')->name('orders.add_order');
+    Route::post('/orders/save', 'OrdersController@save')->name('orders.save');
+    Route::get('/orders/show/{order}', 'OrdersController@show')->name('orders.show');
 
+});
+Route::group(['middleware' => 'auth:doctor'], function () {
+	Route::get('/orders/doctor_following_orders', 'OrdersController@doctorFollowingOrders')->name('orders.doctor_following_orders');
+	Route::get('/orders/doctor_orders', 'OrdersController@doctorOrders')->name('orders.doctor_orders');
+	Route::get('/orders/edit/{order}', 'OrdersController@editOrder')->name('orders.edit');
+	Route::put('/orders/update/{order}', 'OrdersController@update')->name('orders.update');
+	Route::get('/orders/show/{order}', 'OrdersController@show')->name('orders.show');
 });
 
 // for forget and reset password for client

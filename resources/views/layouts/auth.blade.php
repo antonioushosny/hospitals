@@ -27,7 +27,7 @@ $products_id = session('products_id');
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <link rel="icon" href="{{ asset('front/images/logo-icon.png') }}" type="image/png" sizes="16x16">
+    <link rel="icon" href="{{ asset('backend/img/logo.jpeg') }}" type="image/png" sizes="16x16">
     @yield('metatag')
     <!-- Icons-->
     <link href="{{ asset('backend/vendors/@coreui/icons/css/coreui-icons.min.css') }}" rel="stylesheet">

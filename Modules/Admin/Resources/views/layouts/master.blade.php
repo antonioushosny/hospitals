@@ -24,7 +24,7 @@
     <link href="{{ asset('vendors/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('vendors/select2/css/select2.min.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.1/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet"href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> 
+    <!-- <link rel="stylesheet"href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />  -->
     <link href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.1/dist/bootstrap-float-label.min.css" media="all" rel="stylesheet" type="text/css" />
 
     <!-- Styles for File Input Plugin-->
@@ -80,7 +80,7 @@
     <script src="//cdn.ckeditor.com/4.11.4/full/ckeditor.js"></script>
     <script src="{{ asset('vendors/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset('vendors/select2/js/i18n/ar.js') }}"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
 
     <!-- Custom scripts required by this view --> 
     

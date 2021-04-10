@@ -187,9 +187,32 @@ return [
 	'doctorCreated' 	=> 'تم انشاء الدكتور',
 	'doctorUpdated' 	=> 'تم تعديل الدكتور',
 	'doctorDeleted' 	=> 'تم حذف الدكتور',
-	'doctors_title' 	=> 'اسم الدكتور ',
+	'doctors_name' 		=> 'اسم الدكتور ',
 	'civil_no'			=> 'الرقم المدني',
 	
+	/**
+	 * Clients
+	 */
+	'clients' 			=> 'المستخدمين',
+	'client' 			=> 'المستخدم',
+	'clientDetails'		=> 'تفاصيل المستخدم',
+	'clientCreated' 	=> 'تم انشاء المستخدم',
+	'clientUpdated' 	=> 'تم تعديل المستخدم',
+	'clientDeleted' 	=> 'تم حذف المستخدم',
+	'clients_name' 		=> 'اسم المستخدم ',
+	'civil_no'			=> 'الرقم المدني',
+
+	/**
+	 * Diseases
+	 */
+	'diseases' 			=> 'الأمراض',
+	'disease' 			=> 'المرض',
+	'diseaseDetails'	=> 'تفاصيل المرض',
+	'diseaseCreated' 	=> 'تم انشاء المرض',
+	'diseaseUpdated' 	=> 'تم تعديل المرض',
+	'diseaseDeleted' 	=> 'تم حذف المرض',
+	'diseases_title' 	=> 'اسم المرض ',
+
 	/**
 	 * News
 	 */
@@ -201,8 +224,51 @@ return [
 	'news_title' 	=> 'عنوان الخبر',
 	'news_desc' 	=> 'نص الخبر',
 	'news_image' 	=> 'صورة الخبر',
-	 
- 
+
+
+	/**
+     * orders
+     */
+	'doctor_following'           => 'الدكتور المتابع',
+    'add_order'                 =>'اضافة الطلب',
+    'patient_data'              => 'بيانات المريض',
+    'passport'                  => 'جواز السفر',
+    'nationality'               => 'الجنسية',
+    'blood_type'                => 'فصيلة الدم',
+    'patient_address'           => 'عنوان المريض',
+    'patient_name'              => 'اسم المريض',
+    'patient_phone'             => 'رقم جوال المريض',
+    'companion_data'            => 'بيانات المرافق',
+    'companion_name'            => 'اسم المرافق',
+    'companion_phone'           => 'رقم جوال المرافق',
+    'companion_civil_no'        => 'الرقم المدني',
+    'companion_address'         => 'عنوان المرافق' ,
+    'order_data'                => 'بيانات الطلب',
+    'choose_disease'            => 'اختر المرض',
+    'diseases_title'            => 'اسم المرض',
+    'orders'                    => 'طلبات العلاج بالخارج ',
+    'status_0'                  => 'جديد',
+    'status_1'                  => 'مقبول',
+    'status_2'                  => 'مرفوض',
+    'status_3'                  => 'الطلب قيد التنفيذ',
+    'status_4'                  => 'تم تنفيذ الطلب',
+    'disease'                   => 'المرض',
+    'country'                   => 'الدولة ',
+    'hospital'                  => 'المستشفي',
+    'doctor'                    => 'الدكتور ',
+    'treatment_budget'          => 'ميزانية العلاج ',
+    'prescription_img'          => 'صورة الروشتة / العلاج',
+    'treatment_period'          => 'قترة العلاج ',
+    'treatment_cost'            => 'تكلفة العلاج',
+    'notes'                     => 'ملاحظات ',
+    'created_at'                => 'تاريخ الطلب',
+    'order_images'              => 'مرفقات الطلب',
+	'orders_id'					=> 'رقم الطلب',
+	'client'					=> 'المستخدم',
+	'doctor_following_notes'	=> 'ملاحظات الدكتور المتابع',
+	'orderCreated'				=> 'تم اضافة الطلب',
+	'orderUpdated'				=> 'تم تعديل الطلب',
+	'orderDeleted'				=> 'تم حذف الطلب',
 
 	/**
 	 * Notifications

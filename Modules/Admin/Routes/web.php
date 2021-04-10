@@ -74,10 +74,27 @@ Route::prefix('admin')
 	    Route::resource('departments', 'DepartmentsController');
 
 		/**
+		 * Diseases Routes
+		 */
+		Route::resource('diseases', 'DiseasesController');
+		
+		/**
 		 * Doctors Routes
 		 */
 	    Route::resource('doctors', 'DoctorsController');
 		
+
+		/**
+		 * orders Routes
+		 */
+	    Route::resource('orders', 'OrdersController');
+		
+		/**
+		 * clients Routes
+		 */
+	    Route::resource('clients', 'ClientsController')->except([ 'create', 'store' ]);
+		
+
 	    /**
 		 * ContactUs Routes
 		 */

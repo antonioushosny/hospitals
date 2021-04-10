@@ -116,6 +116,51 @@ return [
     'join'                      => 'انضم الينا',
     'civil_no'                  => 'الرقم المدني',
     'rightsReserved'            => 'جميع الحقوق والطبع والنشر  محفوظة',
-
-
+ 
+  
+	/**
+     * orders
+     */
+	'doctor_following'           => 'الدكتور المتابع',
+    'add_order'                 =>'اضافة الطلب',
+    'edit_order'                 =>'تعديل الطلب',
+    'patient_data'              => 'بيانات المريض',
+    'passport'                  => 'جواز السفر',
+    'nationality'               => 'الجنسية',
+    'blood_type'                => 'فصيلة الدم',
+    'patient_address'           => 'عنوان المريض',
+    'patient_name'              => 'اسم المريض',
+    'patient_phone'             => 'رقم جوال المريض',
+    'companion_data'            => 'بيانات المرافق',
+    'companion_name'            => 'اسم المرافق',
+    'companion_phone'           => 'رقم جوال المرافق',
+    'companion_civil_no'        => 'الرقم المدني',
+    'companion_address'         => 'عنوان المرافق' ,
+    'order_data'                => 'بيانات الطلب',
+    'choose_disease'            => 'اختر المرض',
+    'diseases_title'            => 'اسم المرض',
+    'orders'                    => 'طلبات العلاج بالخارج ',
+    'status_0'                  => 'جديد',
+    'status_1'                  => 'مقبول',
+    'status_2'                  => 'مرفوض',
+    'status_3'                  => 'الطلب قيد التنفيذ',
+    'status_4'                  => 'تم تنفيذ الطلب',
+    'disease'                   => 'المرض',
+    'country'                   => 'الدولة ',
+    'hospital'                  => 'المستشفي',
+    'doctor'                    => 'الدكتور ',
+    'treatment_budget'          => 'ميزانية العلاج ',
+    'prescription_img'          => 'صورة الروشتة / العلاج',
+    'treatment_period'          => 'قترة العلاج ',
+    'treatment_cost'            => 'تكلفة العلاج',
+    'notes'                     => 'ملاحظات ',
+    'created_at'                => 'تاريخ الطلب',
+    'order_images'              => 'مرفقات الطلب',
+    'doctor_orders'             => 'طلبات العلاج بالخارج ',
+    'doctor_following_orders'   => 'الطلبات المسئول عنها',
+	'orderCreated'				=> 'تم اضافة الطلب',
+	'orderUpdated'				=> 'تم تعديل الطلب',
+    'orderDeleted'				=> 'تم حذف الطلب',
+    'doctorLogin'               => 'تسجيل دخول الطبيب',
+    
 ];

@@ -11,8 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="icon" href="{{ asset('front/images/logo-icon.png') }}" type="image/png" sizes="16x16">
-
+    <link rel="icon" href="{{ asset('backend/img/logo.jpeg') }}" type="image/png" sizes="16x16">
     {{-- Styles --}}
     @if($dir == 'rtl')
         {{-- RTL Styles --}}
@@ -26,9 +25,11 @@
     <link rel="stylesheet" href="{{ asset('vendors/select2/css/select2.css') }}">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="{{ asset('front/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/css/sidebar.css') }}">
 
     @if($dir == 'rtl')
         {{-- RTL Styles --}}
+        <link rel="stylesheet" href="{{ asset('front/css/sidebar-rtl.css') }}">
         <link rel="stylesheet" href="{{ asset('front/css/custom-rtl.css') }}">
     @endif
     @yield('style')
@@ -47,7 +48,7 @@
     
 
     <div class="page-wrapper chiller-theme  ">
-       
+        @include('includes.sidebar')
         <!-- sidebar-wrapper  -->
         <main class=" content-div ">
             @yield('content')
@@ -70,6 +71,7 @@
         <script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
     @endif
 
+    <script src="{{ asset('front/js/sidebar.js') }}"></script>
     <script src="{{ asset('vendors/select2/js/select2.min.js') }}"></script>
     @include('includes.scripts')
     @yield('script1')

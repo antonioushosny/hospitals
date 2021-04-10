@@ -124,7 +124,18 @@ class Client extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany('Modules\Admin\Models\Order', 'clients_id', 'clients_id');
     }
- 
+
+    /**
+     * Scope a query to order data.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param string $type    ['asc', 'desc']
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeSorted($query, $type='asc')
+    {
+        // return $query->orderBy('clientss_position', $type)->orderBy('clientss.clientss_id', $type);
+    }
 
      /**
      * Scope a query to fetch Active data only.

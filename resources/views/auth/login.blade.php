@@ -51,7 +51,7 @@ $pageType = session('pageType');
 
                             <div class="card-body p-3 mt-4">
 
-                                @if( session('type') == 'client'  && session()->has('status_danger'))
+                                @if(  session()->has('status_danger'))
                                     <div class="alert alert-danger text-sm-center">
                                         <button class="close" type="button" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">×</span>

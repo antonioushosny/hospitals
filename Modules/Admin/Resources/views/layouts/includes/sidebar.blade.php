@@ -125,6 +125,39 @@
             @endcan
         </li>
       @endcanany
+      {{-- diseases Link --}}
+      @canany(['view diseases'])
+        <li class="nav-item">
+            @can('view diseases')
+              <a class="nav-link" href="{{ route('admin.diseases.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.diseases') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+
+      {{-- clients Link --}}
+      @canany(['view clients'])
+        <li class="nav-item">
+            @can('view clients')
+              <a class="nav-link" href="{{ route('admin.clients.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.clients') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+
+      {{-- orders Link --}}
+      @canany(['view orders'])
+        <li class="nav-item">
+            @can('view orders')
+              <a class="nav-link" href="{{ route('admin.orders.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.orders') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+
       
       {{-- Admins Links --}}
       @canany(['view admins', 'view roles'])

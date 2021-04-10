@@ -51,13 +51,7 @@ return [
         'doctor' => [
             'driver' => 'session',
             'provider' => 'doctors',
-        ],
-  
-
-        'device' => [
-            'driver' => 'session',
-            'provider' => 'devices',
-        ],
+        ] 
 
         
     ],
@@ -88,17 +82,13 @@ return [
 
         'doctors' => [
             'driver' => 'eloquent',
-            'model' => Modules\Ecommerce\Models\Doctor::class,
+            'model' => Modules\Admin\Models\Doctor::class,
         ],
 
         'clients' => [
             'driver' => 'eloquent',
             'model' => Modules\Admin\Models\Client::class,
-        ],
-        'devices' => [
-            'driver' => 'eloquent',
-            'model' =>  Modules\KnowledgeBase\Models\Device::class,
-        ],
+        ] 
     ],
 
     /*
@@ -132,13 +122,7 @@ return [
             'provider' => 'clients',
             'table' => 'password_resets',
             'expire' => 60,
-        ],
-       
-        'devices' => [
-            'provider' => 'devices',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
+        ] 
     ],
 
 ];
