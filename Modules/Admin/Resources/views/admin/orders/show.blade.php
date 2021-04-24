@@ -153,6 +153,12 @@
               </li>
               <li class="list-group-item">
                 <div class="row">
+                  <div class="col-12 col-md-2"><strong>{{ __('admin::lang.treatments_program') }}</strong></div>
+                  <div class="col-12 col-md-10">{!! $order->orders_treatments_program   !!}</div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('lang.treatment_period') }}</strong></div>
                   <div class="col-12 col-md-10">{{ $order->orders_treatment_period }}</div>
                 </div>

@@ -19,7 +19,7 @@
 
                 @csrf
                 <input type="hidden" name="type" value="client">
-                <input type="hidden" name="clients_status" value="stop">
+                <input type="hidden" name="clients_status" value="1">
                 <input type="hidden" name="device_token" value="{{session('device_token')}}">
                 <div class="card  rounded-0 client-auth-card">
                     <div class="card-header p-0">

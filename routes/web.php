@@ -60,7 +60,7 @@ Route::group(['middleware' => 'auth:client'], function () {
     Route::get('/orders/client_orders', 'OrdersController@clientOrders')->name('orders.client_orders');
     Route::get('/orders/add', 'OrdersController@addOrder')->name('orders.add_order');
     Route::post('/orders/save', 'OrdersController@save')->name('orders.save');
-    Route::get('/orders/show/{order}', 'OrdersController@show')->name('orders.show');
+    Route::get('clients/orders/show/{order}', 'OrdersController@show')->name('clients.orders.show');
 
 });
 Route::group(['middleware' => 'auth:doctor'], function () {
@@ -69,6 +69,10 @@ Route::group(['middleware' => 'auth:doctor'], function () {
 	Route::get('/orders/edit/{order}', 'OrdersController@editOrder')->name('orders.edit');
 	Route::put('/orders/update/{order}', 'OrdersController@update')->name('orders.update');
 	Route::get('/orders/show/{order}', 'OrdersController@show')->name('orders.show');
+
+	Route::get('/hospitals_treatments', 'HospitalsTreatmentsController@index')->name('hospitals_treatments.index');
+	Route::get('/hospitals_treatments/show/{hospitals_treatment}', 'HospitalsTreatmentsController@show')->name('hospitals_treatments.show');
+	
 });
 
 // for forget and reset password for client

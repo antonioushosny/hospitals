@@ -164,6 +164,8 @@ return [
 	'orderUpdated'				=> 'Order Updated',
     'orderDeleted'				=> 'Order Deleted',
     'doctorLogin'               => 'Doctor Login',
+    'sendOrder'                 => 'Send Order',
+
 ];
 
 

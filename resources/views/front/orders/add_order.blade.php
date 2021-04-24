@@ -219,7 +219,7 @@
 
                         <input type="hidden" name="clients_id" value="{{$client->clients_id}}">
                         <div class="text-center">
-                            <input type="submit" value="{{ __('lang.Save') }}" class="btn text-white bg-marine  btn-block rounded-0 py-2">
+                            <input type="submit" value="{{ __('lang.sendOrder') }}" class="btn text-white bg-marine  btn-block rounded-0 py-2">
                         </div>
          
 

@@ -100,6 +100,15 @@
                   </li>
                 @endcanany
                 
+                {{-- departments Links --}}
+                @canany(['view departments'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.departments.index') }}" >
+                      {{ __('admin::lang.departments') }}
+                    </a>
+                  </li>
+                @endcanany
+
                 {{-- specialties Links --}}
                 @canany(['view specialties'])
                   <li class="nav-item px-3">
@@ -109,14 +118,7 @@
                   </li>
                 @endcanany
 
-                {{-- departments Links --}}
-                @canany(['view departments'])
-                  <li class="nav-item px-3">
-                    <a class="nav-link"   href="{{ route('admin.departments.index') }}" >
-                      {{ __('admin::lang.departments') }}
-                    </a>
-                  </li>
-                @endcanany
+               
 
                 {{-- doctors Links --}}
                 @canany(['view doctors'])
@@ -143,7 +145,14 @@
                     </a>
                   </li>
                 @endcanany
-                
+                {{-- hospitals_treatments Links --}}
+                @canany(['view hospitals_treatments'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.hospitals_treatments.index') }}" >
+                      {{ __('admin::lang.hospitals_treatments') }}
+                    </a>
+                  </li>
+                @endcanany
 
                 {{-- orders Links --}}
                 @canany(['view orders'])

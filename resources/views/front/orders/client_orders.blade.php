@@ -74,7 +74,7 @@
                     <div class="row mb-2 mb-md-0">
                         <div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.actions') }}</strong></div>
                         <div class="col-8 col-md-12">
-                            <a href="{{ route('orders.show', $order->orders_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                            <a href="{{ route('clients.orders.show', $order->orders_id) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div>

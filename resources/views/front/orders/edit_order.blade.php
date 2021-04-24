@@ -65,7 +65,7 @@
                         </div>
        
                       
-                        <div class="form-group row">
+                        <!-- <div class="form-group row ">
                             <label class="col-md-3 col-form-label" for="orders_prescription_img">{{ __('lang.prescription_img') }}<span class="text-danger">  </span></label>
                             <div class="col-md-9">
                             <input type="file" id="orders_prescription_img" name="orders_prescription_img" >
@@ -73,13 +73,26 @@
                                 <div class="invalid-feedback">{{ $errors->first('orders_prescription_img') }}</div>
                             @endif
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="orders_prescription_img">{{ __('admin::lang.prescription_img') }}<span class="text-danger"> *</span></label>
                             <div class="col-md-9">
                                 @include('admin::layouts.includes.imagePreview', ['name' => 'orders_prescription_img', 'value' => isset($order) ? $order->orders_prescription_img : null])
                                 @if ($errors->first('orders_prescription_img'))
                                     <div class="invalid-feedback">{{ $errors->first('orders_prescription_img') }}</div>
+                                @endif
+                            </div>
+                        </div>
+                        
+
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="orders_treatments_program">{{ __('admin::lang.treatments_program') }}<span class="text-danger"> *</span></label>
+                            <div class="col-md-9">
+                                <textarea id="{{ $locale }}-ckeditor" class="form-control ckeditor {{ $errors->first('orders_treatments_program') ? 'is-invalid' : '' }}"
+                                name="orders_treatments_program" rows="9" placeholder="{{ __('admin::lang.treatments_program') }}"
+                                >{{ old('orders_treatments_program', isset($order) ? $order->orders_treatments_program : '') }}</textarea>
+                                @if ($errors->first('orders_treatments_program'))
+                                    <div class="invalid-feedback">{{ $errors->first('orders_treatments_program') }}</div>
                                 @endif
                             </div>
                         </div>
@@ -149,5 +162,10 @@
     </div>
 </div>
 @endsection
+@section('script')
+<script src="//cdn.ckeditor.com/4.11.4/full/ckeditor.js"></script>
+@include('admin::layouts.includes.ckeditor')
+
  
+@endsection
  

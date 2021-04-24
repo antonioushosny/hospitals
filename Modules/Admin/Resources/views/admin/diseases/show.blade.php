@@ -5,7 +5,7 @@
     <!-- Breadcrumb-->
     <ol class="breadcrumb">
       <li class="breadcrumb-item">  <a href="{{ route('admin.dashboard.home') }}">{{ __('admin::lang.home') }} </a></li>
-      <li class="breadcrumb-item"> <a href="{{ route('admin.departments.index') }}">{{ __('admin::lang.departments') }}</a></li>
+      <li class="breadcrumb-item"> <a href="{{ route('admin.diseases.index') }}">{{ __('admin::lang.diseases') }}</a></li>
       <li class="breadcrumb-item  active">{{ __('admin::lang.show') }}</li>
     </ol>
     <div class="container-fluid">
@@ -19,31 +19,31 @@
               <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('admin::lang.id') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $department->departments_id }}</div>
+                  <div class="col-12 col-md-10">{{ $disease->diseases_id }}</div>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('admin::lang.name') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $department->departments_title }}</div>
+                  <div class="col-12 col-md-10">{{ $disease->diseases_title }}</div>
                 </div>
               </li>
               <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('admin::lang.status') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ __('admin::lang.'. $department->departments_status) }}</div>
+                  <div class="col-12 col-md-10">{{ __('admin::lang.'. $disease->diseases_status) }}</div>
                 </div>
               </li>
             </ul>
           </div>
           <div class="card-footer">
-            @can('view departments')
-              <a href="{{ route('admin.departments.index') }}" class="btn btn-sm btn-secondary">
+            @can('view diseases')
+              <a href="{{ route('admin.diseases.index') }}" class="btn btn-sm btn-secondary">
                 <i class="fa fa-arrow-left"></i>
               </a>
             @endcan
-            @can('update departments')
-              <a href="{{ route('admin.departments.edit', $department->departments_id) }}" class="btn btn-sm btn-warning">
+            @can('update diseases')
+              <a href="{{ route('admin.diseases.edit', $disease->diseases_id) }}" class="btn btn-sm btn-warning">
                 <i class="fa fa-edit"></i>
               </a>
             @endcan

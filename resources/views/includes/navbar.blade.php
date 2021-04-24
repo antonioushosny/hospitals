@@ -56,7 +56,11 @@
                     <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
                         <a class="nav-link" href="{{route('orders.doctor_following_orders')}}">{{__('lang.doctor_following_orders')}} <span class="sr-only">(current)</span></a>
                     </li>
-                @endif
+
+                    <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'hospitals_treatments' ? 'active' : '' }} m-md-0 m-2   ">
+                        <a class="nav-link" href="{{route('hospitals_treatments.index')}}">{{__('admin::lang.hospitals_treatments')}} <span class="sr-only">(current)</span></a>
+                    </li>
+                 @endif
                 <li class="nav-item d-md-none d-inline  m-md-0 m-2">
                     @if($dir == 'ltr')
                         <a class="nav-link" href="{{route('lang','ar')}}"> العربية</a>

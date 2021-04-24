@@ -162,5 +162,5 @@ return [
 	'orderUpdated'				=> 'تم تعديل الطلب',
     'orderDeleted'				=> 'تم حذف الطلب',
     'doctorLogin'               => 'تسجيل دخول الطبيب',
-    
+    'sendOrder'                 => 'ارسال الطلب',
 ];

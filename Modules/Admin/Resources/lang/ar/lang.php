@@ -55,7 +55,7 @@ return [
 	'phone'					=>	'الجوال',
 	'infos'					=>	'نبذة عن Treatment Abroad    ',
 	'privacyPolicy'			=>	'سياسة الاستخدام',
-	'termsConditions'		=>	'الشروط والاحكام',
+	'termsConditions'		=>	'اجراءات التقديم ',
 	'info'					=>	'عن Treatment Abroad ',
 	'page'					=>	'الصفحة',
 	'aboutProject'			=>	'عن Treatment Abroad',
@@ -190,6 +190,19 @@ return [
 	'doctors_name' 		=> 'اسم الدكتور ',
 	'civil_no'			=> 'الرقم المدني',
 	
+
+		/**
+	 * Hospitals Treatments
+	 */
+	'hospitals_treatments' 			=> 'تكاليف المستشفيات',
+	'hospitals_treatment' 			=> 'تكليف المستشفي',
+	'hospitals_treatmentDetails'	=> 'تفاصيل تكاليف المستشفيات',
+	'hospitals_treatmentCreated' 	=> 'تم الاضافة بنجاح',
+	'hospitals_treatmentUpdated' 	=> 'تم التعديل بنجاح',
+	'hospitals_treatmentDeleted' 	=> 'تم الحذف بنجاح',
+	'treatments_period' 			=> 'فترة العلاج',
+	'treatments_cost' 				=> 'تكلفة العلاج ',
+
 	/**
 	 * Clients
 	 */
@@ -269,6 +282,7 @@ return [
 	'orderCreated'				=> 'تم اضافة الطلب',
 	'orderUpdated'				=> 'تم تعديل الطلب',
 	'orderDeleted'				=> 'تم حذف الطلب',
+	'treatments_program'		=> 'برنامج العلاج ',
 
 	/**
 	 * Notifications

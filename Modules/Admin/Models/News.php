@@ -45,7 +45,8 @@ class News extends Model
     protected $fillable = [
         'news_image', 'news_status'
     ];
- /**
+ 
+    /**
      * Set services's image.
      * 
      * @param string $file

@@ -94,7 +94,13 @@ Route::prefix('admin')
 		 */
 	    Route::resource('clients', 'ClientsController')->except([ 'create', 'store' ]);
 		
+		/**
+		 * hospitals_treatments Routes
+		 */
+	    Route::resource('hospitals_treatments', 'HospitalsTreatmentsController');
+		
 
+		
 	    /**
 		 * ContactUs Routes
 		 */

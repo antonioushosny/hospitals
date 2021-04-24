@@ -30,7 +30,7 @@ class HomeController extends Controller
     {   
         $mainPageTitle = 'home' ;
         $last_news = News::active()->limit(9)->get();
-        return view('front.home',compact('mainPageTitle','last_news','advertisements'));
+        return view('front.home',compact('mainPageTitle','last_news'));
     }
 
     public function news(Request $request)

@@ -34,7 +34,7 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'orders_id','orders_patient_name','orders_patient_phone','orders_patient_civil_no','orders_patient_nationality','orders_patient_blood_type','orders_patient_address','orders_patient_email','orders_patient_passport','orders_companion_name','orders_companion_phone','orders_companion_civil_no','orders_companion_address','diseases_id','diseases_title','orders_doctor_following','orders_treatment_cost','countries_id','hospitals_id','doctors_id','orders_treatment_budget','orders_prescription_img','orders_treatment_period','orders_doctor_following_notes','orders_status','clients_id'
+        'orders_id','orders_patient_name','orders_patient_phone','orders_patient_civil_no','orders_patient_nationality','orders_patient_blood_type','orders_patient_address','orders_patient_email','orders_patient_passport','orders_companion_name','orders_companion_phone','orders_companion_civil_no','orders_companion_address','diseases_id','diseases_title','orders_doctor_following','orders_treatment_cost','countries_id','hospitals_id','doctors_id','orders_treatment_budget','orders_prescription_img','orders_treatment_period','orders_doctor_following_notes','orders_status','clients_id','orders_treatments_program'
 
     ];
  

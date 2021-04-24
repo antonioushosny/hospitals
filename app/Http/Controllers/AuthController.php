@@ -76,7 +76,7 @@ class AuthController extends Controller
             session(['type' => $type]);
             // Validate Request
             $request->validate([
-                'clients_phone' => 'required|numeric|digits:9|regex:/^[1-9]{1}[0-9]{8}$/',
+                'clients_phone' => 'required|numeric',
                 'password' => 'required|min:6',
             ]);
 
@@ -344,7 +344,7 @@ class AuthController extends Controller
     public function resetPasswordForm(Request $request)
     {
         Validator::make($request->all(), [
-            'clients_phone'     => 'required|numeric|digits:9|regex:/^[1-9]{1}[0-9]{8}$/',
+            'clients_phone'     => 'required|numeric|digits:8|regex:/^[1-9]{1}[0-9]{7}$/',
         ])->validate();
         $user = Client::where('clients_phone',$request->clients_phone)->first();
         if($user){
@@ -365,7 +365,7 @@ class AuthController extends Controller
             $passwordReset->token = $code ;
             $passwordReset->save() ;
 
-            $recipient = (int)('966'.$user->clients_phone);
+            $recipient = (int)('965'.$user->clients_phone);
             $message = "كود التفعيل الخاص بك هو   ".$code ;
             // Unifonic::send(  $recipient,   $message,   $senderID = null)  ;
             // $user->sendPasswordResetNotification($code);
@@ -500,7 +500,7 @@ class AuthController extends Controller
     {
         Validator::make($request->all(), [
             'clients_name'        => 'required|string|max:100',
-            'clients_phone'       => 'required|numeric|digits:9|regex:/^[1-9]{1}[0-9]{8}/|unique:clients,clients_phone',
+            'clients_phone'       => 'required|numeric|digits:8|regex:/^[1-9]{1}[0-9]{7}/|unique:clients,clients_phone',
             'clients_civil_no'       => 'required|numeric|unique:clients,clients_civil_no',
             'email'                 =>'required|email|unique:clients,email' ,
             'password'              => 'required|max:16|min:6|confirmed',
@@ -513,8 +513,8 @@ class AuthController extends Controller
         // dd($client->clients_id)  ;
         Validator::make($request->all(), [
             'clients_name'        => 'required|string|max:100',
-            'clients_civil_no'       => "required|numeric|digits:9|regex:/^[1-9]{1}[0-9]{8}/|unique:clients,clients_civil_no,$client->clients_id,clients_id",
-            'clients_phone'       => "required|numeric|digits:9|regex:/^[1-9]{1}[0-9]{8}/|unique:clients,clients_phone,$client->clients_id,clients_id",
+            'clients_civil_no'       => "required|numeric|digits:8|regex:/^[1-9]{1}[0-9]{7}/|unique:clients,clients_civil_no,$client->clients_id,clients_id",
+            'clients_phone'       => "required|numeric|digits:8|regex:/^[1-9]{1}[0-9]{7}/|unique:clients,clients_phone,$client->clients_id,clients_id",
             'email'                 => 'required|email|unique:clients,email,'.$client->clients_id.',clients_id'  ,
          ])->validate();
 

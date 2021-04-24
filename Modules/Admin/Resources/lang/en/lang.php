@@ -56,7 +56,7 @@ return [
 	'infos'					=>	'About Treatment Abroad',
 	'info'					=>	'About Treatment Abroad',
 	'privacyPolicy'			=>	'Privacy Policy',
-	'termsConditions'		=>	'Terms & Conditions',
+	'termsConditions'		=>	'Application Procedures',
 	'page'					=>	'Page',
 	'aboutProject'			=>	'About Treatment Abroad ',
 	'connectWithUs'			=> 'Connect With Us',
@@ -178,6 +178,18 @@ return [
 	'civil_no'			=> 'Civil Number',
 
 	/**
+	 * Hospitals Treatments
+	 */
+	'hospitals_treatments' 			=> 'Hospitals Treatments',
+	'hospitals_treatment' 			=> 'Hospitals Treatment',
+	'hospitals_treatmentDetails'	=> 'Hospitals Treatment Details',
+	'hospitals_treatmentCreated' 	=> 'Hospitals Treatment Created',
+	'hospitals_treatmentUpdated' 	=> 'Hospitals Treatment Updated',
+	'hospitals_treatmentDeleted' 	=> 'Hospitals Treatment Deleted',
+	'treatments_period' 			=> 'Hospitals Treatment Period',
+	'treatments_cost' 				=> 'Hospitals Treatment Cost',
+	
+	/**
 	 * Clients
 	 */
 	'clients' 			=> 'Clients',
@@ -255,8 +267,10 @@ return [
 	'orderCreated'				=> 'Order Created',
 	'orderUpdated'				=> 'Order Updated',
 	'orderDeleted'				=> 'Order Deleted',
+	'treatments_program'		=> 'Treatment Program ',
  
  
+	
 	
 	/**
 	 * ContactUs
