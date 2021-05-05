@@ -5,7 +5,7 @@
   <nav id="sidebar" class="sidebar-wrapper d-md-none d-inline">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="{{route('home')}}">{{__('admin::lang.projectTitle')}}</a>
+        <a href="{{route('home')}}">{{__('admin::lang.siteTitle')}}</a>
         <div id="close-sidebar">
           <i class="fa fa-times"></i>
         </div>
@@ -16,7 +16,7 @@
         <ul>
  
               <li class="header-menu" >
-                <img src="{{asset('backend/img/logo.jpeg')}}" alt="{{__('lang.projectTitle')}}" class="  object-fit-contain " width="100%" height="100px" >
+                <img src="{{asset('backend/img/logo.jpeg')}}" alt="{{__('admin::lang.siteTitle')}}" class="  object-fit-contain " width="100%" height="100px" >
               </li>
 
               <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'home' ? 'active' : '' }} ">

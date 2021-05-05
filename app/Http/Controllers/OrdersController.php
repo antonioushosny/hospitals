@@ -98,6 +98,7 @@ class OrdersController extends Controller
 
     public function show(Order $order)
     {   
+         
         $mainPageTitle = 'orders' ;
         return view('front.orders.show',compact('mainPageTitle','order'));
     }

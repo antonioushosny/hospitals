@@ -3,7 +3,7 @@
         <div class="row main-header align-items-center text-md-left  mb-md-0 mb-3 {{auth('client')->check() ? 'mt-md-0 mt-3' : ''}} ">
 
 
-            <div class="col-md-7 col-12 row p-0 m-0   my-md-2 my-0 justify-content-end align-items-end     ">
+            <div class="col-md-6 col-12 row p-0 m-0   my-md-2 my-0 justify-content-end align-items-end     ">
                 <div class=" col-md-12 {{isset($mob) && $mob == 'mob' ? 'd-none' : 'col-4'}} ">
                    <a href="{{route('home')}}"> <img src="{{asset('backend/img/logo.jpeg')}}" alt="{{__('lang.projectTitle')}}" class="  d-md-inline " width="70px" height="50px"></a>
                 </div>
@@ -59,8 +59,9 @@
                     </div>
                 </div>
             @else
-                <div class="col-lg-2 col-md-5 col-5    d-md-inline d-none  ">
-                    <a href="{{route('login')}}" class="btn btn-turquoise-blue ml-3  "  > {{__('lang.login')}}</a>
+                <div class="col-lg-4 col-md-5 col-5    d-md-inline d-none  ">
+                    <a href="{{route('login')}}" class="btn btn-turquoise-blue ml-3  "  > {{__('lang.login')}}</a> /
+                    <a href="{{ route('getRegister', ['type' => 'client'] )}}" class="btn btn-turquoise-blue ml-3  "  > {{__('lang.register')}}</a>
                 </div>
             @endif
 
