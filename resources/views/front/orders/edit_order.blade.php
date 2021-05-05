@@ -74,7 +74,7 @@
                             @endif
                             </div>
                         </div> -->
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label class="col-md-3 col-form-label" for="orders_prescription_img">{{ __('admin::lang.prescription_img') }}<span class="text-danger"> *</span></label>
                             <div class="col-md-9">
                                 @include('admin::layouts.includes.imagePreview', ['name' => 'orders_prescription_img', 'value' => isset($order) ? $order->orders_prescription_img : null])
@@ -82,7 +82,7 @@
                                     <div class="invalid-feedback">{{ $errors->first('orders_prescription_img') }}</div>
                                 @endif
                             </div>
-                        </div>
+                        </div> -->
                         
 
                         <div class="form-group row">

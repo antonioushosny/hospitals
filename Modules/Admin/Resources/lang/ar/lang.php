@@ -202,6 +202,7 @@ return [
 	'hospitals_treatmentDeleted' 	=> 'تم الحذف بنجاح',
 	'treatments_period' 			=> 'فترة العلاج',
 	'treatments_cost' 				=> 'تكلفة العلاج ',
+	'treatments_rate' 				=> 'نسبة النجاح ',
 
 	/**
 	 * Clients

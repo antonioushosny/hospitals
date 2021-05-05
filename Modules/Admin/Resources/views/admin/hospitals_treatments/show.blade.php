@@ -61,7 +61,12 @@
                   <div class="col-12 col-md-10">{{ $hospitals_treatment->hospitals_treatments_cost }}</div>
                 </div>
               </li>
-
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-12 col-md-2"><strong>{{ __('admin::lang.treatments_rate') }}</strong></div>
+                  <div class="col-12 col-md-10">{{ $hospitals_treatment->hospitals_treatments_rate }}</div>
+                </div>
+              </li>
               <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('admin::lang.treatments_program') }}</strong></div>

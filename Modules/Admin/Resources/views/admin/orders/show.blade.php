@@ -139,7 +139,7 @@
                   <div class="col-12 col-md-10">{{ $order->orders_treatment_budget   }}</div>
                 </div>
               </li>
-              <li class="list-group-item">
+              <!-- <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('lang.prescription_img') }}</strong></div>
                   <div class="col-12 col-md-10">
@@ -150,7 +150,7 @@
                     </div>
                     
                 </div>
-              </li>
+              </li> -->
               <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('admin::lang.treatments_program') }}</strong></div>

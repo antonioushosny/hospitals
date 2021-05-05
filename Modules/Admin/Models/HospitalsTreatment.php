@@ -35,7 +35,7 @@ class HospitalsTreatment extends Model
      * @var array
      */
     protected $fillable = [
-        'hospitals_id','diseases_id','doctors_id','hospitals_treatments_period','hospitals_treatments_cost','hospitals_treatments_program','hospitals_treatments_status'
+        'hospitals_id','diseases_id','doctors_id','hospitals_treatments_period','hospitals_treatments_cost','hospitals_treatments_program','hospitals_treatments_rate','hospitals_treatments_status'
     ];
  
     	 						 	 

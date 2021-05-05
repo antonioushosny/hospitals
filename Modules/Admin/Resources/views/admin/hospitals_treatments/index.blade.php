@@ -57,7 +57,8 @@
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.doctor') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.disease') }}</strong></div>
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.treatments_period') }}</strong></div>
-          		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.treatments_cost') }}</strong></div>
+          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.treatments_cost') }}</strong></div>
+          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.treatments_rate') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.status') }}</strong></div>
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.actions') }}</strong></div>
           	</div>
@@ -96,12 +97,19 @@
 	          			</div>
 	          		</div>
 
-					<div class="col-12 col-md-2 text-md-center">
+					<div class="col-12 col-md-1 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
 	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.treatments_cost') }}</strong></div>
 	          				<div class="col-8 col-md-12">{{ $hospitals_treatment->hospitals_treatments_cost }}</div>
 	          			</div>
 	          		</div>
+					<div class="col-12 col-md-1 text-md-center">
+	          			<div class="row mb-2 mb-md-0">
+	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.treatments_rate') }}</strong></div>
+	          				<div class="col-8 col-md-12">{{ $hospitals_treatment->hospitals_treatments_rate }}</div>
+	          			</div>
+	          		</div>
+					  
 	          		<div class="col-12 col-md-1 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
 	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.status') }}</strong></div>

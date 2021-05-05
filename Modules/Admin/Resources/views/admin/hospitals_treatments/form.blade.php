@@ -85,7 +85,17 @@
                     @endif
                   </div>
                 </div>
-
+                <!-- hospitals_treatments_rate -->
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hospitals_treatments_rate">{{ __('admin::lang.treatments_rate') }}<span class="text-danger"> *</span></label>
+                  <div class="col-md-9">
+                    {{ Form::text('hospitals_treatments_rate',old('hospitals_treatments_rate',isset($hospitals_treatment) ? $hospitals_treatment->hospitals_treatments_rate : ''),['placeholder'=> __('admin::lang.treatments_rate'),'class'=>' form-control'])}}              
+                      @if ($errors->first('hospitals_treatments_rate'))
+                        <div class="invalid-feedback">{{ $errors->first('hospitals_treatments_rate') }}</div>
+                      @endif
+                  </div>
+                </div>
+                
                 
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label">{{ __('admin::lang.status') }}<span class="text-danger"> *</span></label>

@@ -188,6 +188,7 @@ return [
 	'hospitals_treatmentDeleted' 	=> 'Hospitals Treatment Deleted',
 	'treatments_period' 			=> 'Hospitals Treatment Period',
 	'treatments_cost' 				=> 'Hospitals Treatment Cost',
+	'treatments_rate' 				=> 'The Success Rate',
 	
 	/**
 	 * Clients

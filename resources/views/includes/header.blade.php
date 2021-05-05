@@ -5,7 +5,7 @@
 
             <div class="col-md-6 col-12 row p-0 m-0   my-md-2 my-0 justify-content-end align-items-end     ">
                 <div class=" col-md-12 {{isset($mob) && $mob == 'mob' ? 'd-none' : 'col-4'}} ">
-                   <a href="{{route('home')}}"> <img src="{{asset('backend/img/logo.jpeg')}}" alt="{{__('lang.projectTitle')}}" class="  d-md-inline " width="70px" height="50px"></a>
+                   <a href="{{route('home')}}"> <img src="{{asset('backend/img/logo.jpeg')}}" alt="{{__('admin::lang.siteTitle')}}" class="  d-md-inline " width="70px" height="50px"></a>
                 </div>
 
             </div>
