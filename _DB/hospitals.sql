@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2021 at 10:28 PM
+-- Generation Time: Oct 16, 2021 at 08:17 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.13
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `treatment`
+-- Database: `hospitals`
 --
 
 -- --------------------------------------------------------
@@ -75,6 +75,91 @@ INSERT INTO `advertisements` (`advertisements_id`, `advertisements_name`, `adver
 (1, 'اعلان', '775770771617811031_instAR.png', '6218566491617811032_instAR.png', '#000000', NULL, '1', '2021-04-07 11:07:43', '2021-04-07 13:57:13'),
 (2, 'اعلان  2', '1231626701617811052_MOH01AR.png', '8524615761617811053_MOH01AR.png', '#000000', NULL, '1', '2021-04-07 13:57:34', '2021-04-07 13:57:34'),
 (3, 'اعلان 3', '9184303571617811070_nursingJobBG.png', '8862476971617811071_nursingJobBG.png', '#000000', NULL, '1', '2021-04-07 13:57:53', '2021-04-07 13:57:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `areas`
+--
+
+CREATE TABLE `areas` (
+  `areas_id` int(10) UNSIGNED NOT NULL,
+  `countries_id` int(10) UNSIGNED NOT NULL,
+  `cities_id` int(10) UNSIGNED NOT NULL,
+  `areas_status` enum('active','stop') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
+  `areas_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `areas_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `areas`
+--
+
+INSERT INTO `areas` (`areas_id`, `countries_id`, `cities_id`, `areas_status`, `areas_created_at`, `areas_updated_at`) VALUES
+(3, 0, 1, 'active', '2021-10-02 13:25:54', '2021-10-02 13:25:54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `area_translations`
+--
+
+CREATE TABLE `area_translations` (
+  `areas_trans_id` int(10) UNSIGNED NOT NULL,
+  `areas_id` int(10) UNSIGNED NOT NULL,
+  `locale` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `areas_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `area_translations`
+--
+
+INSERT INTO `area_translations` (`areas_trans_id`, `areas_id`, `locale`, `areas_title`) VALUES
+(1, 3, 'ar', 'etert'),
+(2, 3, 'en', 'ertert');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cities`
+--
+
+CREATE TABLE `cities` (
+  `cities_id` int(10) UNSIGNED NOT NULL,
+  `countries_id` int(10) UNSIGNED NOT NULL,
+  `cities_status` enum('active','stop') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
+  `cities_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `cities_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cities`
+--
+
+INSERT INTO `cities` (`cities_id`, `countries_id`, `cities_status`, `cities_created_at`, `cities_updated_at`) VALUES
+(1, 0, 'active', '2021-10-01 19:19:10', '2021-10-01 19:19:10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `city_translations`
+--
+
+CREATE TABLE `city_translations` (
+  `cities_trans_id` int(10) UNSIGNED NOT NULL,
+  `cities_id` int(10) UNSIGNED NOT NULL,
+  `locale` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cities_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `city_translations`
+--
+
+INSERT INTO `city_translations` (`cities_trans_id`, `cities_id`, `locale`, `cities_title`) VALUES
+(1, 1, 'ar', 'dfhdfh'),
+(2, 1, 'en', 'ffhdh');
 
 -- --------------------------------------------------------
 
@@ -188,10 +273,7 @@ CREATE TABLE `countries` (
 --
 
 INSERT INTO `countries` (`countries_id`, `countries_status`, `countries_created_at`, `countries_updated_at`) VALUES
-(1, 'active', '2021-03-27 13:49:49', '2021-03-27 13:49:49'),
-(2, 'active', '2021-04-08 21:42:39', '2021-04-08 21:42:39'),
-(3, 'active', '2021-04-08 21:42:59', '2021-04-08 21:42:59'),
-(4, 'active', '2021-04-08 21:43:20', '2021-04-08 21:43:20');
+(1, 'active', '2021-03-27 13:49:49', '2021-03-27 13:49:49');
 
 -- --------------------------------------------------------
 
@@ -212,13 +294,7 @@ CREATE TABLE `country_translations` (
 
 INSERT INTO `country_translations` (`countries_trans_id`, `countries_id`, `locale`, `countries_title`) VALUES
 (1, 1, 'ar', 'الكويت'),
-(2, 1, 'en', 'kuwait'),
-(3, 2, 'ar', 'المانيا'),
-(4, 2, 'en', 'Germany'),
-(5, 3, 'ar', 'امريكا'),
-(6, 3, 'en', 'USA'),
-(7, 4, 'ar', 'اليابان'),
-(8, 4, 'en', 'Japan');
+(2, 1, 'en', 'kuwait');
 
 -- --------------------------------------------------------
 
@@ -333,7 +409,7 @@ CREATE TABLE `doctors` (
 
 INSERT INTO `doctors` (`doctors_id`, `doctors_name`, `specialties_id`, `departments_id`, `doctors_status`, `doctors_phone`, `doctors_email`, `doctors_civil_no`, `password`, `countries_id`, `hospitals_id`, `doctors_created_at`, `doctors_updated_at`) VALUES
 (1, 'ahmed', 3, 1, 'active', '963852741', 'ahmed@gmail.com', '12345678932145', '$2y$10$zahgYmwgqYRTGwHQ3ridxuWibRKREaFpjWRv9tSegO.0k/J41evNy', 1, 1, '2021-03-27 16:59:06', '2021-04-10 10:12:34'),
-(2, 'dr/khaled', 3, 1, 'active', '12345678', 'khaled@gmail.com', '9685741236545', '$2y$10$MOQ.n89UOdT4/XI116cmkOXUcz8dWeBPu5nLmUwju3dAUqSfDNkpu', 2, 2, '2021-04-10 10:46:33', '2021-04-24 14:09:55');
+(2, 'dr/khaled', 3, 1, 'active', '12345678', 'khaled@gmail.com', '9685741236545', '$2y$10$MOQ.n89UOdT4/XI116cmkOXUcz8dWeBPu5nLmUwju3dAUqSfDNkpu', NULL, NULL, '2021-04-10 10:46:33', '2021-04-24 14:09:55');
 
 -- --------------------------------------------------------
 
@@ -345,8 +421,12 @@ CREATE TABLE `hospitals` (
   `hospitals_id` int(10) UNSIGNED NOT NULL,
   `hospitals_status` enum('active','stop') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
   `hospitals_phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hospitals_gps` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hospitals_lat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hospitals_lng` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `countries_id` int(10) UNSIGNED DEFAULT NULL,
+  `cities_id` int(10) UNSIGNED DEFAULT NULL,
+  `hospitals_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hospitals_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `hospitals_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -355,9 +435,72 @@ CREATE TABLE `hospitals` (
 -- Dumping data for table `hospitals`
 --
 
-INSERT INTO `hospitals` (`hospitals_id`, `hospitals_status`, `hospitals_phone`, `hospitals_gps`, `countries_id`, `hospitals_created_at`, `hospitals_updated_at`) VALUES
-(1, 'active', '545642486418', NULL, 1, '2021-03-27 15:31:41', '2021-03-27 15:46:59'),
-(2, 'active', '987456321', NULL, 2, '2021-04-10 10:48:36', '2021-04-10 10:48:36');
+INSERT INTO `hospitals` (`hospitals_id`, `hospitals_status`, `hospitals_phone`, `hospitals_lat`, `hospitals_lng`, `countries_id`, `cities_id`, `hospitals_image`, `password`, `hospitals_created_at`, `hospitals_updated_at`) VALUES
+(1, 'active', '545642486418', '24.543556900031724', '46.65599275648131', 1, 1, '3484352331634402552_3997673841619085363_eye.jpg', NULL, '2021-03-27 15:31:41', '2021-10-16 14:42:32'),
+(2, 'active', '9638527415', '24.543942397325882', '46.65670085966124', NULL, 1, NULL, '$2y$10$BBsRAVMwawq8l2KsX5ryxO/38IE0FXh7e.AG7M9bxDE0cHi2xjZmq', '2021-10-02 14:30:08', '2021-10-16 15:22:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hospitals_areas`
+--
+
+CREATE TABLE `hospitals_areas` (
+  `hospitals_areas_id` int(10) UNSIGNED NOT NULL,
+  `hospitals_id` int(10) UNSIGNED NOT NULL,
+  `areas_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `hospitals_areas`
+--
+
+INSERT INTO `hospitals_areas` (`hospitals_areas_id`, `hospitals_id`, `areas_id`) VALUES
+(5, 3, 2),
+(6, 3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hospitals_departments`
+--
+
+CREATE TABLE `hospitals_departments` (
+  `hospitals_departments_id` int(10) UNSIGNED NOT NULL,
+  `hospitals_id` int(10) UNSIGNED NOT NULL,
+  `departments_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `hospitals_departments`
+--
+
+INSERT INTO `hospitals_departments` (`hospitals_departments_id`, `hospitals_id`, `departments_id`) VALUES
+(1, 1, 1),
+(2, 1, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hospitals_specialties`
+--
+
+CREATE TABLE `hospitals_specialties` (
+  `hospitals_specialties_id` int(10) UNSIGNED NOT NULL,
+  `hospitals_id` int(10) UNSIGNED NOT NULL,
+  `specialties_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `hospitals_specialties`
+--
+
+INSERT INTO `hospitals_specialties` (`hospitals_specialties_id`, `hospitals_id`, `specialties_id`) VALUES
+(4, 1, 4),
+(5, 1, 5),
+(6, 1, 3),
+(7, 2, 3),
+(8, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -373,6 +516,7 @@ CREATE TABLE `hospitals_treatments` (
   `hospitals_treatments_period` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hospitals_treatments_cost` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hospitals_treatments_program` text COLLATE utf8mb4_unicode_ci,
+  `hospitals_treatments_rate` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hospitals_treatments_status` enum('active','stop') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
   `hospitals_treatments_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `hospitals_treatments_updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -382,8 +526,28 @@ CREATE TABLE `hospitals_treatments` (
 -- Dumping data for table `hospitals_treatments`
 --
 
-INSERT INTO `hospitals_treatments` (`hospitals_treatments_id`, `hospitals_id`, `diseases_id`, `doctors_id`, `hospitals_treatments_period`, `hospitals_treatments_cost`, `hospitals_treatments_program`, `hospitals_treatments_status`, `hospitals_treatments_created_at`, `hospitals_treatments_updated_at`) VALUES
-(1, 2, 1, 2, '20 يوم', '100دينار', '<p>نص برنامج العلاج&nbsp;&nbsp;</p>', 'active', '2021-04-24 15:21:53', '2021-04-24 15:21:53');
+INSERT INTO `hospitals_treatments` (`hospitals_treatments_id`, `hospitals_id`, `diseases_id`, `doctors_id`, `hospitals_treatments_period`, `hospitals_treatments_cost`, `hospitals_treatments_program`, `hospitals_treatments_rate`, `hospitals_treatments_status`, `hospitals_treatments_created_at`, `hospitals_treatments_updated_at`) VALUES
+(1, 2, 1, 2, '20 يوم', '100دينار', '<p>نص برنامج العلاج&nbsp;&nbsp;</p>', '80%', 'active', '2021-04-24 15:21:53', '2021-05-05 15:47:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hospital_images`
+--
+
+CREATE TABLE `hospital_images` (
+  `hospital_images_id` int(10) UNSIGNED NOT NULL,
+  `hospitals_id` int(10) UNSIGNED NOT NULL,
+  `hospital_images_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `hospital_images`
+--
+
+INSERT INTO `hospital_images` (`hospital_images_id`, `hospitals_id`, `hospital_images_name`) VALUES
+(1, 1, '3426070101634402116_3997673841619085363_eye.jpg'),
+(2, 1, '1636660921634402117_1745726621619085340_cream.jpg');
 
 -- --------------------------------------------------------
 
@@ -396,18 +560,19 @@ CREATE TABLE `hospital_translations` (
   `hospitals_id` int(10) UNSIGNED NOT NULL,
   `locale` varchar(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hospitals_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hospitals_address` text COLLATE utf8mb4_unicode_ci
+  `hospitals_address` text COLLATE utf8mb4_unicode_ci,
+  `hospitals_desc` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `hospital_translations`
 --
 
-INSERT INTO `hospital_translations` (`hospitals_trans_id`, `hospitals_id`, `locale`, `hospitals_title`, `hospitals_address`) VALUES
-(1, 1, 'ar', 'المستشفي العام بالكويت', 'المدينة - الكويت'),
-(2, 1, 'en', 'Kuwait General Hospital', 'city - Kuwait'),
-(3, 2, 'ar', 'المستشفي العام بالمانيا', 'المانيا'),
-(4, 2, 'en', 'General Hospital in Germany', 'Germany');
+INSERT INTO `hospital_translations` (`hospitals_trans_id`, `hospitals_id`, `locale`, `hospitals_title`, `hospitals_address`, `hospitals_desc`) VALUES
+(1, 1, 'ar', 'المستشفي العام بالكويت', 'المدينة - الكويت', '<p>sdfsdfsdf</p>'),
+(2, 1, 'en', 'Kuwait General Hospital', 'المدينة - الكويت', '<p>sfsdfsdf</p>'),
+(3, 2, 'ar', 'qwrq', 'qwrqwr', '<p>qwrqwr</p>'),
+(4, 2, 'en', 'wr', 'qwrqwr', '<p>qwrqwr</p>');
 
 -- --------------------------------------------------------
 
@@ -450,8 +615,8 @@ CREATE TABLE `info_translations` (
 --
 
 INSERT INTO `info_translations` (`infos_trans_id`, `infos_id`, `locale`, `infos_title`, `infos_desc`) VALUES
-(1, 1, 'ar', 'عن واين', '<p dir=\"rtl\"><strong>نص عن تقنية</strong></p>\r\n\r\n<p dir=\"rtl\">&nbsp;</p>'),
-(2, 1, 'en', 'about Wayn', '<div class=\"tw-nfl tw-ta-container\" id=\"tw-target-text-container\">\r\n<pre style=\"text-align:left\">\r\nText about Technique</pre>\r\n\r\n<p><img alt=\"\" src=\"                            \" /></p>\r\n</div>'),
+(1, 1, 'ar', 'عن واين', '<p dir=\"rtl\"><strong>نص عن المستشفيات</strong></p>\r\n\r\n<p dir=\"rtl\">&nbsp;</p>'),
+(2, 1, 'en', 'about Wayn', '<div class=\"tw-nfl tw-ta-container\" id=\"tw-target-text-container\">\r\n<pre style=\"text-align:left\">\r\nText about hospitals</pre>\r\n\r\n<p><img alt=\"\" src=\"                            \" /></p>\r\n</div>'),
 (3, 2, 'ar', 'سياسة الاستخدام', '<p dir=\"rtl\">نص سياسة الاستخدام</p>\r\n\r\n<p dir=\"rtl\">&nbsp;</p>'),
 (4, 2, 'en', 'Policy', '<p>text</p>'),
 (5, 3, 'ar', 'الشروط', '<p dir=\"rtl\">نص الشروط الاحكام</p>'),
@@ -858,7 +1023,15 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `page`, `action`, `positi
 (356, 'view hospitals_treatments', 'admin', 'hospitals_treatments', 'view', 1201, '2021-04-24 15:06:36', '2021-04-24 15:06:36'),
 (357, 'create hospitals_treatments', 'admin', 'hospitals_treatments', 'create', 1202, '2021-04-24 15:06:36', '2021-04-24 15:06:36'),
 (358, 'update hospitals_treatments', 'admin', 'hospitals_treatments', 'update', 1203, '2021-04-24 15:06:36', '2021-04-24 15:06:36'),
-(359, 'delete hospitals_treatments', 'admin', 'hospitals_treatments', 'delete', 1204, '2021-04-24 15:06:36', '2021-04-24 15:06:36');
+(359, 'delete hospitals_treatments', 'admin', 'hospitals_treatments', 'delete', 1204, '2021-04-24 15:06:36', '2021-04-24 15:06:36'),
+(360, 'view cities', 'admin', 'cities', 'view', 501, '2021-10-01 19:17:06', '2021-10-01 19:17:06'),
+(361, 'create cities', 'admin', 'cities', 'create', 502, '2021-10-01 19:17:06', '2021-10-01 19:17:06'),
+(362, 'update cities', 'admin', 'cities', 'update', 503, '2021-10-01 19:17:06', '2021-10-01 19:17:06'),
+(363, 'delete cities', 'admin', 'cities', 'delete', 504, '2021-10-01 19:17:06', '2021-10-01 19:17:06'),
+(364, 'view areas', 'admin', 'areas', 'view', 601, '2021-10-01 19:17:06', '2021-10-01 19:17:06'),
+(365, 'create areas', 'admin', 'areas', 'create', 602, '2021-10-01 19:17:06', '2021-10-01 19:17:06'),
+(366, 'update areas', 'admin', 'areas', 'update', 603, '2021-10-01 19:17:07', '2021-10-01 19:17:07'),
+(367, 'delete areas', 'admin', 'areas', 'delete', 604, '2021-10-01 19:17:07', '2021-10-01 19:17:07');
 
 -- --------------------------------------------------------
 
@@ -1023,7 +1196,15 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
 (358, 1),
 (358, 2),
 (359, 1),
-(359, 2);
+(359, 2),
+(360, 1),
+(361, 1),
+(362, 1),
+(363, 1),
+(364, 1),
+(365, 1),
+(366, 1),
+(367, 1);
 
 -- --------------------------------------------------------
 
@@ -1167,6 +1348,30 @@ ALTER TABLE `advertisements`
   ADD PRIMARY KEY (`advertisements_id`);
 
 --
+-- Indexes for table `areas`
+--
+ALTER TABLE `areas`
+  ADD PRIMARY KEY (`areas_id`);
+
+--
+-- Indexes for table `area_translations`
+--
+ALTER TABLE `area_translations`
+  ADD PRIMARY KEY (`areas_trans_id`);
+
+--
+-- Indexes for table `cities`
+--
+ALTER TABLE `cities`
+  ADD PRIMARY KEY (`cities_id`);
+
+--
+-- Indexes for table `city_translations`
+--
+ALTER TABLE `city_translations`
+  ADD PRIMARY KEY (`cities_trans_id`);
+
+--
 -- Indexes for table `clients`
 --
 ALTER TABLE `clients`
@@ -1247,10 +1452,34 @@ ALTER TABLE `hospitals`
   ADD KEY `countries` (`countries_id`);
 
 --
+-- Indexes for table `hospitals_areas`
+--
+ALTER TABLE `hospitals_areas`
+  ADD PRIMARY KEY (`hospitals_areas_id`);
+
+--
+-- Indexes for table `hospitals_departments`
+--
+ALTER TABLE `hospitals_departments`
+  ADD PRIMARY KEY (`hospitals_departments_id`);
+
+--
+-- Indexes for table `hospitals_specialties`
+--
+ALTER TABLE `hospitals_specialties`
+  ADD PRIMARY KEY (`hospitals_specialties_id`);
+
+--
 -- Indexes for table `hospitals_treatments`
 --
 ALTER TABLE `hospitals_treatments`
   ADD PRIMARY KEY (`hospitals_treatments_id`);
+
+--
+-- Indexes for table `hospital_images`
+--
+ALTER TABLE `hospital_images`
+  ADD PRIMARY KEY (`hospital_images_id`);
 
 --
 -- Indexes for table `hospital_translations`
@@ -1422,6 +1651,30 @@ ALTER TABLE `advertisements`
   MODIFY `advertisements_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `areas`
+--
+ALTER TABLE `areas`
+  MODIFY `areas_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `area_translations`
+--
+ALTER TABLE `area_translations`
+  MODIFY `areas_trans_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `cities`
+--
+ALTER TABLE `cities`
+  MODIFY `cities_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `city_translations`
+--
+ALTER TABLE `city_translations`
+  MODIFY `cities_trans_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
@@ -1443,19 +1696,19 @@ ALTER TABLE `contact_translations`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `contact_us_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `contact_us_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `countries_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `countries_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `country_translations`
 --
 ALTER TABLE `country_translations`
-  MODIFY `countries_trans_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `countries_trans_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `departments`
@@ -1494,10 +1747,34 @@ ALTER TABLE `hospitals`
   MODIFY `hospitals_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `hospitals_areas`
+--
+ALTER TABLE `hospitals_areas`
+  MODIFY `hospitals_areas_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `hospitals_departments`
+--
+ALTER TABLE `hospitals_departments`
+  MODIFY `hospitals_departments_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `hospitals_specialties`
+--
+ALTER TABLE `hospitals_specialties`
+  MODIFY `hospitals_specialties_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `hospitals_treatments`
 --
 ALTER TABLE `hospitals_treatments`
   MODIFY `hospitals_treatments_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `hospital_images`
+--
+ALTER TABLE `hospital_images`
+  MODIFY `hospital_images_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `hospital_translations`
@@ -1575,7 +1852,7 @@ ALTER TABLE `password_resets`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=360;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=368;
 
 --
 -- AUTO_INCREMENT for table `roles`
