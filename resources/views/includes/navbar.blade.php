@@ -28,9 +28,9 @@
 
                 @if(auth('client')->check())
 
-                    <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
+                    <!-- <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
                         <a class="nav-link" href="{{route('orders.client_orders')}}">{{__('lang.orders')}} <span class="sr-only">(current)</span></a>
-                    </li>
+                    </li> -->
  
                     <li class="nav-item d-md-none d-inline m-md-0 m-2 {{ isset($mainPageTitle) &&  $mainPageTitle == 'myProfile'  ? 'active' : ''  }}">
                         <a class="nav-link" href="{{ route('getProfile','client') }}">{{ __('lang.myProfile') }}</a>
@@ -50,9 +50,9 @@
                 @endif
 
                 @if(auth('hospital')->check())
-                    <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
+                    <!-- <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
                         <a class="nav-link" href="{{route('orders.hospital_orders')}}">{{__('lang.hospital_orders')}} <span class="sr-only">(current)</span></a>
-                    </li>
+                    </li> -->
                  
                  @endif
                 <li class="nav-item d-md-none d-inline  m-md-0 m-2">

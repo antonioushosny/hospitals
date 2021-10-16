@@ -47,11 +47,11 @@
                  @endif
                
               @if(auth('client')->check() && !auth('hospital')->check())
-                <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} ">
+                <!-- <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} ">
                   <a href="{{route('orders.hospital_orders')}}">
                     <span>{{__('lang.orders')}} </span>
                   </a>
-                </li>
+                </li> -->
                  
                 <li class="{{ isset($mainPageTitle) &&  $mainPageTitle == 'myProfile'  ? 'active' : ''  }} ">
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">{{auth::guard('client')->user()->clients_name}} </a>
