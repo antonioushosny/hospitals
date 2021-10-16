@@ -71,12 +71,23 @@
         </li>
       @endcanany
 
-      {{-- countries Link --}}
-      @canany(['view countries'])
+      {{-- cities Link --}}
+      @canany(['view cities'])
         <li class="nav-item">
-            @can('view countries')
-              <a class="nav-link" href="{{ route('admin.countries.index') }}" >
-                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.countries') }}
+            @can('view cities')
+              <a class="nav-link" href="{{ route('admin.cities.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.cities') }}
+              </a>
+            @endcan
+        </li>
+      @endcanany
+
+      {{-- areas Link --}}
+      @canany(['view areas'])
+        <li class="nav-item">
+            @can('view areas')
+              <a class="nav-link" href="{{ route('admin.areas.index') }}" >
+                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.areas') }}
               </a>
             @endcan
         </li>
@@ -92,6 +103,7 @@
             @endcan
         </li>
       @endcanany
+
       {{-- departments Link --}}
       @canany(['view departments'])
         <li class="nav-item">
@@ -114,17 +126,7 @@
       @endcanany
 
      
-
-      {{-- doctors Link --}}
-      @canany(['view doctors'])
-        <li class="nav-item">
-            @can('view doctors')
-              <a class="nav-link" href="{{ route('admin.doctors.index') }}" >
-                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.doctors') }}
-              </a>
-            @endcan
-        </li>
-      @endcanany
+ 
       {{-- diseases Link --}}
       @canany(['view diseases'])
         <li class="nav-item">
@@ -149,26 +151,38 @@
 
       {{-- orders Link --}}
       @canany(['view orders'])
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             @can('view orders')
               <a class="nav-link" href="{{ route('admin.orders.index') }}" >
                 <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.orders') }}
               </a>
             @endcan
-        </li>
+        </li> -->
       @endcanany
 
-      {{-- hospitals_treatments Link --}}
-      @canany(['view hospitals_treatments'])
-        <li class="nav-item">
-            @can('view hospitals_treatments')
-              <a class="nav-link" href="{{ route('admin.hospitals_treatments.index') }}" >
-                <i class="nav-icon fa fa-list"></i> {{ __('admin::lang.hospitals_treatments') }}
-              </a>
+      {{-- contactus Links --}}
+      @canany(['view contactus'])
+        <li class="nav-item nav-dropdown">
+          <a class="nav-link nav-dropdown-toggle" href="#">
+            <i class="nav-icon icon-people"></i> {{ __('admin::lang.connectWithUs') }}</a>
+          <ul class="nav-dropdown-items">
+
+            @can('view contactus')
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.contactus.index') }}">
+                  <i class="nav-icon icon-people"></i> {{ __('admin::lang.contactus') }}</a>
+              </li>
             @endcan
+
+            @can('view contactus')
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.contacts.show', [1, 'activeLocale' => $locale]) }}">
+                  <i class="nav-icon fa fa-user-plus"></i> {{ __('admin::lang.contacts') }}</a>
+              </li>
+            @endcan
+          </ul>
         </li>
       @endcanany
-      
       
       {{-- Admins Links --}}
       @canany(['view admins', 'view roles'])
@@ -195,13 +209,13 @@
       
       {{-- MetaTags Link --}}
       @canany(['view metatags'])
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             @can('view metatags')
               <a class="nav-link" href="{{ route('admin.metatags.index') }}" >
                 <i class="nav-icon fa fa-globe"></i> {{ __('admin::lang.metatagsLink') }}
               </a>
             @endcan
-        </li>
+        </li> -->
       @endcanany
 
       {{-- MetaTags Link --}}

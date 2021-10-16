@@ -43,23 +43,17 @@
 
                 @endif
 
-                @if(!auth('client')->check() && !auth('doctor')->check())
+                @if(!auth('client')->check() && !auth('hospital')->check())
                 <li class="nav-item   m-md-0 m-2">
-                    <a href="{{route('doctorLogin',['type'=>'doctor'])}}" class="nav-link "  > {{__('lang.doctorLogin')}}</a>
+                    <a href="{{route('hospitalLogin',['type'=>'hospital'])}}" class="nav-link "  > {{__('lang.hospitalLogin')}}</a>
                 </li>
                 @endif
 
-                @if(auth('doctor')->check())
+                @if(auth('hospital')->check())
                     <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
-                        <a class="nav-link" href="{{route('orders.doctor_orders')}}">{{__('lang.doctor_orders')}} <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('orders.hospital_orders')}}">{{__('lang.hospital_orders')}} <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
-                        <a class="nav-link" href="{{route('orders.doctor_following_orders')}}">{{__('lang.doctor_following_orders')}} <span class="sr-only">(current)</span></a>
-                    </li>
-
-                    <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'hospitals_treatments' ? 'active' : '' }} m-md-0 m-2   ">
-                        <a class="nav-link" href="{{route('hospitals_treatments.index')}}">{{__('admin::lang.hospitals_treatments')}} <span class="sr-only">(current)</span></a>
-                    </li>
+                 
                  @endif
                 <li class="nav-item d-md-none d-inline  m-md-0 m-2">
                     @if($dir == 'ltr')

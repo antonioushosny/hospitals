@@ -41,20 +41,20 @@
                         </div>
                     </div>
                 </div>
-            @elseif(auth('doctor')->check())
+            @elseif(auth('hospital')->check())
                 <div class="col-md-3  col-4 mb-4 d-md-inline d-none justify-content-center align-items-center ">
 
                     <div class="d-inline ml-md-2  ">
                         <span class=" color-black d-block  " > {{__('lang.welcome')}} </span>
                         <a class="  color-black fb-700  " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{auth::guard('doctor')->user()->doctors_name}}  <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        {{auth::guard('hospital')->user()->hospitals_title}}  <i class="fa fa-angle-down" aria-hidden="true"></i>
 
                         </a>
                         <div class="dropdown-menu dropdown-user {{ $dir == 'rtl' ? 'dropdown-menu-right' :'dropdown-menu-left' }}  mt-2  " aria-labelledby="dropdownMenuLink">
                            
                             <!-- <a class="dropdown-item {{ isset($mainPageTitle) && $mainPageTitle == 'myProfile' ? 'active' : '' }}"  href="{{ route('getProfile','client') }}" >{{ __('lang.myProfile') }}</a> -->
 
-                            <a class="dropdown-item bt-user-menue" href="{{ route('logout', ['type'  =>  'doctor']) }}">{{ __('lang.logout') }} </a>
+                            <a class="dropdown-item bt-user-menue" href="{{ route('logout', ['type'  =>  'hospital']) }}">{{ __('lang.logout') }} </a>
                         </div>
                     </div>
                 </div>

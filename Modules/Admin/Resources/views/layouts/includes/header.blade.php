@@ -53,11 +53,11 @@
                       @endcan
 
                       {{-- MetaTags Link --}}
-                      @can('view metatags')
+                      <!-- @can('view metatags')
                         <a class="dropdown-item" href="{{ route('admin.metatags.index') }}">
                           {{ __('admin::lang.metatagsLink') }}
                         </a>
-                      @endcan
+                      @endcan -->
 
                 
                     </div>
@@ -83,10 +83,27 @@
                 @endcanany
 
                 {{-- countries Links --}}
-                @canany(['view countries'])
+                <!-- @canany(['view countries'])
                   <li class="nav-item px-3">
                     <a class="nav-link"   href="{{ route('admin.countries.index') }}" >
                       {{ __('admin::lang.countries') }}
+                    </a>
+                  </li>
+                @endcanany -->
+                
+                {{-- cities Links --}}
+                @canany(['view cities'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.cities.index') }}" >
+                      {{ __('admin::lang.cities') }}
+                    </a>
+                  </li>
+                @endcanany
+                {{-- areas Links --}}
+                @canany(['view areas'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.areas.index') }}" >
+                      {{ __('admin::lang.areas') }}
                     </a>
                   </li>
                 @endcanany
@@ -118,16 +135,6 @@
                   </li>
                 @endcanany
 
-               
-
-                {{-- doctors Links --}}
-                @canany(['view doctors'])
-                  <li class="nav-item px-3">
-                    <a class="nav-link"   href="{{ route('admin.doctors.index') }}" >
-                      {{ __('admin::lang.doctors') }}
-                    </a>
-                  </li>
-                @endcanany
                 {{-- diseases Links --}}
                 @canany(['view diseases'])
                   <li class="nav-item px-3">
@@ -145,22 +152,14 @@
                     </a>
                   </li>
                 @endcanany
-                {{-- hospitals_treatments Links --}}
-                @canany(['view hospitals_treatments'])
-                  <li class="nav-item px-3">
-                    <a class="nav-link"   href="{{ route('admin.hospitals_treatments.index') }}" >
-                      {{ __('admin::lang.hospitals_treatments') }}
-                    </a>
-                  </li>
-                @endcanany
 
                 {{-- orders Links --}}
                 @canany(['view orders'])
-                  <li class="nav-item px-3">
+                  <!-- <li class="nav-item px-3">
                     <a class="nav-link"   href="{{ route('admin.orders.index') }}" >
                       {{ __('admin::lang.orders') }}
                     </a>
-                  </li>
+                  </li> -->
                 @endcanany
                 
                 {{-- contactus Links --}}

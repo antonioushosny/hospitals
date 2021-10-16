@@ -48,9 +48,9 @@ return [
             'driver' => 'session',
             'provider' => 'clients',
         ],
-        'doctor' => [
+        'hospital' => [
             'driver' => 'session',
-            'provider' => 'doctors',
+            'provider' => 'hospitals',
         ] 
 
         
@@ -80,9 +80,9 @@ return [
             'model' => Modules\Admin\Models\Admin::class,
         ],
 
-        'doctors' => [
+        'hospitals' => [
             'driver' => 'eloquent',
-            'model' => Modules\Admin\Models\Doctor::class,
+            'model' => Modules\Admin\Models\Hospital::class,
         ],
 
         'clients' => [
@@ -113,8 +113,8 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'doctors' => [
-            'provider' => 'doctors',
+        'hospitals' => [
+            'provider' => 'hospitals',
             'table' => 'password_resets',
             'expire' => 60,
         ],

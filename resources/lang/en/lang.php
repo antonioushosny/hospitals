@@ -123,7 +123,7 @@ return [
     /**
      * orders
      */
-    'doctor_following'           => 'Responsible Doctor',
+    'hospital_following'           => 'Responsible Hospital',
     'add_order'                 =>'Add Order',
     'edit_order'                 =>'Edit Order',
     'patient_data'              => 'Patient Data',
@@ -150,7 +150,7 @@ return [
     'disease'                   => 'Disease',
     'country'                   => 'Country',
     'hospital'                  => 'Hospital',
-    'doctor'                    => 'Doctor',
+    'hospital'                    => 'Hospital',
     'treatment_budget'          => 'Treatment Budget',
     'prescription_img'          => 'Prescription Image',
     'treatment_period'          => 'Treatment Period',
@@ -158,12 +158,12 @@ return [
     'notes'                     => 'Notes',
     'created_at'                => 'Created At',
     'order_images'              => 'Order Images',
-    'doctor_orders'             => 'Requests for treatment abroad',
-    'doctor_following_orders'   => 'Responsible requests',
+    'hospital_orders'             => 'Requests for Hospital',
+    'hospital_following_orders'   => 'Responsible requests',
     'orderCreated'				=> 'Order Created',
 	'orderUpdated'				=> 'Order Updated',
     'orderDeleted'				=> 'Order Deleted',
-    'doctorLogin'               => 'Doctor Login',
+    'hospitalLogin'               => 'Hospital Login',
     'sendOrder'                 => 'Send Order',
 
 ];

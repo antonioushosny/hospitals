@@ -36,9 +36,31 @@
               </li>
               <li class="list-group-item">
                 <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('admin::lang.country') }}</strong></div>
+                  <div class="col-12 col-md-2"><strong>{{ __('admin::lang.city') }}</strong></div>
                   <div class="col-12 col-md-10">
-                    {{ $hospital->country ? $hospital->country->countries_title : '' }} 
+                    {{ $hospital->country ? $hospital->city->cities_title : '' }} 
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-12 col-md-2"><strong>{{ __('admin::lang.images') }}</strong></div>
+                  <div class="col-12 col-md-10">
+                    
+                    <div class="row">
+                      
+                      @foreach($hospital->images as $image)
+                        
+                        <div class="col-12 col-md-4 mb-2">
+                          
+                            <img src="{{ $image->hospital_images_name ? asset($image->images_url($image->hospital_images_name, 'medium')) : asset('img/no-image.png') }}"
+                              alt="img" class="img-fluid img-thumbnail showPrevImage" />
+                        </div>
+
+                      @endforeach
+
+                    </div>
+
                   </div>
                 </div>
               </li>

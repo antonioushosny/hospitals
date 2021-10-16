@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Modules\Admin\Http\Requests\OrderRequest;
 use Modules\Admin\Models\Client;
 use Modules\Admin\Models\Order;
-use Modules\Admin\Models\Doctor;
+use Modules\Admin\Models\Hospital;
 use Modules\Admin\Models\Country;
 use Modules\Admin\Models\Specialty;
 use Modules\Admin\Models\Department;
@@ -29,8 +29,8 @@ class OrdersController extends Controller
         $searchArray = [
             'clients_id' => [request('clients_id'), '='], 
             'countries_id' => [request('countries_id'), '='], 
-            'orders_doctor_following' => [request('doctor_following'), '='], 
-            'doctors_id' => [request('doctors_id'), '='], 
+            'orders_hospital_following' => [request('hospital_following'), '='], 
+            'hospitals_id' => [request('hospitals_id'), '='], 
             'diseases_id' => [request('diseases_id'), '='], 
             'hospitals_id' => [request('hospitals_id'), '='], 
             'orders_status' => [request('status'), '='],
@@ -43,10 +43,9 @@ class OrdersController extends Controller
         $orders = $searchQuery->paginate(env('PerPage'));
         $countries = Country::get()->pluck('countries_title','countries_id') ;
         $clients = Client::get()->pluck('clients_name','clients_id') ;
-        $doctors = Doctor::get()->pluck('doctors_name','doctors_id') ;
         $hospitals = Hospital::get()->pluck('hospitals_title','hospitals_id') ;
         $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;
-        return view('admin::admin.orders.index', compact('orders','countries','clients','doctors','hospitals','diseases'));
+        return view('admin::admin.orders.index', compact('orders','countries','clients','hospitals','diseases'));
     }
 
     /**
@@ -61,9 +60,8 @@ class OrdersController extends Controller
         $departments = Department::get()->pluck('departments_title','departments_id') ;
         $hospitals = Hospital::get()->pluck('hospitals_title','hospitals_id') ;
         $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;
-        $doctors = Doctor::get()->pluck('doctors_name','doctors_id') ;
         $clients = Client::get()->pluck('clients_name','clients_id') ;
-        return view('admin::admin.orders.create',compact('countries','specialties','departments','hospitals','doctors','diseases','clients'));
+        return view('admin::admin.orders.create',compact('countries','specialties','departments','hospitals','diseases','clients'));
     }
 
     /**
@@ -102,9 +100,8 @@ class OrdersController extends Controller
         $departments = Department::get()->pluck('departments_title','departments_id') ;
         $hospitals = Hospital::get()->pluck('hospitals_title','hospitals_id') ;
         $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;
-        $doctors = Doctor::get()->pluck('doctors_name','doctors_id') ;
         $clients = Client::get()->pluck('clients_name','clients_id') ;
-        return view('admin::admin.orders.edit', compact('order','countries','specialties','departments','hospitals','doctors','diseases','clients'));
+        return view('admin::admin.orders.edit', compact('order','countries','specialties','departments','hospitals','diseases','clients'));
     }
 
     /**

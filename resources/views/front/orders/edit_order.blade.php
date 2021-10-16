@@ -43,63 +43,8 @@
                             </div>
                         @endif
                         <h2>{{__('lang.order_data')}}</h2>
-                        @if($order->doctors_id == auth('doctor')->user()->doctors_id)
-                        <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="orders_treatment_period">{{ __('admin::lang.treatment_period') }}<span class="text-danger">  </span></label>
-                            <div class="col-md-9">
-                                {{ Form::text('orders_treatment_period',old('orders_treatment_period',isset($order) ? $order->orders_treatment_period : ''),['placeholder'=> __('admin::lang.treatment_period'),'class'=>' form-control'])}}              
-                                @if ($errors->first('orders_treatment_period'))
-                                    <div class="invalid-feedback">{{ $errors->first('orders_treatment_period') }}</div>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="orders_treatment_cost">{{ __('admin::lang.treatment_cost') }}<span class="text-danger">  </span></label>
-                            <div class="col-md-9">
-                                {{ Form::text('orders_treatment_cost',old('orders_treatment_cost',isset($order) ? $order->orders_treatment_cost : ''),['placeholder'=> __('admin::lang.treatment_cost'),'class'=>' form-control'])}}              
-                                @if ($errors->first('orders_treatment_cost'))
-                                    <div class="invalid-feedback">{{ $errors->first('orders_treatment_cost') }}</div>
-                                @endif
-                            </div>
-                        </div>
-       
-                      
-                        <!-- <div class="form-group row ">
-                            <label class="col-md-3 col-form-label" for="orders_prescription_img">{{ __('lang.prescription_img') }}<span class="text-danger">  </span></label>
-                            <div class="col-md-9">
-                            <input type="file" id="orders_prescription_img" name="orders_prescription_img" >
-                            @if ($errors->first('orders_prescription_img'))
-                                <div class="invalid-feedback">{{ $errors->first('orders_prescription_img') }}</div>
-                            @endif
-                            </div>
-                        </div> -->
-                        <!-- <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="orders_prescription_img">{{ __('admin::lang.prescription_img') }}<span class="text-danger"> *</span></label>
-                            <div class="col-md-9">
-                                @include('admin::layouts.includes.imagePreview', ['name' => 'orders_prescription_img', 'value' => isset($order) ? $order->orders_prescription_img : null])
-                                @if ($errors->first('orders_prescription_img'))
-                                    <div class="invalid-feedback">{{ $errors->first('orders_prescription_img') }}</div>
-                                @endif
-                            </div>
-                        </div> -->
-                        
-
-                        <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="orders_treatments_program">{{ __('admin::lang.treatments_program') }}<span class="text-danger"> *</span></label>
-                            <div class="col-md-9">
-                                <textarea id="{{ $locale }}-ckeditor" class="form-control ckeditor {{ $errors->first('orders_treatments_program') ? 'is-invalid' : '' }}"
-                                name="orders_treatments_program" rows="9" placeholder="{{ __('admin::lang.treatments_program') }}"
-                                >{{ old('orders_treatments_program', isset($order) ? $order->orders_treatments_program : '') }}</textarea>
-                                @if ($errors->first('orders_treatments_program'))
-                                    <div class="invalid-feedback">{{ $errors->first('orders_treatments_program') }}</div>
-                                @endif
-                            </div>
-                        </div>
-                        
-                        @endif
-
-                        @if($order->orders_doctor_following == auth('doctor')->user()->doctors_id)
+                       
+                        @if($order->hospitals_id == auth('hospital')->user()->hospitals_id)
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label">{{ __('admin::lang.status') }}<span class="text-danger"> *</span></label>
                             <div class="col-md-9 col-form-label">
@@ -131,13 +76,13 @@
                                 @endif
                             </div>
                         </div>
-                        <!-- orders_doctor_following_notes -->
+                        <!-- orders_hospital_following_notes -->
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="orders_doctor_following_notes">{{ __('admin::lang.doctor_following_notes') }}<span class="text-danger">  </span></label>
+                            <label class="col-md-3 col-form-label" for="orders_hospital_following_notes">{{ __('admin::lang.hospital_following_notes') }}<span class="text-danger">  </span></label>
                             <div class="col-md-9">
-                                {{ Form::text('orders_doctor_following_notes',old('orders_doctor_following_notes',isset($order) ? $order->orders_doctor_following_notes : ''),['placeholder'=> __('admin::lang.doctor_following_notes'),'class'=>' form-control'])}}              
-                                @if ($errors->first('orders_doctor_following_notes'))
-                                    <div class="invalid-feedback">{{ $errors->first('orders_doctor_following_notes') }}</div>
+                                {{ Form::text('orders_hospital_following_notes',old('orders_hospital_following_notes',isset($order) ? $order->orders_hospital_following_notes : ''),['placeholder'=> __('admin::lang.hospital_following_notes'),'class'=>' form-control'])}}              
+                                @if ($errors->first('orders_hospital_following_notes'))
+                                    <div class="invalid-feedback">{{ $errors->first('orders_hospital_following_notes') }}</div>
                                 @endif
                             </div>
                         </div>

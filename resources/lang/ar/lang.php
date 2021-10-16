@@ -121,7 +121,7 @@ return [
 	/**
      * orders
      */
-	'doctor_following'           => 'الدكتور المتابع',
+	'hospital_following'           => 'الدكتور المتابع',
     'add_order'                 =>'اضافة الطلب',
     'edit_order'                 =>'تعديل الطلب',
     'patient_data'              => 'بيانات المريض',
@@ -148,7 +148,6 @@ return [
     'disease'                   => 'المرض',
     'country'                   => 'الدولة ',
     'hospital'                  => 'المستشفي',
-    'doctor'                    => 'الدكتور ',
     'treatment_budget'          => 'ميزانية العلاج ',
     'prescription_img'          => 'صورة الروشتة / العلاج',
     'treatment_period'          => 'قترة العلاج ',
@@ -156,11 +155,10 @@ return [
     'notes'                     => 'ملاحظات ',
     'created_at'                => 'تاريخ الطلب',
     'order_images'              => 'مرفقات الطلب',
-    'doctor_orders'             => 'طلبات العلاج بالخارج ',
-    'doctor_following_orders'   => 'الطلبات المسئول عنها',
+    'hospital_orders'             => 'طلبات المستشفي  ',
 	'orderCreated'				=> 'تم اضافة الطلب',
 	'orderUpdated'				=> 'تم تعديل الطلب',
     'orderDeleted'				=> 'تم حذف الطلب',
-    'doctorLogin'               => 'تسجيل دخول الطبيب',
+    'hospitalLogin'               => 'تسجيل دخول المستشفي',
     'sendOrder'                 => 'ارسال الطلب',
 ];

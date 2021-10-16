@@ -5,7 +5,7 @@ namespace Modules\Admin\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\StorageHandle;
 
-class HospitalTranslation extends Model
+class AreaTranslation extends Model
 {
     use  StorageHandle;
 
@@ -16,14 +16,14 @@ class HospitalTranslation extends Model
      * @var string
      */
     
-    protected $table = 'hospital_translations';
+    protected $table = 'area_translations';
 
     /**
      * Primary key.
      * 
      * @var string
      */
-    protected $primaryKey = 'hospitals_trans_id';
+    protected $primaryKey = 'aries_trans_id';
 
     /**
      * Timestamps.
@@ -38,17 +38,17 @@ class HospitalTranslation extends Model
      * @var array
      */
     protected $fillable = [
-        'hospitals_title', 'hospitals_address','hospitals_desc'
+        'areas_title' 
     ];
 
    
     /**
-     * Many to one relation with branches.
+     * Many to one relation with city.
      * 
-     * @return collection of branch
+     * @return collection of city
      */
-    public function hospital()
+    public function city()
     {
-    	return $this->belongsTo('Modules\Admin\Models\Hospital', 'hospitals_id', 'hospitals_id');
+    	return $this->belongsTo('Modules\Admin\Models\City', 'cities_id', 'cities_id');
     }
 }

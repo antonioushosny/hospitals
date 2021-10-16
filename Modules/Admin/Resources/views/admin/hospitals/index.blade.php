@@ -33,7 +33,7 @@
                 </div>
 				
 				<div class="form-group col-12 col-md-2 text-center">
-					{{ Form::select('countries_id',$countries,old('countries_id'),['placeholder'=> __('admin::lang.country'),'class'=>'select2 form-control'])}}
+					{{ Form::select('cities_id',$cities,old('countries_id'),['placeholder'=> __('admin::lang.city'),'class'=>'select2 form-control'])}}
 				</div>
                 <div class="form-group col-12 col-md-2 text-center">
 					<select class="form-control" name="status">
@@ -60,7 +60,7 @@
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.name') }}</strong></div>
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.address') }}</strong></div>
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.phone') }}</strong></div>
-          		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.country') }}</strong></div>
+          		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.city') }}</strong></div>
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.status') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.actions') }}</strong></div>
           	</div>
@@ -98,8 +98,8 @@
 	          		</div>
 					  <div class="col-12 col-md-2 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
-	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.country') }}</strong></div>
-							  <div class="col-8 col-md-12">{{ $hospital->country ?  $hospital->country->countries_title : '' }}</div>
+	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.city') }}</strong></div>
+							  <div class="col-8 col-md-12">{{ $hospital->city ?  $hospital->city->cities_title : '' }}</div>
 	          			</div>
 	          		</div>
 	          		<div class="col-12 col-md-2 text-md-center">

@@ -15,5 +15,6 @@ return [
 	'admin.contacts.update',
 	'admin.contacts.view',
 	'admin.contacts.show',
+	'admin.hospitals.deleteHospitalImage',
 
   ];

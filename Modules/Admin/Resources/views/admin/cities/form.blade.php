@@ -6,7 +6,7 @@
 <div class="card-body">
 	@include('admin::layouts.includes.messages')
   <div class="row">
-    <div class="col-lg-9">
+    <div class="col-lg-12">
       
          {{-- Tabs --}}
         <ul class="nav nav-tabs" id="langsTabs" role="tablist">
@@ -29,23 +29,23 @@
           <div class="tab-pane fade {{ $activeLocale == 'general' ? 'show active' : '' }}" id="general" role="tabpanel" aria-labelledby="general-tab">
             <div class="row">
               <div class="col-lg-9">
-                 
+                
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label">{{ __('admin::lang.status') }}<span class="text-danger"> *</span></label>
                   <div class="col-md-9 col-form-label">
                     @php
-                      $status = old('departments_status', isset($department) ? $department->departments_status : 'active');
+                      $status = old('cities_status', isset($city) ? $city->cities_status : 'active');
                     @endphp
                     <div class="form-check form-check-inline mr-1">
-                      <input class="form-check-input" id="active" type="radio" value="active" name="departments_status" {{ $status == 'active' ? 'checked' : '' }}>
+                      <input class="form-check-input" id="active" type="radio" value="active" name="cities_status" {{ $status == 'active' ? 'checked' : '' }}>
                       <label class="form-check-label" for="active">{{ __('admin::lang.active') }}</label>
                     </div>
                     <div class="form-check form-check-inline mr-1">
-                      <input class="form-check-input" id="stopped" type="radio" value="stop" name="departments_status" {{ $status == 'stop' ? 'checked' : '' }}>
+                      <input class="form-check-input" id="stopped" type="radio" value="stop" name="cities_status" {{ $status == 'stop' ? 'checked' : '' }}>
                       <label class="form-check-label" for="stopped">{{ __('admin::lang.stopped') }}</label>
                     </div>
-                    @if ($errors->first('departments_status'))
-                      <div class="invalid-feedback">{{ $errors->first('departments_status') }}</div>
+                    @if ($errors->first('cities_status'))
+                      <div class="invalid-feedback">{{ $errors->first('cities_status') }}</div>
                     @endif
                   </div>
                 </div>
@@ -61,14 +61,14 @@
 
                 <div class="col-lg-9">
 
-                  <div class="form-group row"  id="{{ $lang->locale }}-departments_title" >
-                    <label class="col-md-3 col-form-label" for="departments_title">{{ __('admin::lang.departments_title') }}<span class="text-danger"> *</span></label>
+                  <div class="form-group row"  id="{{ $lang->locale }}-cities_title" >
+                    <label class="col-md-3 col-form-label" for="cities_title">{{ __('admin::lang.cities_title') }}<span class="text-danger"> *</span></label>
                     <div class="col-md-9">
                     
-                      <input class="form-control {{ $errors->first($lang->locale .'.departments_title') ? 'is-invalid' : '' }}" id="{{ $lang->locale .'[departments_title]' }}" type="text" name="{{ $lang->locale .'[departments_title]' }}" placeholder="{{ __('admin::lang.departments_title') }}" value="{{isset($department) ? $department->translate($lang->locale)->departments_title : '' }}">
+                      <input class="form-control {{ $errors->first($lang->locale .'.cities_title') ? 'is-invalid' : '' }}" id="{{ $lang->locale .'[cities_title]' }}" type="text" name="{{ $lang->locale .'[cities_title]' }}" placeholder="{{ __('admin::lang.cities_title') }}"  value="{{isset($city) ? $city->translate($lang->locale)->cities_title : '' }}" >
 
-                      @if ($errors->first($lang->locale .'.departments_title'))
-                        <div class="invalid-feedback">{{ $errors->first($lang->locale .'.departments_title') }}</div>
+                      @if ($errors->first($lang->locale .'.cities_title'))
+                        <div class="invalid-feedback">{{ $errors->first($lang->locale .'.cities_title') }}</div>
                       @endif
                     </div>
                   </div>
@@ -77,7 +77,7 @@
                 </div>
 
               </div>
- 
+  
             </div>
           @endforeach
         </div>

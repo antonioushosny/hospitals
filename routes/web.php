@@ -33,7 +33,7 @@ Route::get('/news/{news}', 'HomeController@showNews')->name('news.show');
 Auth::routes([ 'verify' => true ]);
  
 Route::get('/login', 'AuthController@getLogin')->name('login');
-Route::get('/login/{type}', 'AuthController@getLogin')->name('doctorLogin');
+Route::get('/login/{type}', 'AuthController@getLogin')->name('hospitalLogin');
 Route::post('/login', 'AuthController@postLogin')->name('postLogin');
 Route::get('/register/{type}', 'AuthController@getRegister')->name('getRegister');
 Route::post('/register', 'AuthController@postRegister')->name('postRegister');
@@ -63,16 +63,12 @@ Route::group(['middleware' => 'auth:client'], function () {
     Route::get('clients/orders/show/{order}', 'OrdersController@show')->name('clients.orders.show');
 
 });
-Route::group(['middleware' => 'auth:doctor'], function () {
-	Route::get('/orders/doctor_following_orders', 'OrdersController@doctorFollowingOrders')->name('orders.doctor_following_orders');
-	Route::get('/orders/doctor_orders', 'OrdersController@doctorOrders')->name('orders.doctor_orders');
+Route::group(['middleware' => 'auth:hospital'], function () {
+	Route::get('/orders/hospital_orders', 'OrdersController@hospitalOrders')->name('orders.hospital_orders');
 	Route::get('/orders/edit/{order}', 'OrdersController@editOrder')->name('orders.edit');
 	Route::put('/orders/update/{order}', 'OrdersController@update')->name('orders.update');
 	Route::get('/orders/show/{order}', 'OrdersController@show')->name('orders.show');
 
-	Route::get('/hospitals_treatments', 'HospitalsTreatmentsController@index')->name('hospitals_treatments.index');
-	Route::get('/hospitals_treatments/show/{hospitals_treatment}', 'HospitalsTreatmentsController@show')->name('hospitals_treatments.show');
-	
 });
 
 // for forget and reset password for client

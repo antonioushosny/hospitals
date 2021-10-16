@@ -8,7 +8,7 @@ use Validator;
 use Auth;
 use Carbon\Carbon;
 use Modules\Admin\Models\Client ;
-use Modules\Admin\Models\Doctor ;
+use Modules\Admin\Models\Hospital ;
 
 use App\Rules\MatchOldPassword;
 use Modules\Admin\Models\PasswordReset;
@@ -71,8 +71,8 @@ class AuthController extends Controller
 
             // else, then do login process
 
-            $email = $type == 'client' ? 'email' : 'doctors_email';
-            $phone = $type == 'client' ? 'clients_phone' : 'doctors_phone';
+            $email = $type == 'client' ? 'email' : 'hospitals_email';
+            $phone = $type == 'client' ? 'clients_phone' : 'hospitals_phone';
             session(['type' => $type]);
             // Validate Request
             $request->validate([
@@ -87,9 +87,9 @@ class AuthController extends Controller
                 $status = 'clients_status'  ;
                 $credentials[$status] = '1';
             }
-            if($type == 'doctor'){
-                $credentials['doctors_phone'] = $request->clients_phone ;
-                $status = 'doctors_status'  ;
+            if($type == 'hospital'){
+                $credentials['hospitals_phone'] = $request->clients_phone ;
+                $status = 'hospitals_status'  ;
                 $credentials[$status] = 'active';
             }
             $credentials['password'] = $request->password ;
@@ -114,8 +114,8 @@ class AuthController extends Controller
                 if($type == 'client'){
                     $userStatus = Auth::guard($type)->validate([ 'clients_phone' => request('clients_phone'), 'password' => request('password'), $status => '0']);
                 }
-                if($type == 'doctor'){
-                    $userStatus = Auth::guard($type)->validate([ 'doctors_phone' => request('clients_phone'), 'password' => request('password'), $status => 'stop']);
+                if($type == 'hospital'){
+                    $userStatus = Auth::guard($type)->validate([ 'hospitals_phone' => request('clients_phone'), 'password' => request('password'), $status => 'stop']);
                     }
                 // if true, this acount has been stopped by Admin
                 if ($userStatus) {

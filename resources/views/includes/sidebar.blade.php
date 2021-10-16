@@ -32,29 +32,23 @@
                   <span>{{__('admin::lang.news')}} </span>
                 </a>
               </li>
-              @if(!auth('client')->check() && !auth('doctor')->check())
+              @if(!auth('client')->check() && !auth('hospital')->check())
              
-                <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'doctorLogin' ? 'active' : '' }} ">
-                  <a href="{{route('doctorLogin',['type'=>'doctor'])}}"  > {{__('lang.doctorLogin')}}</a>
+                <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'hospitalLogin' ? 'active' : '' }} ">
+                  <a href="{{route('hospitalLogin',['type'=>'hospital'])}}"  > {{__('lang.hospitalLogin')}}</a>
                 </li>
               @endif
 
-              @if(auth('doctor')->check())
+              @if(auth('hospital')->check())
                     <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
-                      <a  href="{{route('orders.doctor_orders')}}">{{__('lang.doctor_orders')}} <span class="sr-only">(current)</span></a>
+                      <a  href="{{route('orders.hospital_orders')}}">{{__('lang.hospital_orders')}} <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
-                        <a  href="{{route('orders.doctor_following_orders')}}">{{__('lang.doctor_following_orders')}} <span class="sr-only">(current)</span></a>
-                    </li>
-
-                    <li class="{{ isset($mainPageTitle) && $mainPageTitle == 'hospitals_treatments' ? 'active' : '' }} m-md-0 m-2   ">
-                        <a href="{{route('hospitals_treatments.index')}}">{{__('admin::lang.hospitals_treatments')}} <span class="sr-only">(current)</span></a>
-                    </li>
+                 
                  @endif
                
-              @if(auth('client')->check() && !auth('doctor')->check())
+              @if(auth('client')->check() && !auth('hospital')->check())
                 <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} ">
-                  <a href="{{route('orders.doctor_orders')}}">
+                  <a href="{{route('orders.hospital_orders')}}">
                     <span>{{__('lang.orders')}} </span>
                   </a>
                 </li>
@@ -79,9 +73,9 @@
  
                
  
-              @if(!auth('client')->check() && !auth('doctor')->check())
+              @if(!auth('client')->check() && !auth('hospital')->check())
                 <li class=" ">
-                    <a href="{{route('doctorLogin',['type'=>'doctor'])}}" > {{__('lang.doctorLogin')}}</a>
+                    <a href="{{route('hospitalLogin',['type'=>'hospital'])}}" > {{__('lang.hospitalLogin')}}</a>
                 </li>
               @endif
 

@@ -4,10 +4,13 @@ namespace Modules\Admin\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\StorageHandle;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Hospital extends Model
+class Hospital extends Authenticatable
 {
-    use \Dimsav\Translatable\Translatable, StorageHandle;
+    use \Dimsav\Translatable\Translatable,Notifiable , StorageHandle;
     protected $connection = 'mysql';
     // use   StorageHandle;
 
@@ -25,7 +28,7 @@ class Hospital extends Model
      * @var array
      */
     public $translatedAttributes =  [
-        'hospitals_title', 'hospitals_address' 
+        'hospitals_title', 'hospitals_address','hospitals_desc'
     ];
 
     /**
@@ -43,8 +46,58 @@ class Hospital extends Model
      * @var array
      */
     protected $fillable = [
-        'hospitals_phone', 'hospitals_status','hospitals_gps','countries_id'
+        'hospitals_phone', 'hospitals_status','hospitals_lat','hospitals_lng','countries_id','cities_id','hospitals_image','password'
     ];
+ 
+    
+    /**
+     * Set advertisement image
+     * 
+     * @param string $file
+     */
+    public function setHospitalsImageAttribute($file)
+    {
+        
+        if ($file) {
+            if (is_string($file)) {
+                $this->attributes['hospitals_image'] = $file;
+            } else {
+                $current_name = $this->currentName($file);
+
+                $this->originalImage($file, $current_name);
+                $this->mediumImage($file, $current_name,null,400); 
+                $this->thumbImage($file, $current_name,100,null);
+
+                $this->attributes['hospitals_image'] = $current_name;
+            }
+        } else {
+            $this->attributes['hospitals_image'] = null;
+        }
+    }
+
+        /**
+     * Set password encryption.
+     * 
+     * @param string $value
+     */
+    public function setPasswordAttribute($value)
+    {
+        if ($value) {
+            $this->attributes['password'] = bcrypt($value);
+        }
+    }
+
+    /**
+     * One to Many relation with images.
+     * 
+     * @return collection of hospital
+     */
+
+    public function images()
+    {
+        return $this->hasMany('Modules\Admin\Models\HospitalImage', 'hospitals_id', 'hospitals_id');
+    }
+
  
      /**
      * Many to one relation with branches.
@@ -54,6 +107,48 @@ class Hospital extends Model
     public function country()
     {
     	return $this->belongsTo('Modules\Admin\Models\Country', 'countries_id', 'countries_id');
+    }
+
+    /**
+     * Many to one relation with city.
+     * 
+     * @return collection of city
+     */
+    public function city()
+    {
+    	return $this->belongsTo('Modules\Admin\Models\City', 'cities_id', 'cities_id');
+    }
+
+     /**
+     * Many to one relation with area.
+     * 
+     * @return collection of area
+     */
+    public function areas()
+    {
+    	return $this->belongsToMany('Modules\Admin\Models\Area','hospitals_areas','areas_id', 'hospitals_id');
+    }
+    
+
+    /**
+     * Many to one relation with area.
+     * 
+     * @return collection of area
+     */
+    public function departments()
+    {
+    	return $this->belongsToMany('Modules\Admin\Models\Department','hospitals_departments', 'departments_id', 'hospitals_id');
+    }
+    
+
+    /**
+     * Many to one relation with area.
+     * 
+     * @return collection of area
+     */
+    public function specialties()
+    {
+    	return $this->belongsToMany('Modules\Admin\Models\Specialty','hospitals_specialties', 'hospitals_id', 'specialties_id');
     }
     
     /**

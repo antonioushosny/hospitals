@@ -57,11 +57,23 @@ Route::prefix('admin')
 		 * countries Routes
 		 */
 		Route::resource('countries', 'CountriesController');
+
+		/**
+		 * cities Routes
+		 */
+		Route::resource('cities', 'CitiesController');
+
+		/**
+		 * areas Routes
+		 */
+		Route::resource('areas', 'AreasController');
 		
 		/**
 		 * Hospitals Routes
 		 */
-	    Route::resource('hospitals', 'HospitalsController');	
+		Route::resource('hospitals', 'HospitalsController');	
+		Route::post('hospitals/deleteHospitalImage', 'HospitalsController@deleteHospitalImage')->name('hospitals.deleteHospitalImage');
+
 		
 		/**
 		 * Specialties Routes

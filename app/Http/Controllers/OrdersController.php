@@ -43,11 +43,11 @@ class OrdersController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function doctorOrders ()
+    public function hospitalOrders ()
     {   
         $mainPageTitle = 'orders' ;
-        $orders = Order::where('doctors_id',auth('doctor')->user()->doctors_id)->get();
-        return view('front.orders.doctor_orders',compact('mainPageTitle','orders'));
+        $orders = Order::where('hospitals_id',auth('hospital')->user()->hospitals_id)->get();
+        return view('front.orders.hospital_orders',compact('mainPageTitle','orders'));
     }
 
       /**
@@ -55,11 +55,11 @@ class OrdersController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function doctorFollowingOrders ()
+    public function hospitalFollowingOrders ()
     {   
         $mainPageTitle = 'following_orders' ;
-        $orders = Order::where('orders_doctor_following',auth('doctor')->user()->doctors_id)->get();
-        return view('front.orders.doctor_orders',compact('mainPageTitle','orders'));
+        $orders = Order::where('orders_hospital_following',auth('hospital')->user()->hospitals_id)->get();
+        return view('front.orders.hospital_orders',compact('mainPageTitle','orders'));
     }
 
     public function addOrder()

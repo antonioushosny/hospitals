@@ -65,7 +65,7 @@
                     <label class="col-md-3 col-form-label" for="diseases_title">{{ __('admin::lang.diseases_title') }}<span class="text-danger"> *</span></label>
                     <div class="col-md-9">
                     
-                      <input class="form-control {{ $errors->first($lang->locale .'.diseases_title') ? 'is-invalid' : '' }}" id="{{ $lang->locale .'[diseases_title]' }}" type="text" name="{{ $lang->locale .'[diseases_title]' }}" placeholder="{{ __('admin::lang.diseases_title') }}">
+                      <input class="form-control {{ $errors->first($lang->locale .'.diseases_title') ? 'is-invalid' : '' }}" id="{{ $lang->locale .'[diseases_title]' }}" type="text" name="{{ $lang->locale .'[diseases_title]' }}" placeholder="{{ __('admin::lang.diseases_title') }}" value="{{isset($disease) ? $disease->translate($lang->locale)->diseases_title : '' }}">
 
                       @if ($errors->first($lang->locale .'.diseases_title'))
                         <div class="invalid-feedback">{{ $errors->first($lang->locale .'.diseases_title') }}</div>

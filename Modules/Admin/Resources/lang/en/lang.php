@@ -5,7 +5,7 @@ return [
 	 * General
 	 */ 
 	'home' 					=> 'Home',
-	'siteTitle'				=>	'Treatment Abroad',
+	'siteTitle'				=>	'Hospitals ',
 	'adminPanel'			=>	'Admin Panel',
 	'selectStatus' 			=> 'Select Status',
 	'website'				=>	'Website',
@@ -53,12 +53,12 @@ return [
 	'type'					=>	'Type',
 	'message'				=>	'Message',
 	'phone'					=>	'Phone',
-	'infos'					=>	'About Treatment Abroad',
-	'info'					=>	'About Treatment Abroad',
+	'infos'					=>	'About Hospitals ',
+	'info'					=>	'About Hospitals ',
 	'privacyPolicy'			=>	'Privacy Policy',
-	'termsConditions'		=>	'Application Procedures',
+	'termsConditions'		=>	'Terms Conditions',
 	'page'					=>	'Page',
-	'aboutProject'			=>	'About Treatment Abroad ',
+	'aboutProject'			=>	'About Hospitals ',
 	'connectWithUs'			=> 'Connect With Us',
 	'gps'					=>	'GPS',
 	'createdDone'			=>	'Successfully Added',
@@ -133,6 +133,29 @@ return [
 
 
 	/**
+	 * Cities
+	 */
+	'cities' 		=> 'Cities',
+	'city' 			=> 'City',
+	'cityDetails'	=> 'City Details',
+	'cityCreated' 	=> 'City Created',
+	'cityUpdated' 	=> 'City Updated',
+	'cityDeleted' 	=> 'City Deleted',
+	'cities_title' 	=> 'City Name',
+
+	
+	/**
+	 * Areas
+	 */
+	'areas' 		=> 'Areas',
+	'area' 			=> 'Area',
+	'areaDetails'	=> 'Area Details',
+	'areaCreated' 	=> 'Area Created',
+	'areaUpdated' 	=> 'Area Updated',
+	'areaDeleted' 	=> 'Area Deleted',
+	'areas_title' 	=> 'Area Name',
+
+	/**
 	 * Hospitals
 	 */
 	'hospitals' 		=> 'Hospitals',
@@ -142,6 +165,7 @@ return [
 	'hospitalUpdated' 	=> 'Hospital Updated',
 	'hospitalDeleted' 	=> 'Hospital Deleted',
 	'hospitals_title' 	=> 'Hospital Name',
+	'hospitals_desc'	=> 'Hospital Description',
  
 	/**
 	 * Departments
@@ -309,7 +333,7 @@ return [
 	'info_key'				=>	'Title',
 	'info_value'			=>	'Text',
 	'info_desc'				=>	'Description',
-	'info_about'			=>	'About Treatment Abroad',
+	'info_about'			=>	'About Hospitals ',
 	'info_mission'			=>	'Mission',
 	'info_vision'			=>	'Vision',
 	'info_message'			=>	'Message',

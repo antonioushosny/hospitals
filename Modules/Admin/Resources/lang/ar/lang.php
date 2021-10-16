@@ -5,7 +5,7 @@ return [
 	 * General
 	 */ 
 	'home' 					=> 'الرئيسية',
-	'siteTitle'				=>	'Treatment Abroad',
+	'siteTitle'				=>	'Hospitals Abroad',
 	'adminPanel'			=>	'لوحة التحكم',
 	'selectStatus' 			=> 'أختر الحالة',
 	'website'				=>	'الموقع',
@@ -53,12 +53,12 @@ return [
 	'type'					=>	'النوع',
 	'message'				=>	'الرسالة',
 	'phone'					=>	'الجوال',
-	'infos'					=>	'نبذة عن Treatment Abroad    ',
+	'infos'					=>	'نبذة عن Hospitals',
 	'privacyPolicy'			=>	'سياسة الاستخدام',
-	'termsConditions'		=>	'اجراءات التقديم ',
-	'info'					=>	'عن Treatment Abroad ',
+	'termsConditions'		=>	' الأحكام والشروط',
+	'info'					=>	'عن Hospitals',
 	'page'					=>	'الصفحة',
-	'aboutProject'			=>	'عن Treatment Abroad',
+	'aboutProject'			=>	'عن Hospitals',
 	'connectWithUs'			=> 'تواصل معنا',
 	'gps'					=>	'احداثيات الخريطة',
 	'createdDone'			=>	'تمت الاضافة بنجاح',
@@ -144,6 +144,29 @@ return [
 	'countryDeleted' 	=> 'تم حذف الدولة',
 	'countries_title' 	=> 'اسم الدولة',
 
+	/**
+	 * Cities
+	 */
+	'cities' 		=> 'المدن',
+	'city' 			=> 'المدينة',
+	'cityDetails'	=> 'تفاصيل المدينة',
+	'cityCreated' 	=> 'تم انشاء المدينة',
+	'cityUpdated' 	=> 'تم تعديل المدينة',
+	'cityDeleted' 	=> 'تم حذف المدينة',
+	'cities_title' 	=> 'المدينة',
+
+	
+	/**
+	 * Areas
+	 */
+	'areas' 		=> 'المناطق',
+	'area' 			=> 'المنطقة',
+	'areaDetails'	=> 'تفاصيل المناطق',
+	'areaCreated' 	=> 'تم انشاء المنطقة',
+	'areaUpdated' 	=> 'تم تعديل المنطقة',
+	'areaDeleted' 	=> 'تم حذف المنطقة',
+	'areas_title' 	=> 'المنطقة',
+
 
 	/**
 	 * Hospitals
@@ -155,6 +178,7 @@ return [
 	'hospitalUpdated' 	=> 'تم تعديل المستشفي',
 	'hospitalDeleted' 	=> 'تم حذف المستشفي',
 	'hospitals_title' 	=> 'اسم المستشفي',
+	'hospitals_desc'	=> 'وصف المستشفي',
  
 	/**
 	 * Departments
@@ -260,7 +284,7 @@ return [
     'order_data'                => 'بيانات الطلب',
     'choose_disease'            => 'اختر المرض',
     'diseases_title'            => 'اسم المرض',
-    'orders'                    => 'طلبات العلاج بالخارج ',
+    'orders'                    => 'طلبات العلاج  ',
     'status_0'                  => 'جديد',
     'status_1'                  => 'مقبول',
     'status_2'                  => 'مرفوض',
@@ -351,7 +375,7 @@ return [
 	'infoDeleted' 			=> 'تم حذف المعلومة',
 	'info_key'				=>	'العنوان',
 	'info_value'			=>	'النص',
-	'info_about'			=> 'عن Treatment Abroad ',
+	'info_about'			=> 'عن Hospitals  ',
 	'info_desc'				=>	'الوصف',
 	'info_mission'			=>	'المهمة',
 	'info_vision'			=>	'الرؤية',

@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.orders_id') }}</strong></div>
             <div class="col-12 col-md-3 text-center"><strong>{{ __('admin::lang.diseases_title') }}</strong></div>
-            <div class="col-12 col-md-3 text-center"><strong>{{ __('admin::lang.doctor_following') }}</strong></div>
+            <div class="col-12 col-md-3 text-center"><strong>{{ __('admin::lang.hospital') }}</strong></div>
             <div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.status') }}</strong></div>
             <div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.actions') }}</strong></div>
         </div>
@@ -57,8 +57,8 @@
                     
                 <div class="col-12 col-md-3 text-md-center">
                     <div class="row mb-2 mb-md-0">
-                        <div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.doctor_following') }}</strong></div>
-                        <div class="col-8 col-md-12">{{ $order->doctor_following ? $order->doctor_following->doctors_name : '' }}</div>
+                        <div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.hospital') }}</strong></div>
+                        <div class="col-8 col-md-12">{{ $order->hospital ? $order->hospital->hospital_title : '' }}</div>
                     </div>
                 </div>
 
