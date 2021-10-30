@@ -72,6 +72,7 @@
     @endif
 
     <script src="{{ asset('front/js/sidebar.js') }}"></script>
+    <script src="{{ asset('front/js/custom.js') }}"></script>
     <script src="{{ asset('vendors/select2/js/select2.min.js') }}"></script>
     @include('includes.scripts')
     @yield('script1')

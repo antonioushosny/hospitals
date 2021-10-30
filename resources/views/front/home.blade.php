@@ -7,6 +7,35 @@
 
 @section('content')
 @include('includes.banner')
+
+<div class="container pt-3">
+	@include('search')
+</div>
+
+<!-- hospitals section  -->
+
+<section class=" mt-4 text-center container ">
+	<div class="row">
+      	<div class="col-12  mx-auto text-left">
+        	<span class="font-24 fb-700 fw-light bg-marine color-white">{{__('lang.hospitals')}}</h1>
+		</div>
+	</div>
+	<br/>
+	<div class="row">
+		@foreach($hospitals as $hospital)
+			<div class="col-md-4 col-sm-6 col-12 py-2">
+				<div class="card shadow-sm">
+					<img src="{{$hospital->hospitals_image ? asset($hospital->images_url($hospital->hospitals_image, 'medium')) : asset('img/no-image.png') }}" class="card-img-top" alt="..." height="300px">
+					<div class="card-footer  text-center bg-pale-grey-dark color-marine">
+						<h3 class="card-title"><a href="{{route('hospitals.show',$hospital->hospitals_id)}}" class="color-marine">{{$hospital->hospitals_title}}</a></h3>
+						<a href="{{route('hospitals.show',$hospital->hospitals_id)}}" class="btn btn-info">{{__('lang.more')}}</a>
+					</div>
+				</div>
+			</div>
+		@endforeach		 
+	</div>
+</section>
+
 <!-- last news section  -->
 <section class=" mt-4 text-center container ">
 	<div class="row">
@@ -30,6 +59,7 @@
 		@endforeach		 
 	</div>
 </section>
+
 <section class=" text-center container-fluid bg-pale-grey ">
 	<div class="row">
       	<div class="col-lg-6 col-md-8 mx-auto">

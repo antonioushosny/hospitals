@@ -154,14 +154,14 @@
 
                 <!-- {{-- location gps --}} -->
                 <div class="form-group row mt-3">
-                  <label class="col-md-3 col-form-label" for="gps">{{ __('admin:::lang.gps') }}<span class="text-danger"> *</span></label>
+                  <label class="col-md-3 col-form-label" for="gps">{{ __('admin::lang.gps') }}<span class="text-danger"> *</span></label>
                   <div class="col-md-9">
                     
                     <!-- {{--  for map      --}}  -->
 
                     <div class="form-group form-float">
                         <span style="color: black "> 
-                            {!! Form::label('gps',trans('admin:::lang.gps')) !!}
+                            {!! Form::label('gps',trans('admin::lang.gps')) !!}
                         </span>
                         <input id="pac-input" class="controls form-control addproduct-input w-50 mt-2 " placeholder= "{{__('admin:::lang.search')}}">
                       
@@ -200,7 +200,7 @@
                     <label class="col-md-3 col-form-label" for="hospitals_title">{{ __('admin::lang.name') }}<span class="text-danger"> *</span></label>
                     <div class="col-md-9">
                     
-                      <input class="form-control {{ $errors->first($lang->locale .'.hospitals_title') ? 'is-invalid' : '' }}" id="{{ $lang->locale .'[hospitals_title]' }}" type="text" name="{{ $lang->locale .'[hospitals_title]' }}" placeholder="{{ __('admin::lang.name') }}" value="{{isset($hospital) ? $hospital->translate($lang->locale)->hospitals_title : '' }}">
+                      <input class="form-control {{ $errors->first($lang->locale .'.hospitals_title') ? 'is-invalid' : '' }}" id="{{ $lang->locale .'[hospitals_title]' }}" type="text" name="{{ $lang->locale .'[hospitals_title]' }}" placeholder="{{ __('admin::lang.name') }}" value="{{old($lang->locale .'.hospitals_title', isset($hospital) ? $hospital->translate($lang->locale)->hospitals_title : '' ) }}">
 
                       @if ($errors->first($lang->locale .'.hospitals_title'))
                         <div class="invalid-feedback">{{ $errors->first($lang->locale .'.hospitals_title') }}</div>
@@ -212,7 +212,7 @@
                     <label class="col-md-3 col-form-label" for="hospitals_address">{{ __('admin::lang.address') }}<span class="text-danger"> *</span></label>
                     <div class="col-md-9">
                     
-                      <input class="form-control {{ $errors->first($lang->locale .'.hospitals_address') ? 'is-invalid' : '' }}" id="{{ $lang->locale .'[hospitals_address]' }}" type="text" name="{{ $lang->locale .'[hospitals_address]' }}" placeholder="{{ __('admin::lang.address') }}"  value="{{isset($hospital) ? $hospital->hospitals_address : '' }}">
+                      <input class="form-control {{ $errors->first($lang->locale .'.hospitals_address') ? 'is-invalid' : '' }}" id="{{ $lang->locale .'[hospitals_address]' }}" type="text" name="{{ $lang->locale .'[hospitals_address]' }}" placeholder="{{ __('admin::lang.address') }}"  value="{{ old($lang->locale .'.hospitals_address', isset($hospital) ? $hospital->hospitals_address : '') }}">
 
                       @if ($errors->first($lang->locale .'.hospitals_address'))
                         <div class="invalid-feedback">{{ $errors->first($lang->locale .'.hospitals_address') }}</div>

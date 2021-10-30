@@ -126,20 +126,32 @@ class Hospital extends Authenticatable
      */
     public function areas()
     {
-    	return $this->belongsToMany('Modules\Admin\Models\Area','hospitals_areas','areas_id', 'hospitals_id');
+    	return $this->belongsToMany('Modules\Admin\Models\Area','hospitals_areas', 'hospitals_id','areas_id');
     }
     
 
     /**
-     * Many to one relation with area.
+     * Many to one relation with departments.
      * 
-     * @return collection of area
+     * @return collection of departments
      */
     public function departments()
     {
-    	return $this->belongsToMany('Modules\Admin\Models\Department','hospitals_departments', 'departments_id', 'hospitals_id');
+    	return $this->belongsToMany('Modules\Admin\Models\Department','hospitals_departments', 'hospitals_id', 'departments_id');
     }
-    
+
+    public function hospitals_departments()
+    {
+    	return $this->hasMany('Modules\Admin\Models\HospitalDepartment','hospitals_id', 'hospitals_id');
+    }
+    public function hospitals_specialties()
+    {
+    	return $this->hasMany('Modules\Admin\Models\HospitalSpecialty','hospitals_id', 'hospitals_id');
+    }
+    public function hospitals_areas()
+    {
+    	return $this->hasMany('Modules\Admin\Models\HospitalArea','hospitals_id', 'hospitals_id');
+    }
 
     /**
      * Many to one relation with area.

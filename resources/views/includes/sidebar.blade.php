@@ -25,7 +25,12 @@
                   <span>{{__('lang.home')}} </span>
                 </a>
               </li>
-
+              <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'hospitals' ? 'active' : '' }} ">
+                <a href="{{route('hospitals')}}">
+                  <!-- <i class="fa fa-folder"></i> -->
+                  <span>{{__('admin::lang.hospitals')}} </span>
+                </a>
+              </li>
               <li class=" {{ isset($mainPageTitle) && $mainPageTitle == 'news' ? 'active' : '' }} ">
                 <a href="{{route('news')}}">
                   <!-- <i class="fa fa-folder"></i> -->

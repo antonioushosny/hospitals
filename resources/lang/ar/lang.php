@@ -161,4 +161,9 @@ return [
     'orderDeleted'				=> 'تم حذف الطلب',
     'hospitalLogin'               => 'تسجيل دخول المستشفي',
     'sendOrder'                 => 'ارسال الطلب',
+    'hospitals'                 => 'المستشفيات',
+    'aboutHospital'             => 'عن المستشفي',       
+    'clearFilter'               => 'مسح البحث' ,   
+    'searchForHospital'         => 'ابحث عن مستشفى',
+
 ];

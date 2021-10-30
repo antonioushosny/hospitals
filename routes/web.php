@@ -28,7 +28,8 @@ Route::post('/contactus/add', 'MainController@addcontactus')->name('postcontactu
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/news', 'HomeController@news')->name('news');
 Route::get('/news/{news}', 'HomeController@showNews')->name('news.show');
-
+Route::get('/hospitals', 'HomeController@hospitals')->name('hospitals');
+Route::get('/hospitals/{hospital}', 'HomeController@showHospital')->name('hospitals.show');
 
 Auth::routes([ 'verify' => true ]);
  

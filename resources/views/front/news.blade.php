@@ -6,7 +6,7 @@
  @endsection
 
 @section('content')
-@include('includes.banner')
+ 
 
 <!-- last new section  -->
   

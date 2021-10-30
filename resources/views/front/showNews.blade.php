@@ -6,16 +6,14 @@
  @endsection
 
 @section('content')
-@include('includes.banner')
-
+ 
 <!-- last new section  -->
   
-
 <section class="py-5 text-center container">
 	<div class="row py-lg-5">
       	<div class="col-12  mx-auto">
         	<h1 class="fw-light">{{ $news->news_title }}</h1>
-			<p class="fw-light">{{ $news->news_created_at }}</>
+			<p class="fw-light">{{ $news->news_created_at }}</p>
 			<hr/>
 		</div>
 		<div class="col-md-6 col-12">

@@ -165,7 +165,10 @@ return [
     'orderDeleted'				=> 'Order Deleted',
     'hospitalLogin'               => 'Hospital Login',
     'sendOrder'                 => 'Send Order',
-
+    'hospitals'                 => 'Hospitals',
+    'aboutHospital'             => 'About Hospital',    
+    'clearFilter'               => 'Clear Filter' ,   
+    'searchForHospital'         => 'Search For Hospital',
 ];
 
 

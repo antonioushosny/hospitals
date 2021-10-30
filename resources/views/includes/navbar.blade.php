@@ -16,6 +16,9 @@
                     <a class="nav-link" href="{{route('home')}}">{{__('lang.home')}} <span class="sr-only">(current)</span></a>
                 </li>
 
+                <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'hospitals' ? 'active' : '' }} m-md-0 m-2">
+                    <a class="nav-link" href="{{route('hospitals')}}">{{__('admin::lang.hospitals')}} <span class="sr-only">(current)</span></a>
+                </li>
 
                 <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'news' ? 'active' : '' }} m-md-0 m-2">
                     <a class="nav-link" href="{{route('news')}}">{{__('admin::lang.news')}} <span class="sr-only">(current)</span></a>
