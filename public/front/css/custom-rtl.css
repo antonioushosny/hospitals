@@ -1,0 +1,52 @@
+:root {
+
+	--font-10: 10px;
+	--font-11: 11px;
+	--font-12: 12px;
+	--font-13: 13px;
+	--font-14: 14px;
+	--font-15: 15px;
+	--font-16: 16px;
+	--font-17: 17px;
+	--font-18: 18px;
+	--font-19: 19px;
+	--font-20: 20px;
+	--font-24: 24px;
+	--font-30: 30px;
+
+}
+body {
+	font-family: 'Tajawal', serif !important;
+}
+/* Responsive */
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+	 /*  */
+}
+
+@media (min-width: 961px) and (max-width: 1024px) {
+	/*   */
+}
+
+/* ipad */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+	/*    */
+
+}
+
+
+@media (max-width: 767px) {
+	 /*  */
+
+}
+
+
+@media (min-width: 481px) and (max-width: 766px) {
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+	 /*  */
+
+}

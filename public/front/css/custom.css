@@ -1,0 +1,229 @@
+:root {
+	--pale-grey: #fbfcfd;
+	--pale-grey-dark: #f4f5f9;
+	--marine: #02395b;
+	--white: #ffffff;
+	--bluish: #2a92bd;
+	--greyish-brown: #414141;
+	--red: #dd0000;
+	--turquoise-blue: #07b4bf;
+	--cool-blue-38: rgba(52, 163, 209, 0.38);
+	--pine-green-72: rgba(10, 37, 47, 0.72);
+	--lipstick: #bd2a52;
+	--cool-blue: #34a2d0;
+	--ice-blue: #eaf6fb;
+	--brown-grey: #797979;
+	--white-two: #f4f4f4;
+	--marigold: #ffba00;
+	--black: #000000;
+	--black-two: #121212;
+	--orangey-red: #ef4035;
+	--rosy-pink: #ff5f8a;
+	--rosy-pink-op3 : #d03962 ;
+	--brown-grey-two: #adadad;
+	--light-gray	: #fafafc;
+	--alert-warning	: #fff3cd ;
+	--font-10: 11px;
+	--font-11: 12px;
+	--font-12: 13px;
+	--font-13: 14px;
+	--font-14: 15px;
+	--font-15: 16px;
+	--font-16: 16px;
+	--font-17: 18px;
+	--font-18: 19px;
+	--font-19: 20px;
+	--font-20: 21px;
+	--font-24: 24px;
+	--font-30: 30px;
+
+}
+
+/* classes for fonts  */
+.font-10{font-size: var(--font-10) !important;}
+.font-11{font-size: var(--font-11) !important;}
+.font-12{font-size: var(--font-12) !important;}
+.font-13{font-size: var(--font-13) !important;}
+.font-14{font-size: var(--font-14) !important;}
+.font-15{font-size: var(--font-15) !important;}
+.font-16{font-size: var(--font-16) !important;}
+.font-17{font-size: var(--font-17) !important;}
+.font-18{font-size: var(--font-18) !important;}
+.font-19{font-size: var(--font-19) !important;}
+.font-20{font-size: var(--font-20) !important;}
+.font-24{font-size: var(--font-24) !important;}
+.font-30{font-size: var(--font-30) !important;}
+.font-12em{font-size: 12em !important;}
+
+.fb-700{
+	font-weight: 700;
+}
+.fb-500{
+	font-weight: 500;
+}
+.max-heigh{
+	max-height: 100px;
+}
+.details-img{
+	max-height: 350px;
+}
+/* class for colors */
+.color-pale-grey{color: var(--pale-grey) !important;}
+.color-greyish-brown{color: var(--greyish-brown)  !important;}
+.color-ice-blue{color: var(--ice-blue)  !important;}
+.color-marine{color: var(--marine)  !important;}
+.color-white{color: var(--white)  !important;}
+.color-bluish{color: var(--bluish)  !important;}
+.color-red{color: var(--red)  !important;}
+.color-turquoise-blue{color: var(--turquoise-blue)  !important;}
+.color-cool-blue-38{color: var(--cool-blue-38)  !important;}
+.color-pine-green-72{color: var(--pine-green-72)  !important;}
+.color-lipstick{color: var(--lipstick)  !important;}
+.color-cool-blue{color: var(--cool-blue)  !important;}
+.color-ice-blue{color: var(--ice-blue)  !important;}
+.color-brown-grey{color: var(--brown-grey)  !important;}
+.color-white-two{color: var(--white-two)  !important;}
+.color-marigold{color: var(--marigold)  !important;}
+.color-black{color: var(--black)  !important;}
+.color-black-two{color: var(--black-two)  !important;}
+.color-orangey-red{color: var(--orangey-red)  !important;}
+.color-rosy-pink-op3{color: var(--rosy-pink-op3)  !important;}
+.color-rosy-pink{color: var(--rosy-pink)  !important;}
+.color-brown-grey-two{color: var(--brown-grey-two)  !important;}
+.color-greyish-brown{color: var(--greyish-brown) !important;}
+.color-light-gray{color: var(--light-gray) !important;}
+.color-yellow{color:#ffc107 !important;}
+.color-green{color: green !important;}
+
+/* class for background colors */
+.bg-pale-grey-dark{background-color: var(--pale-grey-dark) ;}
+.bg-pale-grey{background-color: var(--pale-grey) ;}
+.bg-greyish-brown{background-color :var(--greyish-brown) ;}
+.bg-ice-blue{background-color: var(--ice-blue) ;}
+.bg-marine{background-color: var(--marine) ;}
+.bg-white{background-color: var(--white) ;}
+.bg-bluish{background-color: var(--bluish) ;}
+.bg-red{background-color: var(--red) ;}
+.bg-turquoise-blue{background-color: var(--turquoise-blue) ;}
+.bg-cool-blue-38{background-color: var(--cool-blue-38) ;}
+.bg-pine-green-72{background-color: var(--pine-green-72) ;}
+.bg-lipstick{background-color: var(--lipstick) ;}
+.bg-cool-blue{background-color: var(--cool-blue) ;}
+.bg-ice-blue{background-color: var(--ice-blue) ;}
+.bg-brown-grey{background-color: var(--brown-grey) ;}
+.bg-white-two{background-color: var(--white-two) ;}
+.bg-marigold{background-color: var(--marigold) ;}
+.bg-black{background-color: var(--black) ;}
+.bg-black-two{background-color: var(--black-two) ;}
+.bg-orangey-red{background-color: var(--orangey-red) ;}
+.bg-rosy-pink{background-color: var(--rosy-pink) ;}
+.bg-rosy-pink-op3{background-color: var(--rosy-pink-op3) ;}
+.bg-brown-grey-two{background-color: var(--brown-grey-two) ;}
+.bg-light-gray{background-color: var(--light-gray) ;}
+.bg-transparent{background-color: #ffffff0d;}
+.bg-twitter{background-color: rgb(29, 161, 242); width: 40px; height: 40px;  }
+.bg-google{background-color: red; width: 40px; height: 40px;  }
+.bg-facebook{background-color: #3b5998; width: 40px; height: 40px; }
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+@font-face {
+    font-family: NotoSansLight;
+    src: url('../fonts/NotoSans-Light.ttf');
+}
+@font-face {
+    font-family: NotoNaskhArabic;
+    src: url('../fonts/NotoNaskhArabic-Regular.ttf');
+}
+@font-face {
+    font-family: two-light;
+    src: url('../fonts/ge-ss-two-light.ttf');
+}
+@font-face {
+    font-family: Cairo;
+    src: url('../fonts/Cairo-Regular.ttf');
+}
+@font-face {
+    font-family: Tajawal;
+    src: url('../fonts/Tajawal-Regular.ttf');
+}
+
+/* end class for background colors */
+ 
+ 
+.content-div {
+    min-height: 70vh;
+}
+body {
+	min-height: 100vh;
+	position: relative;
+ 	background-color:var(--white) !important;
+	font-size: var(--font-16)  ;
+	/* line-height: var(--font-17); */
+	font-family: 'NotoSansLight', serif !important;
+	font-weight: 600;
+	line-height: 1.5;
+}
+.col-white-op-70 {
+    color: var(--white);
+    opacity: 0.7;
+}
+.btn {
+    color: #212529;
+}
+.select2-selection{
+	height: 37px !important ;
+}
+.select2{
+	width: 100% !important;
+}
+.btn-bluish {
+    border-radius: 5px;
+    background-color: var(--bluish);
+    line-height: 1.88;
+    color: var(--white);
+    font-size: var(--font-16);
+}
+
+.nav-link{
+	color: white !important;
+}
+.nav-link:hover{
+	color: var(--ice-blue) !important;
+}
+.nav-item.active .nav-link{
+	color: var(--ice-blue) !important;
+}
+/* Responsive */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+	/*  */
+}
+
+@media (min-width: 961px) and (max-width: 1024px) {
+	 /*  */
+
+}
+
+/* ipad */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+/*  */
+}
+
+
+@media (max-width: 767px) {
+
+/*  */
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+ 
+/*  */
+}
+@media (min-width: 1025px)   {
+  
+/*  */
+}
+
+ 
