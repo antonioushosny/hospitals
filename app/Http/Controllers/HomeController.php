@@ -41,7 +41,7 @@ class HomeController extends Controller
         $departments = Department::get()->pluck('departments_title','departments_id') ;
         $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;
 
-        return view('front.home',compact('mainPageTitle','last_news','advertisements','hospitals','cities','areas','departments','specialties'));
+        return view('front.home',compact('mainPageTitle','last_news','hospitals','cities','areas','departments','specialties'));
     }
     
     public function news(Request $request)
