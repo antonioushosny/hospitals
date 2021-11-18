@@ -11,6 +11,7 @@ use Modules\Admin\Models\City;
 use Modules\Admin\Models\Area;
 use Modules\Admin\Models\Department;
 use Modules\Admin\Models\Specialty;
+use Modules\Admin\Models\Disease;
 use Carbon\Carbon;
 use Module ;
 class HomeController extends Controller
@@ -106,7 +107,9 @@ class HomeController extends Controller
     public function showHospital(Hospital $hospital)
     {   
         $mainPageTitle = 'hospitals' ;
-        return view('front.showHospital',compact('mainPageTitle','hospital'));
+        $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;
+
+        return view('front.showHospital',compact('mainPageTitle','hospital','diseases'));
     }
  
 }

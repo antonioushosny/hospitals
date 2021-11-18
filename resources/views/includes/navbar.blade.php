@@ -11,7 +11,9 @@
         <div class="collapse navbar-collapse d-md-inline d-none px-0" id="navbarSupportedContent">
             <span class="closebtn d-md-none d-inline" onclick="$('.sideMenu').removeClass('open') ; $('.overlay').removeClass('open') ">×</span>
 
-            <ul class="nav navbar-nav nav-flex-icons ">
+            <ul class="nav navbar-nav nav-flex-icons mr-auto ">
+            
+           
                 <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'home' ? 'active' : '' }} m-md-0 m-2">
                     <a class="nav-link" href="{{route('home')}}">{{__('lang.home')}} <span class="sr-only">(current)</span></a>
                 </li>
@@ -43,9 +45,8 @@
                         <a class="nav-link" href="{{route('logout', ['type'  =>  'client'])}}"> {{__('lang.logout') }} <span class="sr-only">(current)</span></a>
                     </li>
 
-
-                @endif
-
+                @endif  
+                
                 @if(!auth('client')->check() && !auth('hospital')->check())
                 <li class="nav-item   m-md-0 m-2">
                     <a href="{{route('hospitalLogin',['type'=>'hospital'])}}" class="nav-link "  > {{__('lang.hospitalLogin')}}</a>
@@ -53,24 +54,25 @@
                 @endif
 
                 @if(auth('hospital')->check())
-                    <!-- <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
+                    <li class="nav-item {{ isset($mainPageTitle) && $mainPageTitle == 'orders' ? 'active' : '' }} m-md-0 m-2   ">
                         <a class="nav-link" href="{{route('orders.hospital_orders')}}">{{__('lang.hospital_orders')}} <span class="sr-only">(current)</span></a>
-                    </li> -->
+                    </li>
                  
                  @endif
-                <li class="nav-item d-md-none d-inline  m-md-0 m-2">
-                    @if($dir == 'ltr')
-                        <a class="nav-link" href="{{route('lang','ar')}}"> العربية</a>
-                    @else
-                        <a class="nav-link" href="{{route('lang','en')}}"> English</a>
-                    @endif
-                </li>
+              
 
             </ul>
-        <!--  <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form> -->
+            <div class="d-inline-block ">
+                @if($dir == 'ltr')
+                <a href="{{route('lang','ar')}}" class="btn-lang {{$dir == 'ltr' ? 'not-active-lang' : '' }}">  العربية </a>
+                @else
+                <a href="{{route('lang','en')}}" class="btn-lang {{$dir == 'rtl' ? 'not-active-lang' : '' }}"> English</a>
+                @endif
+
+                @if(auth('hospital')->check())
+                <a class="btn btn-light " href="{{ route('logout', ['type'  =>  'hospital']) }}">{{ __('lang.logout') }} </a>
+                @endif
+            </div>
         </div>
     </div>
 </nav>

@@ -20,14 +20,11 @@ $pageType = session('pageType');
       <div class="row justify-content-center login-form">
         <div class="col-md-8">
 
-            <div class="card  rounded-0   ">
-
-                <div class="   text-center py-5 ">
-                    <img src="{{ asset($locale == 'ar' ? 'backend/img/logo.jpeg' : 'backend/img/logo.jpeg') }}" class="img-fluid" width="250px" alt="">
+       
+                <div class="   text-center  ">
+                    <img src="{{ asset($locale == 'ar' ? 'backend/img/logo.jpeg' : 'backend/img/logo.jpeg') }}" class="img-fluid" width="100%" alt="">
                  </div>
-
-            </div>
-
+ 
 
             <div class="card  rounded-0 client-auth-card">
                 <div class="card-header p-0">
@@ -87,31 +84,31 @@ $pageType = session('pageType');
                                             @endif
                                     </div>
                                 </div>
-                                <div class="form-group d-none ">
+                                <!-- <div class="form-group d-none ">
                                    
                                     <p class="m-0 mobile-login-text forget-text ml-3">
                                         {{ __('lang.forgetPassword') }} {{ $dir == 'ltr' ? '?' :'؟' }}
                                         <a href="{{ route('client.password.request') }}" class="gr-color ">{{ __('lang.ResetPassword') }} </a>
                                     </p>
-                                </div>
-                                <div class="form-group ">
+                                </div> -->
+                                <!-- <div class="form-group ">
                                     <div class="custom-control custom-checkbox hidden">
                                         <input type="checkbox" name="remember" class="custom-control-input" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <label class="custom-control-label  " for="remember"> {{ __('lang.rememberMe') }} </label>
                                     </div>
-                                </div>
+                                </div> -->
 
 
                                 <div class=" text-center py-3">
                                     <input type="submit" value="{{ __('lang.login') }}" class="btn bg-marine text-white">
                                 </div>
 
-                                <div class="mt-5 mb-2 text-center">
+                                <!-- <div class="mt-5 mb-2 text-center">
                                     <p class="m-0 mobile-login-text">
                                         {{ __('lang.dontHaveUserAccount') }}
                                         <a href="{{ route('getRegister', ['type' => 'client'] ) }}" class="gr-color ">{{ __('lang.join') }}</a>
                                     </p>
-                                </div>
+                                </div> -->
 
 
                             </div>

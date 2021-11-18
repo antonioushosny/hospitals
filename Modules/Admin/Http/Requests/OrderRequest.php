@@ -32,14 +32,14 @@ class OrderRequest extends FormRequest
 			// 'clients_id' 				=> 'required',
 			// 'order_images'				=> 'required|array',
 			// 'order_images.*'				=> 'image',
-			'countries_id'					=> 'required',
+			// 'countries_id'					=> 'required',
 			// 'doctors_id'					=> 'required',
 			// 'orders_doctor_following_notes' => 'required',
 			// 'orders_doctor_following'		=> 'required',
 			// 'orders_treatment_budget'		=> 'required',
-			'hospitals_id'					=> 'required',
+			// 'hospitals_id'					=> 'required',
 			'orders_status'					=> 'required',
-			'orders_treatment_budget'		=> 'required',
+			// 'orders_treatment_budget'		=> 'required',
 		 
 	 
 		];

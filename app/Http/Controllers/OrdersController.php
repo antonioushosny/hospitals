@@ -78,14 +78,15 @@ class OrdersController extends Controller
     public function save(OrderRequest $request)
     {   
         $order = Order::create($request->all());
-        foreach($request->order_images as $image){
-            $order_image = new OrderImage ;
-            $order_image->orders_id = $order->orders_id ;
-            $order_image->orders_img = $image ;
-            $order_image->save() ;
-        }
-        $mainPageTitle = 'orders' ;
-        return redirect()->route('orders.client_orders')->with('status', __('admin::lang.orderCreated'));
+        // foreach($request->order_images as $image){
+        //     $order_image = new OrderImage ;
+        //     $order_image->orders_id = $order->orders_id ;
+        //     $order_image->orders_img = $image ;
+        //     $order_image->save() ;
+        // }
+        // $mainPageTitle = 'orders' ;
+        // return redirect()->route('orders.client_orders')->with('status', __('admin::lang.orderCreated'));
+        return redirect()->back()->with('status', __('admin::lang.orderCreated'));
         
     }
 

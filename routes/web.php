@@ -56,11 +56,11 @@ Route::get('/', function () {
 	return redirect()->route('home');
 });
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/orders/save', 'OrdersController@save')->name('orders.save');
 Route::group(['middleware' => 'auth:client'], function () {
     Route::get('/client/changePassword/', 'AuthController@changePassword')->name('client.changePassword');
     Route::get('/orders/client_orders', 'OrdersController@clientOrders')->name('orders.client_orders');
     Route::get('/orders/add', 'OrdersController@addOrder')->name('orders.add_order');
-    Route::post('/orders/save', 'OrdersController@save')->name('orders.save');
     Route::get('clients/orders/show/{order}', 'OrdersController@show')->name('clients.orders.show');
 
 });

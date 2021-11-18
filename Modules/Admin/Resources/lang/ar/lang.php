@@ -147,13 +147,13 @@ return [
 	/**
 	 * Cities
 	 */
-	'cities' 		=> 'المدن',
-	'city' 			=> 'المدينة',
-	'cityDetails'	=> 'تفاصيل المدينة',
-	'cityCreated' 	=> 'تم انشاء المدينة',
-	'cityUpdated' 	=> 'تم تعديل المدينة',
-	'cityDeleted' 	=> 'تم حذف المدينة',
-	'cities_title' 	=> 'المدينة',
+	'cities' 		=> 'المحافظات',
+	'city' 			=> 'المحافظة',
+	'cityDetails'	=> 'تفاصيل المحافظة',
+	'cityCreated' 	=> 'تم انشاء المحافظة',
+	'cityUpdated' 	=> 'تم تعديل المحافظة',
+	'cityDeleted' 	=> 'تم حذف المحافظة',
+	'cities_title' 	=> 'المحافظة',
 
 	
 	/**
@@ -412,9 +412,9 @@ return [
    'imageValidationExact' 	=> ' حجم الصورة يجب ان يكون :  عرض :width, وطول :height ',
 
 
-
-   	/**
-    * Routes
-    */
+   'ambulance'			=> 'سيارة إسعاف',
+   'appointmentBooking'=> 'حجز موعد',
+   'appointment'		=> 'موعد',
+   'makeOrder'			=> 'طلب طوارئ',
  
 ];

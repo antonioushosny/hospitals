@@ -41,28 +41,11 @@
                   <div class="col-12 col-md-10">{{ $order->orders_patient_phone }}</div>
                 </div>
               </li>
+               
               <li class="list-group-item">
                 <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.civil_no') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_patient_civil_no }}</div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.passport') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_patient_passport }}</div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.nationality') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_patient_nationality }}</div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.blood_type') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_patient_blood_type }}</div>
+                  <div class="col-12 col-md-2"><strong>{{ __('lang.type') }}</strong></div>
+                  <div class="col-12 col-md-10">{{ __('admin::lang.'.$order->orders_patient_blood_type) }}</div>
                 </div>
               </li>
               <li class="list-group-item">
@@ -71,37 +54,8 @@
                   <div class="col-12 col-md-10">{{ $order->orders_patient_address }}</div>
                 </div>
               </li>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.email') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_patient_email }}</div>
-                </div>
-              </li>
-              <h2>{{__('lang.companion_data')}}</h2>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.companion_name') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_companion_name }}</div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.companion_phone') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_companion_phone }}</div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.companion_civil_no') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_companion_civil_no }}</div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.companion_address') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->orders_companion_address }}</div>
-                </div>
-              </li>
+               
+               
               <h2>{{__('lang.order_data')}}</h2>
               <li class="list-group-item">
                 <div class="row">
@@ -110,12 +64,12 @@
                 </div>
               </li>
            
-              <li class="list-group-item">
+              <!-- <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('lang.country') }}</strong></div>
                   <div class="col-12 col-md-10">{{ $order->country ?  $order->country->countries_title  : '' }}</div>
                 </div>
-              </li>
+              </li> -->
               <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('lang.hospital') }}</strong></div>

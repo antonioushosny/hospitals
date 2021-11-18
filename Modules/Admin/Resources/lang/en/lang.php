@@ -367,10 +367,10 @@ return [
     */
    'imageValidation' 		=> 'Minimum size must be :width x :height',
    'imageValidationExact' 	=> 'Image Size must be :width x :height',
-
-   	/**
-   	 * Routes
-   	 */
  
+	'ambulance'			=> 'Ambulance',
+	'appointmentBooking'=> 'Appointment Booking',
+	'appointment'		=> 'Appointment',
+	'makeOrder'			=> 'Emergency Request',
 
 ];

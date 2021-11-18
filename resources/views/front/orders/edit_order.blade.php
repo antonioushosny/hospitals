@@ -51,23 +51,23 @@
                                 @php
                                 $status = old('orders_status', isset($order) ? $order->orders_status : 'active');
                                 @endphp
-                                <div class="form-check form-check-inline mr-1">
+                                <div class="form-check  ">
                                 <input class="form-check-input" id="status_0" type="radio" value="0" name="orders_status" {{ $status == '0' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="status_0">{{ __('admin::lang.status_0') }}</label>
                                 </div>
-                                <div class="form-check form-check-inline mr-1">
+                                <div class="form-check  ">
                                 <input class="form-check-input" id="status_1" type="radio" value="1" name="orders_status" {{ $status == '1' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="status_1">{{ __('admin::lang.status_1') }}</label>
                                 </div>
-                                <div class="form-check form-check-inline mr-1">
+                                <div class="form-check  ">
                                 <input class="form-check-input" id="status_2" type="radio" value="2" name="orders_status" {{ $status == '2' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="status_2">{{ __('admin::lang.status_2') }}</label>
                                 </div>
-                                <div class="form-check form-check-inline mr-1">
+                                <div class="form-check  ">
                                 <input class="form-check-input" id="status_3" type="radio" value="3" name="orders_status" {{ $status == '3' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="status_3">{{ __('admin::lang.status_3') }}</label>
                                 </div>
-                                <div class="form-check form-check-inline mr-1">
+                                <div class="form-check  ">
                                 <input class="form-check-input" id="status_4" type="radio" value="4" name="orders_status" {{ $status == '4' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="status_4">{{ __('admin::lang.status_4') }}</label>
                                 </div>
@@ -76,13 +76,13 @@
                                 @endif
                             </div>
                         </div>
-                        <!-- orders_hospital_following_notes -->
+                        <!-- orders_doctor_following_notes -->
                         <div class="form-group row">
-                            <label class="col-md-3 col-form-label" for="orders_hospital_following_notes">{{ __('admin::lang.hospital_following_notes') }}<span class="text-danger">  </span></label>
+                            <label class="col-md-3 col-form-label" for="orders_doctor_following_notes">{{ __('admin::lang.notes') }}<span class="text-danger">  </span></label>
                             <div class="col-md-9">
-                                {{ Form::text('orders_hospital_following_notes',old('orders_hospital_following_notes',isset($order) ? $order->orders_hospital_following_notes : ''),['placeholder'=> __('admin::lang.hospital_following_notes'),'class'=>' form-control'])}}              
-                                @if ($errors->first('orders_hospital_following_notes'))
-                                    <div class="invalid-feedback">{{ $errors->first('orders_hospital_following_notes') }}</div>
+                                {{ Form::text('orders_doctor_following_notes',old('orders_doctor_following_notes',isset($order) ? $order->orders_doctor_following_notes : ''),['placeholder'=> __('admin::lang.notes'),'class'=>' form-control'])}}              
+                                @if ($errors->first('orders_doctor_following_notes'))
+                                    <div class="invalid-feedback">{{ $errors->first('orders_doctor_following_notes') }}</div>
                                 @endif
                             </div>
                         </div>

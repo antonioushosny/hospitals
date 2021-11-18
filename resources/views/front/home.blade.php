@@ -16,8 +16,8 @@
 
 <section class=" mt-4 text-center container ">
 	<div class="row">
-      	<div class="col-12  mx-auto text-left">
-        	<span class="font-24 fb-700 fw-light bg-marine color-white">{{__('lang.hospitals')}}</h1>
+      	<div class="col-12  mx-auto  text-left">
+        	<span class="font-24 fb-700 px-5 fw-light bg-marine color-white">{{__('lang.hospitals')}}</h1>
 		</div>
 	</div>
 	<br/>
@@ -40,7 +40,7 @@
 <section class=" mt-4 text-center container ">
 	<div class="row">
       	<div class="col-12  mx-auto text-left">
-        	<span class="font-24 fb-700 fw-light bg-marine color-white">{{__('lang.lastNews')}}</h1>
+        	<span class="font-24 fb-700 px-5 fw-light bg-marine color-white">{{__('lang.lastNews')}}</h1>
 		</div>
 	</div>
 	<br/>

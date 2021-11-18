@@ -155,11 +155,11 @@
 
                 {{-- orders Links --}}
                 @canany(['view orders'])
-                  <!-- <li class="nav-item px-3">
+                  <li class="nav-item px-3">
                     <a class="nav-link"   href="{{ route('admin.orders.index') }}" >
                       {{ __('admin::lang.orders') }}
                     </a>
-                  </li> -->
+                  </li>
                 @endcanany
                 
                 {{-- contactus Links --}}

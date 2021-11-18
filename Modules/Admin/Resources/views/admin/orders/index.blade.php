@@ -29,28 +29,14 @@
 				<div class="form-group col-12 col-md-2 text-center">
 				<input class="form-control" type="text" name="phone" placeholder="{{ __('admin::lang.phone') }}" value="{{ old('phone') }}">
                 </div>
-
-                <div class="form-group col-12 col-md-2 text-center">
-				<input class="form-control" type="text" name="email" placeholder="{{ __('admin::lang.email') }}" value="{{ old('email') }}">
-                </div>
-
+ 
 				<div class="form-group col-12 col-md-2 text-center">
-				<input class="form-control" type="text" name="civil_no" placeholder="{{ __('admin::lang.civil_no') }}" value="{{ old('civil_no') }}">
-                </div>
-		
-				
-				<div class="form-group col-12 col-md-2 text-center">
-					{{ Form::select('countries_id',$countries,old('countries_id'),['placeholder'=> __('admin::lang.country'),'class'=>'select2 form-control'])}}
-				</div>
-				<div class="form-group col-12 col-md-3 text-center">
 					{{ Form::select('hospitals_id',$hospitals,old('hospitals_id'),['placeholder'=> __('admin::lang.hospital'),'class'=>'select2 form-control'])}}
 				</div>
-				<div class="form-group col-12 col-md-3 text-center">
-					{{ Form::select('doctors_id',$doctors,old('doctors_id'),['placeholder'=> __('admin::lang.doctor'),'class'=>'select2 form-control'])}}
+				<div class="form-group col-12 col-md-2 text-center">
+					{{ Form::select('diseases_id',$diseases,old('diseases_id'),['placeholder'=> __('admin::lang.disease'),'class'=>'select2 form-control'])}}
 				</div>
-				<div class="form-group col-12 col-md-3 text-center">
-					{{ Form::select('clients_id',$clients,old('clients_id'),['placeholder'=> __('admin::lang.client'),'class'=>'select2 form-control'])}}
-				</div>
+				 
                 <div class="form-group col-12 col-md-2 text-center">
 					<select class="form-control" name="status">
 						<option value="">{{ __('admin::lang.selectStatus') }}</option>
@@ -74,12 +60,12 @@
           	<div class="row">
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.orders_id') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.client') }}</strong></div>
-          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.doctor_following') }}</strong></div>
+          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.phone') }}</strong></div>
+          		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.address') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.disease') }}</strong></div>
-          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.created_at') }}</strong></div>
-          		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.country') }}</strong></div>
+          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.type') }}</strong></div>
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.hospital') }}</strong></div>
-          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.doctor') }}</strong></div>
+          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.created_at') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.status') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.actions') }}</strong></div>
           	</div>
@@ -102,13 +88,19 @@
 	          		<div class="col-12 col-md-1 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
 	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.client') }}</strong></div>
-							  <div class="col-8 col-md-12">{{ $order->client ? $order->client->clients_name : '' }}</div>
+							  <div class="col-8 col-md-12">{{ $order->orders_patient_name }}</div>
 	          			</div>
 	          		</div>
 					<div class="col-12 col-md-1 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
-	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.doctor_following') }}</strong></div>
-							  <div class="col-8 col-md-12">{{ $order->doctor_following ?  $order->doctor_following->doctors_name : '' }}</div>
+	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.phone') }}</strong></div>
+							  <div class="col-8 col-md-12">{{ $order->orders_patient_phone }}</div>
+	          			</div>
+	          		</div>
+					<div class="col-12 col-md-2 text-md-center">
+	          			<div class="row mb-2 mb-md-0">
+	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.address') }}</strong></div>
+							  <div class="col-8 col-md-12">{{ $order->orders_patient_address }}</div>
 	          			</div>
 	          		</div>
 					<div class="col-12 col-md-1 text-md-center">
@@ -117,16 +109,11 @@
 							  <div class="col-8 col-md-12">{{  $order->disease ?  $order->disease->diseases_title  : $order->diseases_title  }}</div>
 	          			</div>
 	          		</div>
+			 
 					<div class="col-12 col-md-1 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
-	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.created_at') }}</strong></div>
-							  <div class="col-8 col-md-12">{{ $order->orders_created_at  }}</div>
-	          			</div>
-	          		</div>
-					<div class="col-12 col-md-2 text-md-center">
-	          			<div class="row mb-2 mb-md-0">
-	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.country') }}</strong></div>
-	          				<div class="col-8 col-md-12">{{ $order->country ? $order->country->countries_title : '' }}</div>
+	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.type') }}</strong></div>
+							  <div class="col-8 col-md-12">{{ __('admin::lang.'.$order->orders_patient_blood_type)  }}</div>
 	          			</div>
 	          		</div>
 					<div class="col-12 col-md-2 text-md-center">
@@ -135,13 +122,13 @@
 	          				<div class="col-8 col-md-12">{{ $order->hospital ? $order->hospital->hospitals_title : ''}}</div>
 	          			</div>
 	          		</div>
-					  
 					<div class="col-12 col-md-1 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
-	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.doctor') }}</strong></div>
-							  <div class="col-8 col-md-12">{{ $order->doctor ?  $order->doctor->doctors_name : '' }}</div>
+	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.created_at') }}</strong></div>
+							  <div class="col-8 col-md-12">{{ $order->orders_created_at->format('Y-m-d')  }}</div>
 	          			</div>
 	          		</div>
+					  
 				
 				
 	          		<div class="col-12 col-md-1 text-md-center">

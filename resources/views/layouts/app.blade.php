@@ -22,7 +22,7 @@
     
     <link rel="stylesheet" href="{{ asset('front/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/jquery.fancybox.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/select2/css/select2.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/vendors/select2/css/select2.css') }}">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="{{ asset('front/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/sidebar.css') }}">
@@ -73,7 +73,7 @@
 
     <script src="{{ asset('front/js/sidebar.js') }}"></script>
     <script src="{{ asset('front/js/custom.js') }}"></script>
-    <script src="{{ asset('vendors/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('backend/vendors/select2/js/select2.min.js') }}"></script>
     @include('includes.scripts')
     @yield('script1')
     @yield('script2')

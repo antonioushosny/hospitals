@@ -11,7 +11,6 @@ use Modules\Admin\Models\Hospital;
 use Modules\Admin\Models\Country;
 use Modules\Admin\Models\Specialty;
 use Modules\Admin\Models\Department;
-use Modules\Admin\Models\Hospital;
 use Modules\Admin\Models\Disease;
 use Modules\Admin\Models\Language;
 
