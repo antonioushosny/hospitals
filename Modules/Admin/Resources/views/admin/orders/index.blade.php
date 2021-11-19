@@ -34,7 +34,7 @@
 					{{ Form::select('hospitals_id',$hospitals,old('hospitals_id'),['placeholder'=> __('admin::lang.hospital'),'class'=>'select2 form-control'])}}
 				</div>
 				<div class="form-group col-12 col-md-2 text-center">
-					{{ Form::select('diseases_id',$diseases,old('diseases_id'),['placeholder'=> __('admin::lang.disease'),'class'=>'select2 form-control'])}}
+					{{ Form::select('diseases_id',$specialties,old('diseases_id'),['placeholder'=> __('admin::lang.specialty'),'class'=>'select2 form-control'])}}
 				</div>
 				 
                 <div class="form-group col-12 col-md-2 text-center">

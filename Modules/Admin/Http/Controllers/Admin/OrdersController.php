@@ -44,7 +44,9 @@ class OrdersController extends Controller
         $clients = Client::get()->pluck('clients_name','clients_id') ;
         $hospitals = Hospital::get()->pluck('hospitals_title','hospitals_id') ;
         $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;
-        return view('admin::admin.orders.index', compact('orders','countries','clients','hospitals','diseases'));
+        $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;
+
+        return view('admin::admin.orders.index', compact('orders','countries','clients','hospitals','diseases','specialties'));
     }
 
     /**
