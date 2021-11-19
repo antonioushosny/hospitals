@@ -64,6 +64,16 @@ class Order extends Model
     }
    
     /**
+     * Many to one relation with specialty.
+     * 
+     * @return collection of specialty
+     */
+    public function specialty()
+    {
+    	return $this->belongsTo('Modules\Admin\Models\Specialty', 'diseases_id', 'specialties_id');
+    }
+
+     /**
      * Many to one relation with diseases.
      * 
      * @return collection of disease

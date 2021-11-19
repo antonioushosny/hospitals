@@ -62,7 +62,7 @@
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.client') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.phone') }}</strong></div>
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.address') }}</strong></div>
-          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.disease') }}</strong></div>
+          		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.specialty') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.type') }}</strong></div>
           		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.hospital') }}</strong></div>
           		<div class="col-12 col-md-1 text-center"><strong>{{ __('admin::lang.created_at') }}</strong></div>
@@ -105,8 +105,8 @@
 	          		</div>
 					<div class="col-12 col-md-1 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
-	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.disease') }}</strong></div>
-							  <div class="col-8 col-md-12">{{  $order->disease ?  $order->disease->diseases_title  : $order->diseases_title  }}</div>
+	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.specialty') }}</strong></div>
+							  <div class="col-8 col-md-12">{{  $order->specialty ?  $order->specialty->specialties_title  : '' }}</div>
 	          			</div>
 	          		</div>
 			 

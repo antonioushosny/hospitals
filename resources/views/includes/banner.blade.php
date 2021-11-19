@@ -11,11 +11,13 @@
     <div class="carousel-inner">
         @foreach($advertisements as $advertisement)
         <div class="carousel-item {{$loop->first ? 'active' : '' }}">
-            @if($agent->isPhone())
-            <img src="{{$advertisement->advertisements_mobile_img ? asset($advertisement->images_url($advertisement->advertisements_mobile_img, 'original')) : asset('img/no-image.png')}}"  width="100%"  height="400">
-            @else 
-            <img src="{{$advertisement->advertisements_img ? asset($advertisement->images_url($advertisement->advertisements_img, 'original')) : asset('img/no-image.png')}}" width="100%"  height="400">
-            @endif
+            <a href="{{$advertisement->advertisements_url ? $advertisement->advertisements_url : 'javascript:void(0)' }}">
+                @if($agent->isPhone())
+                <img src="{{$advertisement->advertisements_mobile_img ? asset($advertisement->images_url($advertisement->advertisements_mobile_img, 'original')) : asset('img/no-image.png')}}"  width="100%"  height="400">
+                @else 
+                <img src="{{$advertisement->advertisements_img ? asset($advertisement->images_url($advertisement->advertisements_img, 'original')) : asset('img/no-image.png')}}" width="100%"  height="400">
+                @endif
+            </a>
         </div>
         @endforeach
         

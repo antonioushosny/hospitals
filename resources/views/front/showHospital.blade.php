@@ -31,7 +31,10 @@
 							<input class="form-control" type="text" name="orders_patient_phone" placeholder="{{ __('admin::lang.phone') }}" value="{{ old('phone') }}" required>
 						</div>
 						<div class="form-group col-12 col-md-12 text-center">
-							{{ Form::select('diseases_id',$diseases,old('diseases_id'),['placeholder'=> __('admin::lang.disease'),'class'=>'select2 form-control', 'required'=>'required'])}}
+							{{ Form::select('diseases_id',$specialties,old('diseases_id'),['placeholder'=> __('admin::lang.specialty'),'class'=>'select2 form-control', 'required'=>'required'])}}
+						</div>
+						<div class="form-group col-12 col-md-12 text-center">
+							<input class="form-control" type="text" name="diseases_title" placeholder="{{ __('admin::lang.notes') }}" value="{{ old('diseases_title') }}" required>
 						</div>
 						<div class="col-12 text-left mx-4">
 							<div class="form-check ">

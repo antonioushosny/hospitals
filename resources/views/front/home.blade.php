@@ -9,7 +9,10 @@
 @include('includes.banner')
 
 <div class="container pt-3">
-	@include('search')
+ 
+	<a href="{{route('hospitals')}}">
+ 		<img src="{{asset('backend/img/search.jpeg')}}" width="100%"  height="250">
+	</a>
 </div>
 
 <!-- hospitals section  -->

@@ -59,11 +59,16 @@
               <h2>{{__('lang.order_data')}}</h2>
               <li class="list-group-item">
                 <div class="row">
-                  <div class="col-12 col-md-2"><strong>{{ __('lang.disease') }}</strong></div>
-                  <div class="col-12 col-md-10">{{ $order->disease ?  $order->disease->diseases_title  : $order->diseases_title }}</div>
+                  <div class="col-12 col-md-2"><strong>{{ __('admin::lang.specialty') }}</strong></div>
+                  <div class="col-12 col-md-10">{{  $order->specialty ?  $order->specialty->specialties_title  : ''  }}</div>
                 </div>
               </li>
-              
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-12 col-md-2"><strong>{{ __('lang.notes') }}</strong></div>
+                  <div class="col-12 col-md-10">{{ $order->diseases_title }}</div>
+                </div>
+              </li>
               <li class="list-group-item">
                 <div class="row">
                   <div class="col-12 col-md-2"><strong>{{ __('lang.hospital') }}</strong></div>

@@ -107,9 +107,9 @@ class HomeController extends Controller
     public function showHospital(Hospital $hospital)
     {   
         $mainPageTitle = 'hospitals' ;
-        $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;
+        $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;
 
-        return view('front.showHospital',compact('mainPageTitle','hospital','diseases'));
+        return view('front.showHospital',compact('mainPageTitle','hospital','specialties'));
     }
  
 }
