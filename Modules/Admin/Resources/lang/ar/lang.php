@@ -172,13 +172,13 @@ return [
 	 * Hospitals
 	 */
 	'hospitals' 		=> 'المستشفيات',
-	'hospital' 			=> 'المستشفي',
-	'hospitalDetails'	=> 'تفاصيل المستشفي',
-	'hospitalCreated' 	=> 'تم انشاء المستشفي',
-	'hospitalUpdated' 	=> 'تم تعديل المستشفي',
-	'hospitalDeleted' 	=> 'تم حذف المستشفي',
-	'hospitals_title' 	=> 'اسم المستشفي',
-	'hospitals_desc'	=> 'وصف المستشفي',
+	'hospital' 			=> 'المستشفى',
+	'hospitalDetails'	=> 'تفاصيل المستشفى',
+	'hospitalCreated' 	=> 'تم انشاء المستشفى',
+	'hospitalUpdated' 	=> 'تم تعديل المستشفى',
+	'hospitalDeleted' 	=> 'تم حذف المستشفى',
+	'hospitals_title' 	=> 'اسم المستشفى',
+	'hospitals_desc'	=> 'وصف المستشفى',
  
 	/**
 	 * Departments
@@ -219,7 +219,7 @@ return [
 	 * Hospitals Treatments
 	 */
 	'hospitals_treatments' 			=> 'تكاليف المستشفيات',
-	'hospitals_treatment' 			=> 'تكليف المستشفي',
+	'hospitals_treatment' 			=> 'تكليف المستشفى',
 	'hospitals_treatmentDetails'	=> 'تفاصيل تكاليف المستشفيات',
 	'hospitals_treatmentCreated' 	=> 'تم الاضافة بنجاح',
 	'hospitals_treatmentUpdated' 	=> 'تم التعديل بنجاح',
@@ -292,7 +292,7 @@ return [
     'status_4'                  => 'تم تنفيذ الطلب',
     'disease'                   => 'المرض',
     'country'                   => 'الدولة ',
-    'hospital'                  => 'المستشفي',
+    'hospital'                  => 'المستشفى',
     'doctor'                    => 'الدكتور ',
     'treatment_budget'          => 'ميزانية العلاج ',
     'prescription_img'          => 'صورة الروشتة / العلاج',
