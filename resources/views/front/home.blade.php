@@ -43,7 +43,7 @@
 			<form action="{{route('donate')}}" method="get" >
 				<div class="form-group">
 					<label for="exampleInputEmail1">{{__('lang.enterYourBloodType')}}</label>
-					{{ Form::select('blood_type',$blood_types,old('blood_type'),['placeholder'=> __('lang.enterYourBloodType'),'class'=>'select2 form-control'])}}
+					{{ Form::select('blood_type',$blood_types,old('blood_type'),['placeholder'=> __('lang.enterYourBloodType'),'class'=>'  form-control'])}}
 				</div>
 				<button type="submit" class="btn btn-primary fb-700 font-20 btn-block">{{__('lang.check')}}</button>
 			</form>
