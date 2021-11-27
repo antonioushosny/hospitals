@@ -12,6 +12,7 @@ use Modules\Admin\Models\Area;
 use Modules\Admin\Models\Department;
 use Modules\Admin\Models\Specialty;
 use Modules\Admin\Models\Disease;
+use Modules\Admin\Models\BloodType;
 use Carbon\Carbon;
 use Module ;
 class HomeController extends Controller
@@ -41,8 +42,10 @@ class HomeController extends Controller
         $areas = Area::get()->pluck('areas_title','areas_id') ;
         $departments = Department::get()->pluck('departments_title','departments_id') ;
         $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;
+        $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;       
+        $blood_types = BloodType::get()->pluck('blood_types_type','blood_types_id') ;       
 
-        return view('front.home',compact('mainPageTitle','last_news','hospitals','cities','areas','departments','specialties'));
+        return view('front.home',compact('mainPageTitle','last_news','hospitals','cities','areas','departments','specialties','diseases','blood_types'));
     }
     
     public function news(Request $request)
@@ -56,7 +59,43 @@ class HomeController extends Controller
         $mainPageTitle = 'news' ;
         return view('front.showNews',compact('mainPageTitle','news'));
     }
-        
+    public function donate(Request $request)
+    {   
+        if($request->blood_type){
+            $blood_type = BloodType::where('blood_types_id',$request->blood_type)->first();
+            if($blood_type){
+                if($blood_type->blood_types_amount >= 70){
+                    return redirect()->back()->with('status', __('lang.weHaveEnoughBlood'))->with('success', __('lang.weHaveEnoughBlood'));
+                }else{
+                    return redirect()->back()->with('status', __('lang.weDontHaveEnoughBlood'))->with('success', __('lang.weDontHaveEnoughBlood'));
+                }
+            }
+        }
+        return redirect()->back()->with('error', __('lang.yourBloodTypeNotExist'));
+    }
+    public function corona(Request $request)
+    {   
+  
+        if($request->firstDate && $request->secondDate){
+            $days = (new \DateTime($request->firstDate))->diff(new \DateTime())->days;
+            if($days >= 90 ){
+                $diff = $days - 90 ;
+                $date = new \DateTime(); 
+                $date->modify('-'.$diff." day");
+                $date =  $date->format("Y-m-d") ;
+                return redirect()->back()->with('success', __('lang.doseWasDue',['date'=>$date]))->with('status', __('lang.doseWasDue',['date'=>$date]));
+
+            }else{
+                $diff = 90 - $days ;
+                $date = new \DateTime(); 
+                $date->modify('+'.$diff." day");
+                $date =  $date->format("Y-m-d") ;
+                return redirect()->back()->with('success', __('lang.YourDoseIs',['date'=>$date]))->with('status', __('lang.YourDoseIs',['date'=>$date]));
+
+            }
+        }
+        return redirect()->back()->with('error', __('lang.serviceAvailableCorona'))->with('status', __('lang.serviceAvailableCorona'));
+    }
     public function hospitals(Request $request)
     {   
         $searchArray = [
@@ -66,7 +105,12 @@ class HomeController extends Controller
             'hospitals.countries_id' => [request('countries_id'), '='], 
             'hospitals.cities_id' => [request('cities_id'), '='], 
             'hospitals.hospitals_status' => [request('status'), '='],
-            
+            'hospitals.hospitals_intensive_care' => [request('hospitals_intensive_care'), '>='],
+            'hospitals.hospitals_recovery_rooms' => [request('hospitals_recovery_rooms'), '>='],
+            'hospitals.hospitals_private_rooms' => [request('hospitals_private_rooms'), '>='],
+            'hospitals.hospitals_public_rooms' => [request('hospitals_public_rooms'), '>='],
+            'hospitals.hospitals_rays_centers' => [request('hospitals_rays_centers'), '>='],
+            'hospitals.hospitals_analysis_laboratories' => [request('hospitals_analysis_laboratories'), '>='],
         ];
         request()->flash();
 
@@ -100,16 +144,18 @@ class HomeController extends Controller
         $areas = Area::get()->pluck('areas_title','areas_id') ;
         $departments = Department::get()->pluck('departments_title','departments_id') ;
         $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;       
+        $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;       
         // $hospitals = Hospital::active()->paginate(9);
         $mainPageTitle = 'hospitals' ;
-        return view('front.hospitals',compact('mainPageTitle','hospitals','cities','areas','departments','specialties'));
+        return view('front.hospitals',compact('mainPageTitle','hospitals','cities','areas','departments','specialties','diseases'));
     }
     public function showHospital(Hospital $hospital)
     {   
         $mainPageTitle = 'hospitals' ;
         $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;
+        $diseases = Disease::get()->pluck('diseases_title','diseases_id') ;       
 
-        return view('front.showHospital',compact('mainPageTitle','hospital','specialties'));
+        return view('front.showHospital',compact('mainPageTitle','hospital','specialties','diseases'));
     }
  
 }

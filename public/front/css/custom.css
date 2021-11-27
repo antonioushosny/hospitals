@@ -192,6 +192,14 @@ body {
 .nav-item.active .nav-link{
 	color: var(--ice-blue) !important;
 }
+.search-form .form-group{
+    margin: 0px;
+    padding: 0px;
+}
+.search-form .form-control , .search-form select, .search-form .select2 ,.search-form button ,
+.search-form .select2-container--default .select2-selection--single{
+	border-radius: 0px;
+}
 /* Responsive */
 
 @media (min-width: 1024px) and (max-width: 1280px) {

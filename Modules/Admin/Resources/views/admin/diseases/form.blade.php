@@ -29,7 +29,16 @@
           <div class="tab-pane fade {{ $activeLocale == 'general' ? 'show active' : '' }}" id="general" role="tabpanel" aria-labelledby="general-tab">
             <div class="row">
               <div class="col-lg-9">
-                 
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="specialties_id">{{ __('admin::lang.specialty') }}<span class="text-danger"> *</span></label>
+                  <div class="col-md-9">
+                    {{ Form::select('specialties_id',$specialties,old('specialties_id',isset($disease) ? $disease->specialties_id : ''),['class'=>'select2 form-control'])}}              
+                    @if ($errors->first('specialties_id'))
+                      <div class="invalid-feedback">{{ $errors->first('specialties_id') }}</div>
+                    @endif
+                  </div>
+                </div>
+
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label">{{ __('admin::lang.status') }}<span class="text-danger"> *</span></label>
                   <div class="col-md-9 col-form-label">

@@ -46,7 +46,7 @@ class Hospital extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'hospitals_phone', 'hospitals_status','hospitals_lat','hospitals_lng','countries_id','cities_id','hospitals_image','password'
+        'hospitals_phone', 'hospitals_status','hospitals_lat','hospitals_lng','countries_id','cities_id','hospitals_image','password','hospitals_intensive_care','hospitals_recovery_rooms','hospitals_analysis_laboratories','hospitals_private_rooms','hospitals_public_rooms','hospitals_rays_centers'
     ];
  
     
@@ -57,7 +57,6 @@ class Hospital extends Authenticatable
      */
     public function setHospitalsImageAttribute($file)
     {
-        
         if ($file) {
             if (is_string($file)) {
                 $this->attributes['hospitals_image'] = $file;

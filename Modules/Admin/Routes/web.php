@@ -91,6 +91,12 @@ Route::prefix('admin')
 		Route::resource('diseases', 'DiseasesController');
 		
 		/**
+		 * Blood Types Routes
+		 */
+		Route::resource('blood_types', 'BloodTypesController');
+		
+
+		/**
 		 * Doctors Routes
 		 */
 	    Route::resource('doctors', 'DoctorsController');

@@ -51,7 +51,7 @@
                   </div>
                 </div>
 
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="departments_id">{{ __('admin::lang.departments') }}<span class="text-danger"> *</span></label>
                   <div class="col-md-9">
                     {{ Form::select('departments_ids[]',$departments,old('departments_ids',isset($hospital) ? $hospital->departments->pluck('departments_id') : []),['class'=>'select2 form-control','multiple'=>'multiple'])}}              
@@ -59,7 +59,7 @@
                       <div class="invalid-feedback">{{ $errors->first('departments_id') }}</div>
                     @endif
                   </div>
-                </div>
+                </div> -->
 
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="specialties_id">{{ __('admin::lang.specialties') }}<span class="text-danger"> *</span></label>
@@ -80,7 +80,6 @@
                       @endif
                   </div>
                 </div>
-
                 
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label" for="clients_phone">{{ __('admin::lang.password') }}<span class="text-danger"> *</span></label>
@@ -91,7 +90,67 @@
                       @endif
                   </div>
                 </div>
+
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hospitals_intensive_care">{{ __('admin::lang.hospitals_intensive_care') }}<span class="text-danger"> *</span></label>
+                  <div class="col-md-9">
+                    {{ Form::number('hospitals_intensive_care',old('hospitals_intensive_care',isset($hospital) ? $hospital->hospitals_intensive_care : ''),['placeholder'=> __('admin::lang.hospitals_intensive_care'),'class'=>'select2 form-control'])}}              
+                      @if ($errors->first('hospitals_intensive_care'))
+                        <div class="invalid-feedback">{{ $errors->first('hospitals_intensive_care') }}</div>
+                      @endif
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hospitals_recovery_rooms">{{ __('admin::lang.hospitals_recovery_rooms') }}<span class="text-danger"> *</span></label>
+                  <div class="col-md-9">
+                    {{ Form::number('hospitals_recovery_rooms',old('hospitals_recovery_rooms',isset($hospital) ? $hospital->hospitals_recovery_rooms : ''),['placeholder'=> __('admin::lang.hospitals_recovery_rooms'),'class'=>'select2 form-control'])}}              
+                      @if ($errors->first('hospitals_recovery_rooms'))
+                        <div class="invalid-feedback">{{ $errors->first('hospitals_recovery_rooms') }}</div>
+                      @endif
+                  </div>
+                </div>
                 
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hospitals_analysis_laboratories">{{ __('admin::lang.hospitals_analysis_laboratories') }}<span class="text-danger"> *</span></label>
+                  <div class="col-md-9">
+                    {{ Form::number('hospitals_analysis_laboratories',old('hospitals_analysis_laboratories',isset($hospital) ? $hospital->hospitals_analysis_laboratories : ''),['placeholder'=> __('admin::lang.hospitals_analysis_laboratories'),'class'=>'select2 form-control'])}}              
+                      @if ($errors->first('hospitals_analysis_laboratories'))
+                        <div class="invalid-feedback">{{ $errors->first('hospitals_analysis_laboratories') }}</div>
+                      @endif
+                  </div>
+                </div>
+                
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hospitals_rays_centers">{{ __('admin::lang.hospitals_rays_centers') }}<span class="text-danger"> *</span></label>
+                  <div class="col-md-9">
+                    {{ Form::number('hospitals_rays_centers',old('hospitals_rays_centers',isset($hospital) ? $hospital->hospitals_rays_centers : ''),['placeholder'=> __('admin::lang.hospitals_rays_centers'),'class'=>'select2 form-control'])}}              
+                      @if ($errors->first('hospitals_rays_centers'))
+                        <div class="invalid-feedback">{{ $errors->first('hospitals_rays_centers') }}</div>
+                      @endif
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hospitals_public_rooms">{{ __('admin::lang.hospitals_public_rooms') }}<span class="text-danger"> *</span></label>
+                  <div class="col-md-9">
+                    {{ Form::number('hospitals_public_rooms',old('hospitals_public_rooms',isset($hospital) ? $hospital->hospitals_public_rooms : ''),['placeholder'=> __('admin::lang.hospitals_public_rooms'),'class'=>'select2 form-control'])}}              
+                      @if ($errors->first('hospitals_public_rooms'))
+                        <div class="invalid-feedback">{{ $errors->first('hospitals_public_rooms') }}</div>
+                      @endif
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-md-3 col-form-label" for="hospitals_private_rooms">{{ __('admin::lang.hospitals_private_rooms') }}<span class="text-danger"> *</span></label>
+                  <div class="col-md-9">
+                    {{ Form::number('hospitals_private_rooms',old('hospitals_private_rooms',isset($hospital) ? $hospital->hospitals_private_rooms : ''),['placeholder'=> __('admin::lang.hospitals_private_rooms'),'class'=>'select2 form-control'])}}              
+                      @if ($errors->first('hospitals_private_rooms'))
+                        <div class="invalid-feedback">{{ $errors->first('hospitals_private_rooms') }}</div>
+                      @endif
+                  </div>
+                </div>
+
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="hospitals_image">{{ __('admin::lang.img') }}<span class="text-danger"> *</span></label>
                     <div class="col-md-9">
@@ -102,7 +161,7 @@
                     </div>
                 </div>
 
-                @if (isset($hospital))
+                <!-- @if (isset($hospital))
                   <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="hospital_images">{{ __('admin::lang.images') }}</label>
                     <div class="col-md-9">
@@ -131,7 +190,8 @@
                       <div class="invalid-feedback">{{ $errors->first('hospital_images') }}</div>
                     @endif
                   </div>
-                </div>
+                </div> -->
+
                 <div class="form-group row">
                   <label class="col-md-3 col-form-label">{{ __('admin::lang.status') }}<span class="text-danger"> *</span></label>
                   <div class="col-md-9 col-form-label">

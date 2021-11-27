@@ -63,6 +63,7 @@
 
             </ul>
             <div class="d-inline-block ">
+                <i class="fa fa-globe"></i>
                 @if($dir == 'ltr')
                 <a href="{{route('lang','ar')}}" class="btn-lang {{$dir == 'ltr' ? 'not-active-lang' : '' }}">  العربية </a>
                 @else

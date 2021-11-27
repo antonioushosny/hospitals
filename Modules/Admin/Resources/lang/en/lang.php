@@ -166,6 +166,12 @@ return [
 	'hospitalDeleted' 	=> 'Hospital Deleted',
 	'hospitals_title' 	=> 'Hospital Name',
 	'hospitals_desc'	=> 'Hospital Description',
+	'hospitals_intensive_care' =>'Intensive Care',
+	'hospitals_recovery_rooms' =>'Recovery Rooms',
+	'hospitals_analysis_laboratories'=>'Analysis Laboratories',
+	'hospitals_private_rooms'		 =>'Private Rooms',
+	'hospitals_public_rooms'	     =>'Public Rooms',
+	'hospitals_rays_centers'		 =>'Rays Centers',
  
 	/**
 	 * Departments
@@ -357,7 +363,17 @@ return [
 	'website_status'		=>	'Website Status',
 	'website_lang'			=>	'Website language for Users',
 	 
-	 
+	/**
+	 * blood_types
+	 */
+	'blood_types' 			=> 'Blood Types',
+	'blood_types_type' 		=> 'Type',
+	'blood_types_amount' 	=> 'Amount',
+	'amount' 				=> 'Amount',
+	'blood_typeCreated'		=> 'Blood Type Created',
+	'blood_typeUpdated'		=> 'Blood Type Updated',
+	'blood_typeDeleted'		=> 'Blood Type Deleted',
+	
 	/*
     |--------------------------------------------------------------------------
     | Validation Image

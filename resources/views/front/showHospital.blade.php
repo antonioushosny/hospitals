@@ -92,7 +92,7 @@
 				<h3>{{__('admin::lang.address')}} : </h3> {!!  $hospital->hospitals_address !!}
 				<h3>{{__('lang.aboutHospital')}} : </h3> {!!  $hospital->hospitals_desc !!}
 			</div>
-			<div class="col-md-12 col-12 pt-3 text-left">
+			<!-- <div class="col-md-12 col-12 pt-3 text-left">
 			<h3>{{__('admin::lang.images')}} : </h3>
 				<div class="row">
 					@foreach($hospital->images as $image)
@@ -102,7 +102,7 @@
 						</div>
 					@endforeach
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	

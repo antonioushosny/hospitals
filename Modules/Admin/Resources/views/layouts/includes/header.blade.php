@@ -188,6 +188,15 @@
                     </div>
                   </li>
                 @endcanany
+                {{-- blood_types Links --}}
+                @canany(['view blood_types'])
+                  <li class="nav-item px-3">
+                    <a class="nav-link"   href="{{ route('admin.blood_types.index') }}" >
+                      {{ __('admin::lang.blood_types') }}
+                    </a>
+                  </li>
+                @endcanany
+
                 {{-- Admins Links --}}
                 @canany(['view admins', 'view roles'])
                   <li class="nav-item px-3">

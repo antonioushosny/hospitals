@@ -7,9 +7,11 @@
 
 @section('content')
 @include('includes.banner')
-
+<div class="py-3 font-20">
+	@include('admin::layouts.includes.messages')
+</div>
 <div class="container pt-3">
- 
+
 	<a href="{{route('hospitals')}}">
  		<img src="{{asset('backend/img/search.jpeg')}}" width="100%"  height="250">
 	</a>
@@ -26,19 +28,29 @@
 	<br/>
 	<div class="row">
 		@foreach($hospitals as $hospital)
-			<div class="col-md-4 col-sm-6 col-12 py-2">
-				<div class="card shadow-sm">
-					<img src="{{$hospital->hospitals_image ? asset($hospital->images_url($hospital->hospitals_image, 'medium')) : asset('img/no-image.png') }}" class="card-img-top" alt="..." height="300px">
-					<div class="card-footer  text-center bg-pale-grey-dark color-marine">
-						<h3 class="card-title"><a href="{{route('hospitals.show',$hospital->hospitals_id)}}" class="color-marine">{{$hospital->hospitals_title}}</a></h3>
-						<a href="{{route('hospitals.show',$hospital->hospitals_id)}}" class="btn btn-info">{{__('lang.more')}}</a>
-					</div>
-				</div>
+			<div class="col-md-6 col-sm-6 col-12 py-2">
+				@include('includes.hospital-card',['hospital'=>$hospital])
 			</div>
 		@endforeach		 
 	</div>
 </section>
-
+<hr/>
+<!-- blood types -->
+<section class="container-fluid py-5 bg-ice-blue">
+	<div class="container ">
+		<h3 class="text-center mb-5 fb-700"> {{__('lang.areYouWantToDonateBlood')}}</h3>
+		<div>
+			<form action="{{route('donate')}}" method="get" >
+				<div class="form-group">
+					<label for="exampleInputEmail1">{{__('lang.enterYourBloodType')}}</label>
+					{{ Form::select('blood_type',$blood_types,old('blood_type'),['placeholder'=> __('lang.enterYourBloodType'),'class'=>'select2 form-control'])}}
+				</div>
+				<button type="submit" class="btn btn-primary fb-700 font-20 btn-block">{{__('lang.check')}}</button>
+			</form>
+		</div>
+	</div>
+</section>
+<hr/>
 <!-- last news section  -->
 <section class=" mt-4 text-center container ">
 	<div class="row">
@@ -50,19 +62,32 @@
 	<div class="row">
 		@foreach($last_news as $new)
 			<div class="col-md-4 col-sm-6 col-12 py-2">
-				<div class="card shadow-sm">
-					<img src="{{$new->news_image ? asset($new->images_url($new->news_image, 'medium')) : asset('img/no-image.png') }}" class="card-img-top" alt="..." height="300px">
-					<div class="card-footer  text-center bg-pale-grey-dark color-marine">
-						<h3 class="card-title"><a href="{{route('news.show',$new->news_id)}}" class="color-marine">{{$new->news_title}}</a></h3>
-						<p class="card-text font-12"> {{$new->news_created_at}}</p>
-						<a href="{{route('news.show',$new->news_id)}}" class="btn btn-info">{{__('lang.more')}}</a>
-					</div>
-				</div>
+				@include('includes.newsCard',['new'=>$new])
 			</div>
 		@endforeach		 
 	</div>
 </section>
-
+<hr/>
+<!-- Corona check -->
+<section class="container-fluid py-5 bg-ice-blue">
+	<div class="container ">
+		<h3 class="text-center mb-5 fb-700"> {{__('lang.coronaTitle')}}</h3>
+		<div>
+			<form action="{{route('corona')}}" method="get" >
+				<div class="form-group">
+					<label for="firstDate">{{__('lang.firstDate')}}</label>
+					{{ Form::date('firstDate',old('firstDate'),['placeholder'=> __('lang.firstDate'),'class'=>'select2 form-control'])}}
+				</div>
+				<div class="form-group">
+					<label for="secondDate">{{__('lang.secondDate')}}</label>
+					{{ Form::date('secondDate',old('secondDate'),['placeholder'=> __('lang.secondDate'),'class'=>'select2 form-control'])}}
+				</div>
+				<button type="submit" class="btn btn-success fb-700 font-20 btn-block">{{__('lang.check')}}</button>
+			</form>
+		</div>
+	</div>
+</section>
+<hr/>
 <section class=" text-center container-fluid bg-pale-grey ">
 	<div class="row">
       	<div class="col-lg-6 col-md-8 mx-auto">

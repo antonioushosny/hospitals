@@ -43,10 +43,19 @@ class Disease extends Model
      * @var array
      */
     protected $fillable = [
-        'diseases_status'
+        'diseases_status','specialties_id'
     ];
     
- 
+    /**
+     * Many to one relation with Specialty.
+     * 
+     * @return collection of Specialty
+     */
+    public function specialty()
+    {
+    	return $this->belongsTo('Modules\Admin\Models\Specialty', 'specialties_id', 'specialties_id');
+    }
+
     /**
      * Scope a query to order data.
      *

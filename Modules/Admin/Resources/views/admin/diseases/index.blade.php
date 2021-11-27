@@ -22,10 +22,11 @@
 	                	<a href="{{ route('admin.diseases.create') }}" class="btn btn-success btn-sm"><i class="fa fa-plus"></i></a>
                 	@endcan
                 </div>
+                <div class="form-group col-12 col-md-3 text-center">
+					{{ Form::select('specialty',$specialties,old('specialty'),['placeholder'=> __('admin::lang.specialty'),'class'=>'select2 form-control'])}}
+                </div>
                 <div class="form-group col-12 col-md-4 text-center">
                   <input class="form-control" type="text" name="name" placeholder="{{ __('admin::lang.name') }}" value="{{ old('name') }}">
-                </div>
-                <div class="form-group col-12 col-md-3 text-center">
                 </div>
                 <div class="form-group col-12 col-md-2 text-center">
 					<select class="form-control" name="status">
@@ -48,9 +49,10 @@
         <div class="card d-none d-md-block">
           <div class="card-header">
           	<div class="row">
-          		<div class="col-12 col-md-3 text-center"><strong>{{ __('admin::lang.id') }}</strong></div>
+          		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.id') }}</strong></div>
+          		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.specialty') }}</strong></div>
           		<div class="col-12 col-md-3 text-center"><strong>{{ __('admin::lang.title') }}</strong></div>
-          		<div class="col-12 col-md-3 text-center"><strong>{{ __('admin::lang.status') }}</strong></div>
+          		<div class="col-12 col-md-2 text-center"><strong>{{ __('admin::lang.status') }}</strong></div>
           		<div class="col-12 col-md-3 text-center"><strong>{{ __('admin::lang.actions') }}</strong></div>
           	</div>
           </div>
@@ -61,20 +63,27 @@
 	        <div class="card">
 	          <div class="card-body">
 	          	<div class="row">
-	          		<div class="col-xs-12 col-md-3 text-md-center">
+	          		<div class="col-xs-12 col-md-2 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
 	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.id') }}</strong></div>
 	          				<div class="col-8 col-md-12">{{ $disease->diseases_id }}</div>
 	          			</div>
 	          		</div>
-	          		<div class="col-12 col-md-3 text-md-center">
+	          		<div class="col-12 col-md-2 text-md-center">
+	          			<div class="row mb-2 mb-md-0">
+	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.specialty') }}</strong></div>
+	          				<div class="col-8 col-md-12">{{ $disease->specialty ? $disease->specialty->specialties_title : ''  }}</div>
+	          			</div>
+	          		</div>
+
+					<div class="col-12 col-md-3 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
 	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.title') }}</strong></div>
 	          				<div class="col-8 col-md-12">{{ $disease->diseases_title }}</div>
 	          			</div>
 	          		</div>
 	          		 
-	          		<div class="col-12 col-md-3 text-md-center">
+	          		<div class="col-12 col-md-2 text-md-center">
 	          			<div class="row mb-2 mb-md-0">
 	          				<div class="col-4 d-block d-md-none"><strong>{{ __('admin::lang.status') }}</strong></div>
 	          				<div class="col-8 col-md-12">

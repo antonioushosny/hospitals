@@ -6,6 +6,7 @@ use App\Models\StorageHandle;
 use App\Http\Controllers\Controller;
 use Modules\Admin\Http\Requests\DiseaseRequest;
 use Modules\Admin\Models\Disease;
+use Modules\Admin\Models\Specialty;
 use Modules\Admin\Models\Language;
 
 class DiseasesController extends Controller
@@ -21,7 +22,9 @@ class DiseasesController extends Controller
     {
         $searchArray = [
             'disease_translations.diseases_title' => [request('name'), 'like'], 
-            'diseases.diseases_status' => [request('status'), '=']
+            'diseases.diseases_status' => [request('status'), '='],
+            'diseases.specialties_id' => [request('specialty'), '='],
+            
         ];
         request()->flash();
 
@@ -30,8 +33,9 @@ class DiseasesController extends Controller
         
         $searchQuery = $this->searchIndex($query, $searchArray);
         $diseases = $searchQuery->paginate(env('PerPage'));
+        $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;
 
-        return view('admin::admin.diseases.index', compact('diseases'));
+        return view('admin::admin.diseases.index', compact('diseases','specialties'));
     }
 
     /**
@@ -41,7 +45,8 @@ class DiseasesController extends Controller
      */
     public function create()
     {
-        return view('admin::admin.diseases.create');
+        $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;
+        return view('admin::admin.diseases.create', compact('specialties'));
     }
 
     /**
@@ -75,7 +80,8 @@ class DiseasesController extends Controller
      */
     public function edit(Disease $disease)
     {
-        return view('admin::admin.diseases.edit', compact('disease'));
+        $specialties = Specialty::get()->pluck('specialties_title','specialties_id') ;
+        return view('admin::admin.diseases.edit', compact('disease','specialties'));
     }
 
     /**

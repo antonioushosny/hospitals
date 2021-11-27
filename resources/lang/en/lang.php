@@ -169,6 +169,21 @@ return [
     'aboutHospital'             => 'About Hospital',    
     'clearFilter'               => 'Clear Filter' ,   
     'searchForHospital'         => 'Search For Hospital',
+
+    'areYouWantToDonateBlood'   => 'Are You Want To Donate Blood ?',
+    'enterYourBloodType'        => 'Choose Your Blood Type' ,
+    'check'                     => 'Check',
+    'yourBloodTypeNotExist'     => "We don't have your blood type",
+    'weHaveEnoughBlood'         => 'We have enough blood type entered Thank you Please try later',
+    'weDontHaveEnoughBlood'     => 'The quantity available in the blood bank of the type entered is less than 70%. Please go to the nearest branch of the blood bank and donate, thank you',
+
+    'coronaTitle'               => 'Now you can know the date of the third dose of the Corona vaccine',
+    'YourDoseIs'                => 'Your dose is :date , Please go to the place where you received the previous doses on time, thank you' ,
+    'doseWasDue'                => 'Your dose was due on :date. Please call the hotline of the Ministry of Health',
+    'serviceAvailableCorona'    => 'This service is available for those who have the first and second doses. Please enter the dates',
+    'firstDate'                 => 'Date of receiving the first dose',
+    'secondDate'                => 'Date of receiving the second  dose',
+    
 ];
 
 

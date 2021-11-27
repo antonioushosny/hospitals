@@ -179,6 +179,13 @@ return [
 	'hospitalDeleted' 	=> 'تم حذف المستشفى',
 	'hospitals_title' 	=> 'اسم المستشفى',
 	'hospitals_desc'	=> 'وصف المستشفى',
+	'hospitals_intensive_care' =>'العناية المركزة',
+	'hospitals_recovery_rooms' =>'غرف الإنعاش',
+	'hospitals_analysis_laboratories'=>'معامل التحاليل',
+	'hospitals_private_rooms'		 =>'غرف خاصة',
+	'hospitals_public_rooms'	     =>'غرف عامة',
+	'hospitals_rays_centers'		 =>'مراكز اشعة',
+
  
 	/**
 	 * Departments
@@ -287,7 +294,7 @@ return [
     'orders'                    => 'طلبات العلاج  ',
     'status_0'                  => 'جديد',
     'status_1'                  => 'مقبول',
-    'status_2'                  => 'مرفوض',
+    'status_2'                  => 'غير متوفر',
     'status_3'                  => 'الطلب قيد التنفيذ',
     'status_4'                  => 'تم تنفيذ الطلب',
     'disease'                   => 'المرض',
@@ -399,7 +406,16 @@ return [
 	'website_status'		=>	'حالة الموقع',
 	'website_lang'			=>	'لغة دخول الموقع للمستخدمين',
 
-
+	/**
+	 * blood_types
+	 */
+	'blood_types' 			=> 'انواع الدم',
+	'blood_types_type' 		=> 'النوع',
+	'blood_types_amount' 	=> 'الكمية',
+	'amount' 				=> 'الكيمة',
+	'blood_typeCreated'		=> 'تم انشاء نوع الدم ',
+	'blood_typeUpdated'		=> 'تم تعديل نوع الدم ',
+	'blood_typeDeleted'		=> 'تم حذف نوع الدم ',
 	
    /*
     |--------------------------------------------------------------------------

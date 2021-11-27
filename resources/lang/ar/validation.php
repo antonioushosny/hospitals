@@ -260,9 +260,26 @@ return [
     
  
   
-
- 
-
+        /**
+         * blood_types
+         */
+        'blood_types' 			=> 'انواع الدم',
+        'blood_types_type' 		=> 'النوع',
+        'blood_types_amount' 	=> 'الكمية',
+        'amount' 				=> 'الكيمة',
+        'blood_typeCreated'		=> 'تم انشاء نوع الدم ',
+        'blood_typeUpdated'		=> 'تم تعديل نوع الدم ',
+        'blood_typeDeleted'		=> 'تم حذف نوع الدم ',
+    
+        /**
+         * Hospitals
+         */
+        'hospitals_intensive_care'       =>'العناية المركزة',
+        'hospitals_recovery_rooms'       =>'غرف الإنعاش',
+        'hospitals_analysis_laboratories'=>'معامل التحاليل',
+        'hospitals_private_rooms'		 =>'غرف خاصة',
+        'hospitals_public_rooms'	     =>'غرف عامة',
+        'hospitals_rays_centers'		 =>'مراكز اشعة',
 
     ],
 ];
